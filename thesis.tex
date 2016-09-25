@@ -351,7 +351,7 @@ Q = \frac{q - g h_{flow} \Delta T \frac{\Delta (h+z) }{\Delta x}}{1 + g h_{flow}
 where \(q\) is the water flux between cells from the previous iteration, \(g\) is acceleration due to gravity, \(h_{flow}\) is the maximum depth of flow between cells (m), \(t\) is time (s), \(h\) is depth of water, \(z\) is elevation, \(x\) is the grid well width, and \(n\) is Manning's roughness coefficient. The full implementation details are given in Coulthard (2013), and the derivation from the shallow water equations is given in Bates (2010).
 
 \subsection{Sediment transport}
-Transport of loose sediment is governed by the \citet{Wilcock2003} sediment transport model. The Wilcock and Crowe model represents transport of mixed sand/gravel fractions based on the surface sediment composition. The rate of sediment transport, \(q_i\), is given as:
+Transport of loose sediment within the model is governed by the \citet{Wilcock2003} sediment transport model. The Wilcock and Crowe model represents transport of mixed sand/gravel fractions based on the surface sediment composition. The rate of sediment transport, \(q_i\), is given as:
 
 \begin{equation}
 q_i = \frac{F_i {U_*}^3 {W_i}^*}{(s -1) g}
@@ -372,7 +372,7 @@ where \(k_e\) is the bedrock erodibility coefficient, \(\tau_b\) is the basal sh
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental design and case study descriptions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Three upland catchments in the UK were selected to represent a range of catchment sizes and shapes. The catchments were also chosen on the basis that they had experienced a severe rain storm which could be used as a basis for the experiments, such that it could be considered `extreme' in the typical return period of flooding events for each particular catchment. Peak discharges for each of the following flood events exceed the 99th percentile for their respective catchments. The catchments and respective severe rain events chosen were located in: Ryedale, North Yorkshire, 2005; Plynlimon, Mid-Wales, 2012; and Boscastle, Cornwall, 2004. An overview map of their locations is given in Figure \ref{overview_fig}. A table (Table \ref{met_setting}) summarises the key features of each catchment and associated storm.
+Three upland catchments in the UK were selected to represent a range of catchment sizes and shapes. The catchments were also chosen on the basis that they had experienced a severe rain storm which could be used as a basis for the experiments, such that it could be considered `extreme' in the typical return period of flooding events for each particular catchment. Peak discharges for each of the following flood events exceed the 99th percentile for their respective catchments. The catchments and respective severe rain events chosen were located in: Ryedale, North Yorkshire, 2005; Eden, Cumbria 2012; and Boscastle, Cornwall, 2004. An overview map of their locations is given in Figure \ref{overview_fig}. A table (Table \ref{met_setting}) summarises the key features of each catchment and associated storm.
 
 \linespread{1.3}
 \begin{table}
