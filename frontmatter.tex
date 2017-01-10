@@ -1,0 +1,55 @@
+\title{Linking numerical landscape evolution models with high-resolution meteorological data}
+
+\author{Declan A. Valters}
+% Faculty of Life Sciences people should comment the next line out
+\school{Earth, Atmospheric, and Environmental Sciences}
+\faculty{Engineering and Physical Sciences}
+\def\wordcount{xxxxx}
+
+% Uncomment the line below to suppress the `List of Tables' page (optional)
+%\tablespagefalse
+
+% Uncomment the line below to suppress the `List of Figures' page (optional)
+%\figurespagefalse
+
+% Uncomment the line below to use a customised Declaration statement
+%\def\declaration{All the work in this thesis has been sourced from Google.}
+
+\beforeabstract
+This thesis addresses a limitation in numerical models of landscape evolution regarding how the spatial variation of precipitation is represented or parameterised within such models. Numerical models of landscape evolution typically forsake a realistic representation of rainfall patterns in favour of a simpler treatments of rainfall as being spatially homogeneous across the model domain, despite the fact that many geomorphic processes being sensitive to thresholds of sediment entrainment and transport, driven by the movement of water within the landscape. The thesis presents the development and application of a series of computer-based models of landscape evolution with improved routines for the representation of rainfall spatial variability. These modifications are then applied to exploring the sensitivity of landscapes to spatial variation in rainfall inputs over a range of timescales from single storm events, to longer term topographic evolution. 
+
+The thesis starts by exploring current limitations in rainfall representation in landscape evolution models, followed by an assessment of precipitation data sources that could be potentially used as realistic inputs to landscape evolution models. Models of synthetic rainfall generation are also discussed in this section. A numerical model of landscape evolution is developed for deployment on high-performance parallel computing systems, based on the established CAESAR-Lisflood model (Coulthard et al., 2013). This model is benchmarked, showing performance benefits compared with the serial code. The improved model code is shown to produce results commensurate with the CAESAR-Lisflood model it is developed from.
+
+The model is applied to assessing the sensitivity of fluvial erosional processes within river catchments to the spatial variation in rainfall during extreme storm events. Two real storm events that triggered flooding in the UK in 2004 and 2005 are used a test cases. Landscape response to single storm events is shown to be sensitive to the spatial resolution of radar rainfall input across the model domain.
+
+Finally, a software framework is presented for driving a landscape evolution model with input from a numerical weather prediction model. Using high-resolution NWP simulations of 250m grid spacing, mesoscale rainfall features are resolved at the river catchment scale. The UK storm case studies described in the previous chapter are re-assessed using data from NWP simulations of each case to investigate the response of catchments to the mesoscale details of severe rainfall events.
+%To explore the effects of rainfall spatial variability at longer timescales of topographic evolution, the CHILD landscape evolution model (Tucker et al., 2001) is developed to incorporate a model of spatially-limited storm morphology. The rainfall model is designed to represent the typical intense rainfall associated with convective storm cells.
+
+
+%
+%
+%From a meteorological perspective, precipitation patterns are observably non-uniform at a variety of scales, due to effects such as the orographic enhancement of rainfall, as well as the spatially limited nature of convective storm cells that bring intense rainfall. In temperate regions, many geomorphic processes are ultimately driven by the movement of water in the landscape, such as fluvial incision and sediment transport.
+%
+%Write your abstract here: Remember, it must fit on this A4 page and should
+%describe contents of the thesis/dissertation. Here might also be a good place
+%to indicate what you have achieved in the thesis/dissertation and, in the
+%case of a PhD, what new results you have discovered. Note that for a PhD
+%single-spacing is used throughout the Abstract, including displayed equations
+%\[
+%e = mc^{2}
+%\]
+%as for the above example.
+
+\afterabstract
+
+% The next part is optional; however it is a good place to thank your
+% supervisor and the people responsible for providing computer support ;-)
+\prefacesection{Layperson's abstract}
+An optional section suggested by the UoM thesis preparation guide.
+
+\prefacesection{Acknowledgements}
+Acknowledgements...
+
+
+% The next line is NOT optional and MUST appear
+\afterpreface
