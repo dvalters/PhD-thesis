@@ -11,8 +11,21 @@
 % Use this command to output a single chapter
 \includeonly{chapter6}
 
+\usepackage{rotating}
 %\usepackage{lineno}
 %\linenumbers
+
+%\usepackage{epigraph}
+
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
 
 %these are now in the muthesis.cls file
 %\usepackage[utf8]{inputenc}

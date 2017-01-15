@@ -1,12 +1,16 @@
-\chapter{Modelling catchment hydrogeomorphic sensitivity to rainfall radar data resolution}
+\chapter{Modelling catchment hydrogeomorphic sensitivity to rainfall spatial distribution}
 \chaptermark{Catchment sensitivity to rainfall resolution}
+%\begin{chapquote}{Lewis Carroll, \textit{Alice in Wonderland}}
+%``Begin at the beginning,'' the King said, gravely, ``and go on till you
+%come to an end; then stop.''
+%\end{chapquote}
 
-\begin{abstract}
-Landscapes evolve and take their shape from the cumulative effect of `geomorphically effective' events. In temperate climates, these are rainfall-driven events of sufficient magnitude to trigger threshold-dependent erosional processes. This chapter investigates the sensitivity of two end-member erosional models to the spatial resolution of rainfall input to a catchment using three historic severe rainfall events in Northern England and Cornwall.
-
-It is demonstrated that the erosional model chosen exerts first-order control of the total amount of landscape change and sediment flux. However, both end member models show sensitivity to the spatial resolution of rainfall input data during individual, formative rainfall events. 
-
-\end{abstract}
+%\begin{abstract}
+%Landscapes evolve and take their shape from the cumulative effect of `geomorphically effective' events. In temperate climates, these are rainfall-driven events of sufficient magnitude to trigger threshold-dependent erosional processes. This chapter investigates the sensitivity of two end-member erosional models to the spatial resolution of rainfall input to a catchment using three historic severe rainfall events in Northern England and Cornwall.
+%
+%It is demonstrated that the erosional model chosen exerts first-order control of the total amount of landscape change and sediment flux. However, both end member models show sensitivity to the spatial resolution of rainfall input data during individual, formative rainfall events. 
+%
+%\end{abstract}
 \section{Introduction}
 
 Landscape evolution at the catchment scale is punctuated by intense erosive episodes driven by flood events (Wolman and Miller, 1960; Newson, 1980; Costa and O'Connor, 1995) interspersed with periods of relative calm and little geomorphic change, an idea that harks back to the early ideas of geological `catastrophism' (Cuvier, ?). It is these erosive events, driven by intense rainfall in temperate climates, separated by long periods of stasis, that cumulatively sculpt the landscape over geological time. The importance of these rare but formative events has been revisited by recent work such as Huang and Niemann (2006), looking at the long term implications of different geomorphically effective event discharges on fluvial incision; Gupta et al., (2007); Lamb and Fonstad (2010); and Baynes et al., (2015) where the amount of bedrock erosion during a single large flood event was quantified. Still, our understanding of catchment scale landscape evolution is far from complete - the role of individual events is highly variable. Anton (2014) report that rapid gorge formation can be driven primarily by small to moderate sized floods, rather than floods of extreme magnitude. Further, there was no observed relationship between flood magnitude and erosion rate. Turowski et al. (2011) report that streams within catchments can exhibit different behaviour in response to the same flood event -- some streams may erode during high flows, whereas others may deposit during high flows. During small--medium flows their respective behaviour is reversed. Wong et al. (2015) establish through numerical modelling that geomorphic changes in channel geometry during severe flood events are substantial enough to change hydrological response of a river catchment. Catchment-scale erosional dynamics are complex, and except in the simplest cases depend on other forcings other than the magnitude alone of single flood events.  The understanding of hydrogeomorphic processes during single storm events is not only important for the long-term evolution of landscapes, but also for prediction of how catchments will respond to changing hydro-meteorological conditions that may accompany climate change (Kendon et al., 2014).
@@ -38,7 +42,7 @@ The following questions are explored through the use of numerical modelling simu
 %%%%%%%%%%%%%%%%
 \section{Theory}
 %%%%%%%%%%%%%%%%
-In our conceptual model of landscape evolution, fluvial processes -- erosion and deposition of sediment and bedrock by flowing water -- are assumed to be the dominant geomorphic processes at work. The numerical model used to simulate these processes uses established hydrological and geomorphic process laws, which are breifly reviewed here in the following sections.
+In our conceptual model of landscape evolution, fluvial processes -- erosion and deposition of sediment and bedrock by flowing water -- are assumed to be the dominant geomorphic processes at work. The numerical model used to simulate these processes uses established hydrological and geomorphic process laws, which are briefly reviewed here in the following sections.
 
 \subsection{Rainfall-runoff and flow routing}
 From rainfall input, runoff is calculated using an adaptation of the Beven and Kirby (1979) TOPMODEL. Total surface and subsurface discharge is given by:
@@ -203,13 +207,65 @@ For Ryedale simulations, it was decided to use an \(m\) value of 0.005, providin
 
 At the catchment scale, hydrological response was sensitive to both the rainfall resolution and the choice of erosional model. For all catchments, higher resolution rainfall input data resulted in a flashier storm hydrograph, with catchments reaching their peak discharge sooner than the uniform rainfall cases. Maximum river discharges were also higher when using higher resolution rainfall data. The choice of erosion model also influenced the hydrograph response. When catchment erosion was modelled using a transport-limited case, peak discharges were higher, but the timing of hydrograph peaks remained very similar for each case. The difference in peak discharges were minimal when comparing the detachment-limited cases to the hydrological-only models.
 
+\begin{figure}[t]
+\includegraphics[width=14cm]{chp06_figures_scripts/figure_ryedale_hydrograph_ensemble.eps}
+\caption{Hydrographs (discharge over time at catchment outlet) for each simulation of the 2005 Ryedale event listed in table XXX.}
+\label{fig_ryedale_hydrograph_ensemble}
+\end{figure}
+
+\begin{figure}[t]
+\includegraphics[width=14cm]{chp06_figures_scripts/figure_boscastle_hydrograph_ensemble.eps}
+\caption{Hydrographs (discharge over time at catchment outlet) for each simulation of the 2004 Boscastle event listed in table XXX.}
+\label{fig_boscastle_hydrograph_ensemble}
+\end{figure}
+
 \subsection{Catchment sediment flux}
 % General description of all results.
 Sediment flux followed a similar pattern to that observed in water discharge from the catchment. For all catchments and events simulated, sediment flux from the catchment was higher in the simulations using higher resolution rainfall input data. The patterns of peak sediment discharge also mirrored that of water discharge, with sediment flux peaking earlier in the simulations with higher resolution rainfall inputs. 
 
-\subsection{Local variations in catchment erosion}
+\begin{figure}[t]
+\includegraphics[width=14cm]{chp06_figures_scripts/figure_boscastle_sedigraph_ensemble.eps}
+\caption{Sediment flux (Total sediment volume output per hour at catchment outlet for each erosion-enabled simulation of the 2004 Boscastle event listed in table XXX.}
+\label{fig_boscastle_sedigraph_ensemble}
+\end{figure}
+
+\begin{figure}[t]
+\includegraphics[width=14cm]{chp06_figures_scripts/figure_ryedale_sedigraph_ensemble.eps}
+\caption{Sediment flux (Total sediment volume output per hour at catchment outlet) for each erosion-enabled simulation of the 2005 Ryedale event listed in table XXX.}
+\label{fig_ryedale_sedigraph_ensemble}
+\end{figure}
+
+\subsection{Spatial variations in flood inundation}
 
 % Plan view erosion diff maps
+\begin{sidewaysfigure}[t]
+\includegraphics[width=17cm]{chp06_figures_scripts/figure_boscastle_peak_flood_ensemble.png}
+\caption{Flood extents in the Boscastle catchment at the time of maximum river discharge for each simulation.}
+\label{fig_boscastle_2dplan_flood_ensemble}
+\end{sidewaysfigure}
+
+% Plan view erosion diff maps
+\begin{sidewaysfigure}[t]
+\includegraphics[width=17cm]{chp06_figures_scripts/figure_ryedale_peak_flood_ensemble.png}
+\caption{Flood extents in the Ryedale catchment at the time of maximum river discharge for each simulation.}
+\label{fig_ryedale_2dplan_flood_ensemble}
+\end{sidewaysfigure}
+
+\subsection{Spatial variations in sediment and bedrock erosion}
+
+% Plan view erosion diff maps
+\begin{sidewaysfigure}[t]
+\includegraphics[width=22cm]{chp06_figures_scripts/figure_boscastle_erosion_diff_ensemble10.jpg}
+\caption{Boscastle. Erosion.}
+\label{fig_boscastle_2dplan_erosion_ensemble}
+\end{sidewaysfigure}
+
+% Plan view erosion diff maps
+\begin{sidewaysfigure}[t]
+\includegraphics[width=22cm]{chp06_figures_scripts/figure_ryedale_erosion_diff_ensemble30.jpg}
+\caption{Ryedale. Erosion.}
+\label{fig_ryedale_2dplan_erosion_ensemble}
+\end{sidewaysfigure}
 
 \section{Discussion}
 
