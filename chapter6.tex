@@ -305,15 +305,7 @@ The Ryedale simulations showed greater variation in flood extent between the gri
 
 % Describe planform variations in erosion and deposition
 \subsection{Spatial variations in sediment and bedrock erosion}
-The main spatial variation seen in sediment erosion is seen in river channels, where shear stresses require to initiate erosion and sediment transport are greatest due to the flow of water. The amount of erosion in each simulation was highly sensitive to parameterisation choice of the sediment erosion and transport law, with the choice of rainfall input data being only a secondary controlling factor on erosion amounts, all other factors being equal. This behaviour was seen on all simulations, in Figure \ref{fig_boscastle_2dplan_erosion_ensemble} and \ref{fig_ryedale_2dplan_erosion_ensemble}.
-
-
-\subsubsection{Boscastle}
-
-
-\subsubsection{Ryedale}
-
-
+The main spatial variation seen in sediment erosion is seen in river channels, where shear stresses require to initiate erosion and sediment transport are greatest due to the flow of water. The amount of erosion in each simulation was highly sensitive to parameterisation choice of the sediment erosion and transport law, with the choice of rainfall input data (gridded vs uniform) being only a secondary controlling factor on erosion amounts, all other factors being equal. This behaviour was seen on all simulations, in Figure \ref{fig_boscastle_2dplan_erosion_ensemble} and \ref{fig_ryedale_2dplan_erosion_ensemble}. 
 
 % Plan view erosion diff maps
 \begin{sidewaysfigure}[t]
@@ -330,6 +322,13 @@ The main spatial variation seen in sediment erosion is seen in river channels, w
 \end{sidewaysfigure}
 
 \section{Discussion}
+The size of the two catchments appears to be a determining factor in how sensitive hydrogeomorphic processes are to the rainfall data input resolution. The Boscastle catchment at 18 km\(^2\) is approximately an order of magnitude smaller than the Rydedale catchment at 270 km\(^2\). For each simulation using gridded rainfall input, the cell width of the rainfall grid is 1 km. The relative amount of increase in rainfall detail between uniform and gridded simulations is much greater in the larger Ryedale catchment than the Boscastle catchment. By using a 1 km gridded rainfall product as input data, the Ryedale simulation potentially captures 15 times more rainfall heterogeneity compared to the respective Boscastle simulation, by virtue of it simply being a much larger catchment with a greater number of rainfall input cells. Catchment size is known to be a factor in hydrological studies of rainfall resolution, and larger catchments are reported to show greater sensitivity to rainfall resolution (e.g. \citep{nicotina2006}), in terms of hydrological response. 
+
+Increasing the resolution of rainfall input data may not be enough to observe sensitivity in smaller catchments, as rainfall features themseleves may not exhibit the necessary heterogeneity in structure to benefit from being resolved at finer scale. Convective rain cells approximately the same size as the catchment over which they rain upon, may well be homogenous enough in spatial extent and rainfall rate that a `uniform' approximation of their rainfall rate is sufficiently precise enough to represent the rainfall rate at all points in the catchment. As seen in the Boscastle catchment simulations, using a detailed rainfall input data source did not notably alter the outcome of the hydrological predictions (Figures \ref{figure_}, \ref{figure_}). In the Ryedale catchment simulations, the hydrological predictions were notably different based on the choice of rainfall input data resolution, affecting both the time and magnitude of the resulting flood peak. 
+
+Talk about size of convective cell features. What is typical storm cell size and heterogeneity (decay from centre?).
+
+As with hydrology and flood extent, sediment flux exhibits sensitivity to the input rainfall data resolution, but the more dominant sensitivity is to the sediment erosion parameterisation choice in the model. The set of erosion-enabled simulations in these experiments represented two end-members of sediment transport and erosion laws. The \textit{TLIM}-suffixed simulations representing a purely trasnport limited environment and the \textit{DLIM}-suffixed environment representing a purely detachment limted enviornemtn -- with the transport limited law simulaitons predicting much greater sediment flux and erosion than the detachment limited counterparts. In terms of sediment flux and erosion, the role of rainfall input data spatial resoluiton played only a secondary role in determining erosion amounts. The size of the catchment was less important in this respect, with even the smaller Boscastle catchment showing a marked sensitivity to the choice of erosion law.
 
 \subsection{Implications for longer-term landscape evolution}
 \textit{Some discussion on how these results scale-up to longer term landscape evolution. I.e. How many storms of similar magnitude would be needed to reach longer term erosion rates? Does this correspond to known longer term erosion rates of similar upland landscapes?}
