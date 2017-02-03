@@ -1,6 +1,6 @@
-\chapter{Modelling catchment hydrogeomorphic sensitivity to rainfall spatial distribution}
-\label{chapter_hydrogeomorph}
-\chaptermark{Catchment sensitivity to rainfall resolution}
+\chapter{Rain or rock? Sensitivity of a flood-inundation model to rainfall distribution and erosional parameterisation}
+\label{chapter_flood_model_sensitivity}
+\chaptermark{Rain or rock?}
 %\begin{chapquote}{Lewis Carroll, \textit{Alice in Wonderland}}
 %``Begin at the beginning,'' the King said, gravely, ``and go on till you
 %come to an end; then stop.''
@@ -14,31 +14,14 @@
 %\end{abstract}
 \section{Introduction}
 
-Landscape evolution at the catchment scale is punctuated by intense erosive episodes driven by flood events (Wolman and Miller, 1960; Newson, 1980; Costa and O'Connor, 1995) interspersed with periods of relative calm and little geomorphic change, an idea that harks back to the early ideas of geological `catastrophism' (Cuvier, ?). It is these erosive events, driven by intense rainfall in temperate climates, separated by long periods of stasis, that cumulatively sculpt the landscape over geological time. The importance of these rare but formative events has been revisited by recent work such as Huang and Niemann (2006), looking at the long term implications of different geomorphically effective event discharges on fluvial incision; Gupta et al., (2007); Lamb and Fonstad (2010); and Baynes et al., (2015) where the amount of bedrock erosion during a single large flood event was quantified. Still, our understanding of catchment scale landscape evolution is far from complete - the role of individual events is highly variable. It has been reported that rapid gorge formation can be driven primarily by small to moderate sized floods (Anton 2012), rather than floods of extreme magnitude. The relationship between flood magnitude and erosion rate is not always observed in case studies (Anton 2012), suggesting that the links between precipitation, hydrological response, and sediment transport are not fully understood. The behaviour of certain catchment processes is non-linear (Coulthard, XXXX). Turowski et al. (2011) report that streams within catchments can exhibit different behaviour in response to the same flood event -- some streams may erode during high flows, whereas others may deposit during high flows. During small--medium flows their respective behaviour is reversed. Wong et al. (2015) establish through numerical modelling that geomorphic changes in channel geometry during severe flood events are substantial enough to change hydrological response of a river catchment. Catchment-scale erosional dynamics are complex, and except in the simplest cases depend on other forcings other than the magnitude of single flood events alone.  The understanding of hydrogeomorphic processes during single storm events is not only important for the long-term evolution of landscapes, but also for prediction of how catchments will respond to changing hydro-meteorological conditions that may accompany climate change (Kendon et al., 2014).
-
-The focus in this paper is to quantify the sensitivity of catchment-scale erosional processes to the spatial distribution of rainfall during flood events. The assumption of uniform rainfall over a river catchment is argued to hold true for small catchments (Solyom and Tucker 2004; Tucker 2010), but even over small areas, mesoscale rainfall features, such as localized convective storm cells, can result in spatially and temporally uneven input of precipitation into the catchment. In the case of intense convective precipitation, individual storm cells can be as small as 10km$^2$ in areal extent (Weisman and Klemp, 1986; Von Hardenberg et al., 2003). Over larger catchments, or those with steep topographic gradients, precipitation is almost certain to vary spatially, due to orographic enhancement of rainfall (Roe, 2005). As such, rainfall-runoff generation, local river flow, and erosion rates may vary considerably within individual drainage basins. 
-
 Patterns of rainfall distribution across a catchment can affect hydrograph response, including the peak discharge and local water levels (Nicotina et al., 2008). As many geomorphic processes are threshold dependent (Schumm, 1979), such as fluvial incision into bedrock (Sklar and Dietrich, 2001; Snyder et al., 2003), there is potential for the spatial distribution of rainfall to control local erosion rates within a catchment. Non-linearity in geomorphic process laws (e.g. Coulthard et al., 1998; Phillips, 2003; Coulthard and Van de Wiel, 2007) should dictate that catchments are also geomorphically sensitive to the spatial distribution of rainfall. 
-
-Numerical models of landscape evolution usually omit a realistic distribution of rainfall input in favour of uniform, homogenised precipitation across the landscape. When precipitation is `lumped', either spatially or temporally in a catchment, local minima and maxima of precipitation are lost, and with discharge being a function of rainfall rate, this uncertainty propagates through to local discharges and erosion rates. The uncertainty in erosion rates is potentially exacerbated by the non-linearity and threshold dependence of erosive processes. The variability of precipitation is considered in many cases to be as important as total precipitation amount in determining erosional effectiveness (Tucker and Bras, 2000; Tucker, 2010). What is currently lacking in landscape evolution studies is a fuller understanding of how landscapes erode during individual storms, and in particular how erosional processes are sensitive to the details of precipitation across a catchment. 
-
-In numerical models of landscape evolution, resolving the precise temporal and spatial details of rain storms and the hydrological response is often computationally prohibitive, especially over long timescales, and as such modellers have taken to using simpler parametrisiations of storm characteristics, such as using simple stochastic models to generate rainfall inputs and rainfall timeseries (Eagleson, 1978; Tucker et al., 2001). In studies of long term landscape evolution, the sensitivity of landscapes to the spatial distribution of rainfall has been investigated to some extent -- particularly the imprint of orographic precipitation on landscapes (e.g. Roe 2002; Anders 2008; Han and Gasparini, 2015). 
-
-Rainfall resolution has been demonstrated to exert a control over sediment yields over seasonal and decadal timescales (Coulthard and Skinner, 2016). In a numerical modelling study of the River Swale catchment, Coulthard and Skinner show that local as well as catchment-wide sediment yields were predicted to increase by orders of magnitude as rainfall data resolution increases. The study looked at the effects of rainfall spatial data resolution as well the temporal resolution of data, showing both to demonstrate a control over sediment fluxes in a catchment. 
-
-%The intermediate stage between rainfall episode and geomorphic process is the hydrological response of the landscape. This is determined by a range of factors, includng antecedent conditions, bedrock and soil properties, vegetative cover, catchment morphology and the distribution of the rainfall across the catchment. Again, in numerical models of long term landscape evolution, these processes are parameterised for computational efficiency, generally through the selection of an appropriate rainfall-runoff model for the catchment (Beven). Most models of longer term landscape evolution assume a hydrological steady-state during each erosive event, and erosion is calculated as a function of peak or total discharge during a storm. Notable exceptions include the work of Solyom and Tucker (2004), where a parameterised non-steady state rainfall-runoff model is proposed to explain landscape evolution under condtions of short storm duration realtive to runoff time. 
-%Talk about some of the purely hydrologic studies that have used spatially varible dsitributed rainfall.
-
-In contrast to previous studies, this paper looks at the effects of individual severe rainfall events using a range of erosional end-member models. The study investigates the sensitivity of catchment-scale erosion to the spatial details of severe rain storms -- the agents of long term landscape evolution. Landscape response is investigated using a numerical landscape evolution model that incorporates a dynamic (non steady-state) water-routing component and a range of fluvial incision and sediment transport laws. A series of model experiments is presented to test how sensitive real landscapes are to the catchment-scale details of precipitation during intense rainfall events. The simulations are each based on selected severe storms in Great Britain occurring in the past decade, which left significant flooding, damage, and geomorphic change in their wake.
 
 The following questions are explored through the use of numerical modelling simulations;
 
 \begin{itemize}
-\item Are modelled flood inundation extents sensitive to the spatial resolution of rainfall inputs to the catchment?
-\item Are fluvial erosion and sediment transport processes sensitive to the details of precipitation at the catchment scale during single storm events?
-\item Does the choice of erosional model operating within the catchment influence sensitivity to rainfall patterns? 
-%\item What is the link between the spatial pattern of rainfall and spatial pattern of erosion and deposition in each storm--flood event?
-\item What are the implications of this for longer term landscape evolution? 
+\item Are predicted flood inundation extents during a storm sensitive to the spatial resolution of rainfall inputs to the catchment?
+\item Are fluvial erosion and sediment transport processes controls on predicted flood inundation extents in a catchment during a single severe storm.
+\item Does geomorphic change of the floodplain and channel during a storm event significant enough to affect flood inundation predictions?
 \end{itemize}
 
 %%%%%%%%%%%%%%%%
@@ -263,21 +246,6 @@ The choice of erosion model also influenced the hydrological response. When catc
 \end{figure}
 
 
-\subsection{Catchment sediment flux}
-% General description of all results.
-In contrast to water fluxes, sediment flux from the catchments were most sensitive to the sediment erosion parameterisation, rather than the spatial detail of rainfall inputs.. For all catchments and events simulated, sediment flux from the catchment was higher in the simulations using higher resolution rainfall input data. The patterns of peak sediment discharge also mirrored that of water discharge, with sediment flux peaking earlier in the simulations with higher resolution rainfall inputs. 
-
-\begin{figure}[t]
-\includegraphics[width=14cm]{chp06_figures_scripts/figure_boscastle_sedigraph_ensemble.eps}
-\caption{Boscastle sediment flux (total sediment volume output per hour at catchment outlet for each erosion-enabled simulation of the 2004 Boscastle event listed in Table \ref{table_ensemble_experiments}.}
-\label{fig_boscastle_sedigraph_ensemble}
-\end{figure}
-
-\begin{figure}[t]
-\includegraphics[width=14cm]{chp06_figures_scripts/figure_ryedale_sedigraph_ensemble.eps}
-\caption{Ryedale sediment flux (Total sediment volume output per hour at catchment outlet) for each erosion-enabled simulation of the 2005 Ryedale event listed in Table \ref{table_ensemble_experiments}.}
-\label{fig_ryedale_sedigraph_ensemble}
-\end{figure}
 
 \subsection{Spatial variation in flood inundation}
 \subsubsection{Boscastle}
@@ -302,34 +270,16 @@ The Ryedale simulations showed greater variation in flood extent between the gri
 \label{fig_ryedale_2dplan_flood_ensemble}
 \end{sidewaysfigure}
 
-% Describe planform variations in erosion and deposition
-\subsection{Spatial variations in sediment and bedrock erosion}
-The main spatial variation seen in sediment erosion is seen in river channels, where shear stresses require to initiate erosion and sediment transport are greatest due to the flow of water. The amount of erosion in each simulation was highly sensitive to parameterisation choice of the sediment erosion and transport law, with the choice of rainfall input data (gridded vs uniform) being only a secondary controlling factor on erosion amounts, all other factors being equal. This behaviour was seen on all simulations, in Figure \ref{fig_boscastle_2dplan_erosion_ensemble} and \ref{fig_ryedale_2dplan_erosion_ensemble}. 
 
-% Plan view erosion diff maps
-\begin{sidewaysfigure}[t]
-\includegraphics[width=25cm]{chp06_figures_scripts/figure_boscastle_erosion_diff_ensemble10.jpg}
-\caption{Boscastle. Erosion.}
-\label{fig_boscastle_2dplan_erosion_ensemble}
-\end{sidewaysfigure}
-
-% Plan view erosion diff maps
-\begin{sidewaysfigure}[t]
-\includegraphics[width=25cm]{chp06_figures_scripts/figure_ryedale_erosion_diff_ensemble30.jpg}
-\caption{Ryedale. Erosion.}
-\label{fig_ryedale_2dplan_erosion_ensemble}
-\end{sidewaysfigure}
 
 \section{Discussion}
-The spatial resolution of rainfall input in a river catchment simulation has a demonstrable effect on both hydrological and sediment fluxes, which is seen in both catchment-wide fluxes (Figures \ref{fig_boscastle_hydrograph_ensemble}, \ref{fig_boscastle_sedigraph_ensemble}, \ref{fig_ryedale_hydrograph_ensemble}, \ref{fig_ryedale_sedigraph_ensemble}). Though the magnitude of the sensitivity varied between experiments, there was a general increase in water fluxes, and hence sediment flux, in simulations with gridded rainfall data used as the rainfall input, compared to simulations that used a single, uniform value for rainfall. Existing studies investigating landscape evolution model sensitivity to rainfall resolution \citep{coulthard2016sensitivity} have noted similar increases in water discharge and sediment yields when using spatially heterogeneous rainfall data. The results from the experiments presented in this chapter are broadly in agreement with the general findings of \citet{coulthard2016sensitivity} although the timescales involved in each study are of different magnitudes. The results presented here suggest that the effect of rainfall resolution sensitivity applies to hydrogeomorphic processes at the single-event time scale, as well as landscape evolution over periods of hundreds and thousands of years.
+
 
 The size of the two catchments appears to be a determining factor in how sensitive hydrogeomorphic processes are to the rainfall data input resolution. The Boscastle catchment at 18 km\(^2\) is approximately an order of magnitude smaller than the Rydedale catchment at 270 km\(^2\). For each simulation using gridded rainfall input, the cell width of the rainfall grid is 1 km. The relative amount of increase in rainfall detail between uniform and gridded simulations is much greater in the larger Ryedale catchment than the Boscastle catchment. By using a 1 km gridded rainfall product as input data, the Ryedale simulation potentially captures 15 times more rainfall heterogeneity compared to the respective Boscastle simulation, by virtue of it simply being a much larger catchment with a greater number of rainfall input cells. Catchment size is known to be a factor in hydrological studies of rainfall resolution, and larger catchments are reported to show greater sensitivity to rainfall resolution \citep[e.g.][]{nicotina2008impact}, in terms of hydrological response.
 
 Increasing the resolution of rainfall input data may not be enough to observe sensitivity in smaller catchments, as rainfall features themselves may not exhibit the necessary heterogeneity in structure to benefit from being resolved at finer scale. Rain cells or bands equal to or greater in size than the catchment over which they rain upon, may well be homogeneous enough in spatial extent and rainfall rate that a `uniform' approximation of their rainfall rate is sufficiently precise enough to represent the rainfall rate at all points in the catchment. As seen in the Boscastle catchment simulations, using a detailed rainfall input data source did not notably alter the outcome of the hydrological predictions (Figures \ref{fig_boscastle_2dplan_flood_ensemble}, \ref{fig_ryedale_2dplan_flood_ensemble}). In the Ryedale catchment simulations, the hydrological predictions were notably different based on the choice of rainfall input data resolution, affecting both the time and magnitude of the resulting flood peak. 
 
 Talk about size of convective cell features. What is typical storm cell size and heterogeneity (decay from centre?).
-
-As with hydrology and flood extent, sediment flux exhibits sensitivity to the input rainfall data resolution, but the more dominant sensitivity is to the sediment erosion parameterisation choice in the model. The set of erosion-enabled simulations in these experiments represented two end-members of sediment transport and erosion laws. The \textit{TLIM}-suffixed simulations representing a purely transport limited environment and the \textit{DLIM}-suffixed environment representing a purely detachment limited environment -- with the transport limited law simulations predicting much greater sediment flux and erosion than the detachment limited counterparts. In terms of sediment flux and erosion, the role of rainfall input data spatial resolution played only a secondary role in determining erosion amounts. The size of the catchment was less important in this respect, with even the smaller Boscastle catchment showing a marked sensitivity to the choice of erosion law.
 
 \subsection{Implications for longer-term landscape evolution}
 The experiments presented in this chapter have focused on the hydrogeomorphic response to single severe storm events, events which produced floods with return periods of 1 in 330 years (Ryedale) and 1 in 1300 years (Boscastle). The amounts of river channel incision predicted as a result of these storms is comparable to that predicted by studies of landscape evolution on scales of 1000 years, for example a study of a similar upland river basin by \citep{coulthard2016sensitivity} predicted channel incision amounts of 0.5--5m over 1000 years. The experiments presented here, using the same sediment transport law, predicts comparable incision amounts of channel incision during a single storm. If the flood return periods are assumed to be broadly correct, these simulations suggest that the majority of sediment erosion occurs during rare but high magnitude flood events, rather than through gradual processes or more frequent but lower magnitude events.
