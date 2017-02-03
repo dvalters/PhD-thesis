@@ -1,67 +1,16 @@
-\chapter{Linking high-resolution NWP model output with a landscape evolution model}
+\chapter{Landscape erosion model sensitivity to rainfall spatial inputs}
 
 \section{Introduction}
 
-An introduction to the need for better forecasting of flash fooding events. Societal impacts etc. References to recent events in the UK. Rapid geomorphological change can accompany such events, leading to unexpected hydrological outcomes as most models assume static terrain surface during flood-inundation prediction.
-
-Weather forecast models allow high resolution simulations to forecast spatial details of precipitations. Potenital forecasting capability when coupled to hydrodynamic landsacpe evolution model. Relate to summer convective events which tend to be much more spatially focused (mesoscale) and can hence rainfall inputs can vary significantly accross a catchment. NWP offers greater lead times than radar `nowcasting'. 
-
-Can cite pitt review (2008).
-
-Need to investigate better linking of environmental models. E.g. NWP to Land Surface Flooding and Erosion models.
-
-This chapter presents a framework for driving a landscape evolution model with output from NWP simulations. It then looks at two test applications from intense rainfall events in the UK. 
-
-The work investigates whether a one-way coupled model (WRF-CAESAR-Lisflood) can provide better forecasting ability over a model driven with coarser resolution data.
+Describe how sediment and erosional processes are sensitive to rainfall spatial inputs.
 
 \section{Method}
 
-Two WRF simulations.
-
-\begin{itemize}
-\item Boscastle (2004)
-\item Ryedale (2005)
-\item Both events triggered flash floods, and the flooding was exarcebated by the mobilisation of sediment during the flood, leading to blocked river channels/channels with reduced capacity.
-\end{itemize}
-
-Model set up:
-\begin{itemize}
-\item Four domains, with the innermost domain centred on the river catchment of interest with a horizontal grid spacing of 200m. Outer domains have reolutions of 25km, 5km, and 1km.
-\item Initialised with ECMWF data. (ERA-20C).
-\end{itemize}
-
-\textbf{Figure: WRF domain set up}
-
-\textbf{Table: WRF parameters for each simulation}
-
-\subsection{Modifications to the CAESAR-Lisflood model}
-Description of model modifications to enable ingestion of high resolution rainfall data. I.e. describe the new rainfall runoff generation model. How it differs from the standard sem-distributed model (TOPMODEL) found in CAESAR-Lisflood.
-
-A f\textbf{figure} would probably be useful here to aid the description of the model component. 
-
-\subsection{Landscape evolution model set up}
-
-No need to repeat the general model description in Chapter 5, just refer back. List the parameters for each simulation in a table though.
-
-\subsection{Modelling framework}
-
-\textbf{Figure: flowchart showing the set up of the two models and their integration}. Brief description here.
-
 \section{Results}
 
-\subsection{NWP modelling results}
-
-\textbf{Show a figure of the rainfall outputs over the inner domain and overlain over the river catchment(2 figures, one for each case)}
-
-\subsection{Landscape evolution/hydrology modelling results.}
-
-Similar figures as to previous chapter of flood inundation and erosion spatial distribution. 
-
-\section{Discussion} 
-
-Discus differences with the rainfall radar chapter previously. Does 200m NWP simulations produce any noticable differences with the 1km gridded radar inputs and the uniform rainfall inputs. 
-
 \section{Conclusion}
+
+
 
 
 
