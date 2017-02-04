@@ -141,7 +141,28 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
-\RequirePackage[round]{natbib}
+
+% BIBLIOGRAPHY PACKAGES
+
+% NATBIB
+%\RequirePackage{natbib}
+
+% BIBLATEX
+\RequirePackage[british]{babel}
+
+\RequirePackage{csquotes}
+
+\RequirePackage[style=apa,
+                              natbib=true,
+                              uniquename=false,
+                              backend=biber,
+                              maxcitenames=2]{biblatex}
+\DeclareLanguageMapping{british}{british-apa}
+\DeclareFieldFormat{apacase}{#1}
+% Requires biber to be installed, and set in your build options if 
+% using texmaker or texworks etc. I.e.: "biber %". (deafult is usually bib(la)tex)
+% NOTE: Do not use: "biber %.aux" !
+
 
 %% Manchester University PhD thesis style -- modifications to the report style
 %%

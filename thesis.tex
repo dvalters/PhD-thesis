@@ -9,14 +9,19 @@
 \documentclass[12pt,oneside,PhD]{muthesis}
 
 % Use this command to output a single chapter
-%\includeonly{chapter6}
+%\includeonly{chapter6,chapter7}
+%\includeonly{chapter2}
 
 \usepackage{rotating}
 \usepackage[labelfont=bf]{caption}
 %\usepackage{lineno}
 %\linenumbers
-
+\usepackage{listings}
 %\usepackage{epigraph}
+
+% IF USING BIBLATEX PACKAGE, BIBLIOGRAPHY FILE MUST
+% GO HERE IN PREAMBLE
+\bibliography{literature}
 
 \makeatletter
 \renewcommand{\@chapapp}{}% Not necessary...
@@ -62,12 +67,26 @@
 % Chapter 4 is a more focused review of rainfall representation in LEMs
 \include{chapter4}
 
+
+
 %=-=-=-=-=-=-=-=-=-=
-% WORK
+% MODEL DEVELOPMENT
 %=-=-=-=-=-=-=-=-=-=
 
 % Chapter 5 describes the development and benchmarking of the HAIL-CAESAR model
 \include{chapter5}
+
+%=-=-=-=-=-=-=-=-=-=
+% CASE STUDIES AND MODEL SET-UP
+%=-=-=-=-=-=-=-=-=-=
+
+\include{chapter_events}
+
+%=-=-=-=-=-=-=-=-=-=
+% RESULTS AND INTERPRETATION
+%=-=-=-=-=-=-=-=-=-=
+
+\include{chapter_events}
 
 % Chapter 6 describes a case study test of using the model with hi res rainfall
 % radar data
@@ -203,15 +222,20 @@
 
 \include{conclusions}
 
-\bibliographystyle{plainnat}
-\bibliography{thesis,literature}
+% If using biblatex package
+
+\printbibliography
+
+% If using natbib package
+%\bibliographystyle{apalike}
+%\bibliography{literature}
 
 % Comment the following THREE lines if you do NOT have an Appendix
 \appendix
 \include{appendix_wrf_lem}
 
 \include{appendices}
-.........
+
 
 % If you need more than one appendix, then just use another \chapter command
 %\chapter{Yet Another Appendix}

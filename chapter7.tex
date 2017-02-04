@@ -32,6 +32,22 @@ In contrast to previous studies, this paper looks at the effects of individual s
 
 \section{Method}
 
+\begin{table}
+\begin{tabular}{lll}
+\\
+\textbf{Experiment name}   & \textbf{Rainfall input} & \textbf{Erosion law}  \\
+\hline
+UNIFORM\_DLIM      &  Spatially-averaged Radar   & Detachment-limited \\
+UNIFORM\_TLIM       &  Spatially-averaged Radar  & Transport-limited \\
+
+GRIDDED\_DLIM      &  1km Radar Gridded  & Detachment-limited \\
+GRIDDED\_TLIM       &  1km Radar Gridded  & Transport-limited \\
+\hline \\ 
+\end{tabular} 
+\caption{Outline of the erosion simulations carried out for both the Ryedale and Boscastle case studies.}
+\label{table_ensemble_experiments}
+\end{table}
+
 \section{Results}
 \subsection{Catchment sediment flux}
 % General description of all results.
@@ -72,7 +88,14 @@ The main spatial variation seen in sediment erosion is seen in river channels, w
 As with hydrology and flood extent (Chapter \ref{chapter_flood_model_sensitivity}), sediment flux exhibits sensitivity to the input rainfall data resolution, but the more dominant sensitivity is to the sediment erosion parameterisation choice in the model. The set of erosion-enabled simulations in these experiments represented two end-members of sediment transport and erosion laws. The \textit{TLIM}-suffixed simulations representing a purely transport limited environment and the \textit{DLIM}-suffixed environment representing a purely detachment limited environment -- with the transport limited law simulations predicting much greater sediment flux and erosion than the detachment limited counterparts. In terms of sediment flux and erosion, the role of rainfall input data spatial resolution played only a secondary role in determining erosion amounts. The size of the catchment was less important in this respect, with even the smaller Boscastle catchment showing a marked sensitivity to the choice of erosion law.
 
 \section{Conclusion}
+Over long term landscape evolution, erosional proccesses in catchments are known to be sensitive to the spatial distribution of rainfall input.  This study has shown that catchment erosional processes are also sensitive to rainfall spatial distribution during the course of a single severe storm, and it is suggested that this is due to the spatial variation in shear stresses required brought on by heterogeneous rainfall inputs to the catchment system.  As sediment transport and erosional process are highly threshold dependent, this leads to erosional patterns that differ according to the pattern of rainfall input. In other words, in the simulation of landscape evolution processes at the catchment scale, the choice of whether to use a uniform value representing the rainfall input, or to use a spatially heterogeneous gridded rainfall data, can have a marked impact on the predicted sediment yields from the catchment.
 
+In terms of sediment yields, however, these experiments have shown that it is the choice of erosional parameterisation in the model, and not necessarily the resolution of rainfall input data, that has a first-order control on the total sediment yields from a catchment and the magnitude of river channel incision during a simulated event.
+
+Stuff amount rarity of events. Catastrophism.
+
+\subsection{Implications for longer-term landscape evolution}
+The experiments presented in this chapter have focused on the hydrogeomorphic response to single severe storm events, events which produced floods with return periods of 1 in 330 years (Ryedale) and 1 in 1300 years (Boscastle). The amounts of river channel incision predicted as a result of these storms is comparable to that predicted by studies of landscape evolution on scales of 1000 years, for example a study of a similar upland river basin by \citep{coulthard2016sensitivity} predicted channel incision amounts of 0.5--5m over 1000 years. The experiments presented here, using the same sediment transport law, predicts comparable incision amounts of channel incision during a single storm. If the flood return periods are assumed to be broadly correct, these simulations suggest that the majority of sediment erosion occurs during rare but high magnitude flood events, rather than through gradual processes or more frequent but lower magnitude events.
 
 
 
