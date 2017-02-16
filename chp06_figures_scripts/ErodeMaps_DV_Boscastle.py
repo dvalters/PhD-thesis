@@ -43,7 +43,7 @@ trunc_cmap = mplext.colours.truncate_colormap("Blues", 0.4, 1.0)
 
 #DataDirectory = "/run/media/dav/SHETLAND/Analyses/Ryedale_storms_simulation/Gridded/DetachLim/"
 #DataDirectory = "/mnt/SCRATCH/Analyses/HydrogeomorphPaper/peak_flood_maps/boscastle/erode_diff/"
-DataDirectory = "/mnt/SCRATCH/Analyses/HydrogeomorphPaper/peak_flood_maps/boscastle/erode_diff/test_raster_diff_func/"
+DataDirectory = "/mnt/SCRATCH/Analyses/HydrogeomorphPaper/erode_diff/test_raster_diff_func/"
 
 filename = DataDirectory + "Elevations0.asc"
 drapename = DataDirectory + "WaterDepths2880.asc"
@@ -55,11 +55,12 @@ drapename = DataDirectory + "WaterDepths2880.asc"
 #                      OutFileType="AAIGrid")
 
 
-LSDP.MultiDrapeErodeDiffMaps(DataDirectory, "BoscastleElevations0.asc", "Boscastle*.bil", 
-               "plasma", 
+LSDP.MultiDrapeErodeDiffMaps(DataDirectory, "RyedaleElevations0.asc", "RyedaleElevDiff*.bil", 
+               "seismic", 
                drape_min_threshold= -4.5,
-               drape_max_threshold= -0.05,
-               cbar_label = "DEM difference (m)")
+               drape_max_threshold= 4.5,
+               middle_mask_range=(-0.02,0.02),
+               cbar_label = "Erosion/Deposition (m)")
 
 
 # Create the drape array from one of the Catchment model output rasters

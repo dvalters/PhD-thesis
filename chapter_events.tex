@@ -1,11 +1,22 @@
-\chapter{Severe storm and flood events in Cornwall and Northern England}
+\chapter{Numerical simulation of two flash flood events in the UK}
 \label{chapter_events}
 \chaptermark{Severe storms in Cornwall and northern England}
 
-\section{Introduction}
+\section{Background}
+Intense rainfall events may be short lived, lasting only a few hours, but have the potential to cause substantial and destructive flooding. In the UK, such storms occur generally in the Summer months, and their severity is often the result of a combination of meteorological factors such as high moisture content in the atmosphere, convective rain cell formation, orographic enhancement of rainfall, and slow-moving or stationary rain cell. The combination of one or more of these characteristic often leads to river catchments being subjected to particularly high-intensity rainfall narrowly focused in a single catchment area or even more localised area within a catchment. Antecedent conditions, such as soil-moisture content, also play a role, but in cases of the most extreme rainfall events, even catchments with a high potential to absorb incoming rainfall or slow its flow towards rivers will be overwhelmed with the rate and volume of water input to the catchment and flooding will be inevitable.
+
+This chapter describes two events that took place in UK river catchments in the Summers of 2004 and 2005 and their representation by a series of numerical modelling experiments. The experiments are designed to investigate the role of rainfall spatial resolution in hydrological and geomorphological processes during severe storms. % Extension from the intro chapter?
+
+The Ryedale catchment, near the town of Helmsley, North Yorkshire (2005); and the Valency catchment near the village of Boscastle, Cornwall.(2004) both experienced intense rainfall leading to extensive and damaging flash flooding in each catchment. There were significant economic impacts for both communities affected by the floods, as well as natural geomorphological changes in the river channels and catchments observed in the aftermath of the flooding. 
 
 \section{Meteorological setting}
-Two upland catchments in the UK were selected to represent a range of catchment sizes and shapes. The catchments were also chosen on the basis that they had experienced a severe rain storm which could be used as a basis for the experiments, such that it could be considered `extreme' in the typical return period of flooding events for each particular catchment. Peak discharges for each of the following flood events exceed the 99th percentile for their respective catchments. The catchments and respective severe rain events chosen were located in: Ryedale, North Yorkshire, 2005; Eden, Cumbria 2012; and Boscastle, Cornwall, 2004. An overview map of their locations is given in Figure \ref{overview_fig}. A table (Table \ref{met_setting}) summarises the key features of each catchment and associated storm.
+Two upland catchments in the UK were selected to represent a range of catchment sizes and shapes. The catchments were also chosen on the basis that they had experienced a severe rain storm which could be used as a basis for the experiments, such that it could be considered `extreme' in the typical return period of flooding events for each particular catchment. Peak discharges for each of the following flood events exceed the 99th percentile for their respective catchments. The catchments and respective severe rain events chosen were located in: Ryedale, North Yorkshire, 2005; Eden, Cumbria 2012; and Boscastle, Cornwall, 2004. An overview map of their locations is given in Figure \ref{fig_location_map}. A table (Table \ref{table_met_setting}) summarises the key features of each catchment and associated storm.
+
+\begin{figure}[htb]
+\includegraphics[width=11cm]{chp_events_figures_scripts/figure_location_map.eps}
+\caption{Location of the two case study catchments and main settlement within each catchment within Britain}
+\label{fig_location_map}
+\end{figure}
 
 \linespread{1.5}
 \begin{table}
@@ -14,45 +25,122 @@ Two upland catchments in the UK were selected to represent a range of catchment 
 \begin{tabular}{l c c} \hline
 
 Catchment Name 			& \textbf{Ryedale} &  \textbf{Valency} \\ \hline
+Main settlement        & Helmsley             & Boscastle \\
 Catchment Area   			& 270km$^2$ 				& 18km$^2$ \\ 
 Catchment Type         & Upland, Moor/Peaty & Upland, Pasture \\ 
 Storm Date	 		            & 2005-06-19 	& 2004-08-16 \\ 
 Peak Rainfall	 (mm hr \(^{-1}\))  & 125  & c.400 \\
-Peak Discharge	 	 & & \\ 
+%Peak Discharge	 	 & & \\ 
 Meteorological Setting	 	& Split-front, convective system & Quasi-stationary convective system \\ 
 3hr Rainfall Return Period 	 & 330yr (Wass et al. 2008)	& 1300yr (Burt, 2005) \\ \hline
 \end{tabular}
 }
 \caption{Table showing key characteristics of each storm event.}
-\label{met_setting}
+\label{table_met_setting}
 \end{table}
 
-\subsubsection{Boscastle, Cornwall storm 2004}
+\subsection{Boscastle, Cornwall storm 2004}
 The Boscastle storm took place on the 16th August 2004 leading to flooding within the River Valency catchment and the village of Boscastle. In the preceding months March--June, the south-west region had been drier than usual, but during July the Valency catchment area experienced average rainfall conditions \citep{golding2005boscastle}. The estimated soil moisture deficit\footnote{The amount of water needed to bring the soil back to field capacity, i.e. a state where the soil is holding the maximum amount of water possible against gravity. \citep{beven2011rainfall}} in the area, which had been lower than average due to the dry antecedent conditions, decreased during the period of 1--16th August, due to the return to average rainfall conditions in that month. The soil moisture deficit during this period was estimated to have decreased from approximately 80--220mm to 40--180mm.
 
 On the day of the storm, the extreme rainfall accumulations of up to 200 mm in the upper Valency catchment resulted from prolonged rainfall between the hours of 1200 -- 1600 UTC. Rainfall rates were thought to have reached almost 400 mm hr\(^{-1}\) \citep{golding2005boscastle}, after correcting for under-reporting from rain gauges in the vicinity of the catchment. (Burt, 2006).
 
 The meteorological conditions that enabled such prolonged heavy rainfall were a combination of large-scale synoptic conditions moving in from the Atlantic, with moist lower atmospheric layers readily forming convective cloud. Repeated initiation of convection along the north Cornish coast lead to what appeared to be relative stationary convective cells over the Valency catchment. Later authors refer to this type of convective storm as a `Boscastle-type' or quasi-stationary convective storm \citep{warren2014boscastle}.
 
+\begin{figure}[htb]
+\includegraphics[width=15cm]{chp_events_figures_scripts/figure_boscastle_total_rainfall.png}
+\caption{Total accumulated radar rainfall (24 hours) over the Valency (Boscastle) catchment during the 16th August 2004.}
+\label{fig_boscastle_rain_totals}
+\end{figure}
 
 
-\subsubsection{Ryedale, North York Moors storm 2005}
+\subsection{Ryedale, North York Moors storm 2005}
 The Ryedale storm occurred on 19 June 2005. Intense rainfall throughout the afternoon lead to total accumulated rainfall amounts of up to 89mm in the Ryedale valley, between the hours of 1400 -- 1800 UTC. Peak instantaneous rainfall rates were estimated to have been around 32.5mm hr\(^-1\) (Sibley et al., 2009) to 59.4 mm hr \(^{-1}\) (Hopkins et al. 2010), though one report states they reached as high as 125 mm hr \(^{-1}\) (Cinderley, 2005). The antecedent conditions had been dry for a prolonged spell, leading to cracking of the surface peat in the higher elevations of the catchment.
 
 Antecedent conditions before the Ryedale storm of 2005 had been dry over a prolonged period over much of the region \citep{sibley2009analysis}. Soil moisture deficit was estimated to be around 60mm in the catchmnet, higher than usual due to the drier conditions in the preceding months \citep{wass2008investigation}. With a low soil moisture content, thinner soils in the upper reaches of the catchment would have been dry before the intense rainfall.
 
-The meteorological conditions leading to such heavy rainfall was a combination of a cold, upper-level air mass advecting over a warm moist boundary layer, leading to unstable conditions that enabled a convective thunderstorm to develop in the late afternoon. The instability was enhanced by a split-frontal system. [More? Too much met here?]. The conditions let to a particularly high amount of precipitable water present in the atmosphere which was subsequently washed out into the landscape during intense rainfall. 
+The meteorological conditions leading to such heavy rainfall was a combination of a cold, upper-level air mass advecting over a warm moist boundary layer, leading to unstable conditions that enabled a convective thunderstorm to develop in the late afternoon. The conditions let to a particularly high amount of precipitable water present in the atmosphere which was subsequently washed out into the landscape during intense rainfall. 
 
-
+\begin{figure}[htb]
+\includegraphics[width=13cm]{chp_events_figures_scripts/figure_ryedale_total_rainfall.png}
+\caption{Total accumulated radar rainfall (24 hours) over the Ryedale catchment during the 19th June 2005.}
+\label{fig_ryedale_rain_totals}
+\end{figure}
 
 \section{Flooding and geomorphic change}
 
-\subsubsection{Boscastle, Cornwall, 2004}
-\subsubsection{Ryedale, England, 2005}
+\subsection{Boscastle, Cornwall, 2004}
+Flooding was extensive in the area surrounding Bosacstle village, with flood levels rapidly exceeding bankfull and flooding several properties to depths of several metres. Water levels in the Valency river and its tributaries began to rise in the early afternoon from approximately 1200 UTC onwards, reaching bankfull around 1430 UTC and peaking at around 1600 UTC, by which point over 70 properties had been flooded, with several destroyed due to the force of the water \citep{wallingford2005flooding}.
+The hydraulics of the Boscastle flood were complicated due to the role of large debris blockages (`trash barriers') in the river channels. In particular, a large debris blockage occurred in the main bridge in the village crossing the Valency, which caused a significant backup of water behind the bridge, and re-routing of water through alternate pathways within the village. A reconstruction of the flood based on eyewitness accounts and water mark levels, consequently results in different reports of the peak water level in the village depending on where the observations were made \citep{wallingford2005flooding}. 
 
-\section{Numerical simulation configuration}
+The geomorphological impacts of the flood event were well documented in the aftermath of the flood \citep{wallingford2005flooding}. The Valency river channel and many of its tributaries were observed to have experienced channel avulsion\footnote{Movement of the original channel to a new position within the flood plain.} in places, as well as significant downcutting in the upper tributary channels of the catchment. In a number of places the channel avulsion was substantial enough to straighten the channel and increase the local gradient of the river, potentially increasing flow velocities and shear stresses acting on the channel bed. There were large amounts of sediment observed in the river flow at the time, ranging in size from fine silts to boulders. There were some areas of sediment deposition observed along the river channel banks and floodplain, and a sizeable area of sediment deposition in Boscastle harbour. However, most stretches of the main river channel and its tributaries showed net erosion in the form of channel widening (up to 3--4 metres) and deepening (of up to 2 metres) \citep{wallingford2005flooding}.
 
-\subsubsection{Model initialisation}
+\subsection{Ryedale, North Yorkshire, 2005}
+Flooding was widespread in the Rye catchment, with river levels reaching up to 3.5 m at Hawnby at the peak of the flood, submerging the gauging station building \citep{wass2008investigation}. In Helmsley, the largest settlement, further downstream, similar river level rises of up to 2m were reported at the peak of the flood in the evening and into the night. 
+
+Geomorphologically, the Ryedale catchment saw relatively rapid change considering the short duration of the storm and subsequent flood on the 19th June. In the aftermath of the flood, up to 2--3 metres of channel downcutting and erosion were reported to have take place in the upper reaches of the tributaries of the catchment \citep{hopkins2012knowledge,wass2008investigation} as well as significant amounts of sediment and debris deposition in the lower reaches of the catchment around the settlement of Helmsley \citep{hopkins2012knowledge}. The storm was noted for the triggering of many landslides on hillslopes within the catchment, including 105 reported shallow landslides in the catchment, as well as two large peat slides in moorland areas covering up to 3.7 ha of mass movement in areal extent \citep{galiatsatos2007assessment,wass2008investigation}. Dry antecedent conditions in the area are believed to have led to the amount of landsliding reported by weakening the peat moorland within the catchment \citep{sibley2009analysis}. Dry conditions proceeding summer storms are reported to cause shrinkage and cracking in peatlands, leading to greater risk of erosion in heavy downpours \citep{warburton2004hydrological}. 
+The economic damage was also substantial for a sparsely populated area. Three bridges were destroyed at a cost of £2.9 million, as well as flooding of 121 properties \citep{wass2008investigation}. Economic loss included agricultural damage such as loss of land and livestock \citep{sibley2009analysis}. Many residents were displaced for months during repair and were reported to have suffered illness and psychological trauma from the event \citep{hopkins2012knowledge}.
+
+
+
+\section{Experiment design}
+\label{section_experiment_design}
+
+Using the two flash flood events described previously as case studies, an ensemble of simulations was designed to address the questions laid out in Chapter \ref{chapter_intro} and summarised in the hypotheses as follows:
+
+\begin{enumerate}
+
+\item \label{itm:flood} \textbf{Flood inundation modelling is sensitive to the spatial detail of precipitation.}
+  \begin{enumerate} 
+  \item \label{itm:hydro} Catchment hydrology is sensitive to the spatial distribution of rainfall inputs over the catchment area. Resolving the spatial details of a precipitation event, such as during a flash flood, allows the timing and magnitude of flood inundation to be better predicted.
+  \item Geomorphological change of the river channel and flood plain during a flash flood is substantial enough to alter the patterns of flood inundation. In a model that can account for erosional change during flooding, nuances in flood inundation can be better predicted.
+  \end{enumerate}
+
+\item \label{itm:geomorph} \textbf{Erosional processes in river catchments are sensitive to the spatial distribution of rainfall inputs.}
+  \begin{enumerate}
+  \item Erosion and sediment transport processes are sensitive to thresholds determining erosion initiation and sediment entrainment. If item (\ref{itm:hydro})  holds true, then fluvial erosional processes should exhibit sensitivity to the spatial distribution of rainfall inputs of rainfall as well.
+  \item The parameterisation of erosional processes in the model also determines the spatial pattern of erosion and deposition, but does spatial variation in rainfall inputs exert a greater control than the choice of erosion law?
+  \end{enumerate}
+  
+\end{enumerate} 
+
+To test the above hypotheses, simulations of the two case studies were repeated, varying the following conditions:
+
+\begin{itemize}
+\item Rainfall spatial resolution
+\item Erosion law parameterisation (including a `no-erosion' control case)
+\end{itemize}
+
+The simulations were parameterised with different erosion law schemes and different rainfall input resolutions to assess which exerted the greatest control over catchment response to intense rainfall, in terms of flood inundation and sediment transport. The same set of experiments was carried out for two historic rainfall events that lead to severe flooding in UK river catchments, giving a total of 6 different simulations for each catchment outlined in Table \ref{table_ensemble_experiments} -- a total of 12 simulations.
+
+\begin{table}
+\begin{tabular}{lll}
+\\
+\textbf{Experiment name}   & \textbf{Rainfall input} & \textbf{Erosion law}  \\
+\hline
+UNIFORM\_HYDRO  &  Spatially-averaged  Radar  & (no erosion) \\
+UNIFORM\_DLIM      &  Spatially-averaged  Radar & Detachment-limited \\
+UNIFORM\_TLIM       &  Spatially-averaged  Radar & Transport-limited \\
+
+GRIDDED\_HYDRO  &  1km Radar Gridded  & (no erosion) \\
+GRIDDED\_DLIM      &  1km Radar Gridded  & Detachment-limited \\
+GRIDDED\_TLIM       &  1km Radar Gridded   & Transport-limited \\
+\hline \\ 
+\end{tabular} 
+\caption{Outline of the simulations carried out for both the Ryedale and Boscastle case studies.}
+\label{table_ensemble_experiments}
+\end{table}
+
+\
+
+\subsection{Model initialisation and configuration}
+The numerical landscape evolution model, HAIL-CAESAR (described in Chapter \ref{chapter_HAIL-CAESAR}) is used for all simulations. HAIL-CAESAR is a hydrodynamic landscape evolution model that uses a TOPMODEL-based hydrological rainfall-runoff model to generate surface runoff in a river catchment, which is then routed through the landscape according to an adaptation of the LISFLOOD-FP shallow water routing algorithms \citep{bates2010simple}. Fluvial erosion and sediment transport is then derived using the velocities and depths of the calculated surface water within the catchment. The equations describing the water routing, sediment erosion, and transport laws are described fully in Chapter \ref{chapter_HAIL-CAESAR}.
+
+\subsubsection{Input data}
+Rainfall input data is taken from the Met Office NIMROD radar rainfall 1km composite dataset \citep{metoffice2003nimrod}. The same 1km rainfall radar product is used to derive the rainfall inputs for the spatially uniform rainfall simulations, by averaging out the gridded rainfall data over the input points of the catchment, thus preserving the total amount of rainfall input in each simulation, and only varying its spatial distribution for the relevant simulations.
+
+Topographic data used to initialise the terrain surface for the Boscastle simulation is derived from the Environment Agency (England) 2m LiDAR product. The Boscastle data is resampled to 5m grid spacing to reduce the total number of grid cells and the  computational demands of running a complex hydrodynamic model. Environment Agency LiDAR was not available for the whole Ryedale catchment at the time of the simulation, so the Ryedale terrain is initialised using OS Terrain 50 data, interpolated to 5m grid spacing to enable like-for-like comparison with the Boscastle terrain grid spacing. Resampling the initial topographic data sources to the same terrain grid spacing for both sets of simulations is done to minimise the potential effects that variation in grid spacing has on model output and subsequent topographic analysis \citep[e.g][]{chang1991effect,schoorl2000three,haile2005effects,zhang2008effects}
+
+\subsubsection{Simulation duration}
 
 The simulations are set to begin 24 hours before the day of each intense rainfall event. The model is allowed to run for a further 24 hours after the event, giving a total simulation tme of 72 hours. The timing of the simulations is given in Table \ref{table_start_time_hydrog_sims}.
 
@@ -62,6 +150,7 @@ The simulations are set to begin 24 hours before the day of each intense rainfal
 \hline 
 Boscastle          &  2004-08-15 00:00  &  2004-08-17 23:59 \\
 Ryedale             &  2005-06-18 00:00  &  2005-06-20 23:59 \\
+\hline
 
 \end{tabular}
 \caption{Start and end times (UTC) for each 72 simulation. The major rainfall event occurs during the 2nd day in each simulation.}
@@ -69,7 +158,7 @@ Ryedale             &  2005-06-18 00:00  &  2005-06-20 23:59 \\
 \end{table}
 
 \subsubsection{Erosion-enabled simulations}
-A variety of erosion laws exist describing how landscapes erode from fluvial incision. The choice of erosion law for a given catchment depends on a variety of factors, such as the characteristic substrate material in the catchment -- is it predominantly loose sediment or cohesive, solid bedrock? In reality, landscapes are often a mixture of these two extremes, incorporating loose sediment on top of solid bedrock. Catchments also often exhibit a transition from rockier upland headwaters, to more thickly soil-mantled flood plains. In order to address the uncertainty in choosing which erosion model applies for each catchment (Section \ref{theory}), two erosion model end-members are used, with each one representing a different conceptual model of fluvial incision and sediment transport. These include: i) a purely sediment transport-limited model, ii) a detachment-limited bedrock incision model. The equations describing the transport-limited and detachment-limited models are discussed in Section \ref{theory}. Further models were considered, such as a hybrid transport-detachment limited erosion model, but it was deemed beyond the scope of this study, which is to focus on the sensitivity of rainfall resolution, rather than wide range of erosion and sediment transport models. 
+A variety of erosion laws exist describing how landscapes erode from fluvial incision. The choice of erosion law for a given catchment depends on a variety of factors, such as the characteristic substrate material in the catchment -- is it predominantly loose sediment or cohesive, solid bedrock? In reality, landscapes are often a mixture of these two extremes, incorporating loose sediment on top of solid bedrock. Catchments also often exhibit a transition from rockier upland headwaters, to more thickly soil-mantled flood plains. In order to address the uncertainty in choosing which erosion model applies for each catchment (Chapter \ref{chapter_landscape_evol}), two erosion model end-members are used, with each one representing a different conceptual model of fluvial incision and sediment transport. These include: i) a purely sediment transport-limited model, ii) a detachment-limited bedrock incision model. The equations describing the transport-limited and detachment-limited models used in the model are discussed in detail in Chapter \ref{chapter_HAIL-CAESAR}. Further models were considered, such as a hybrid transport-detachment limited erosion model, but it was deemed beyond the scope of this study, which is to focus on the sensitivity of rainfall resolution, rather than wide range of erosion and sediment transport models. 
 
 A set of control simulations parameterising only runoff and surface water routing (no erosion taking place) were also carried out for comparison against the two erosion end-member simulations. (Table \ref{table_ensemble_experiments}.)
 
@@ -84,10 +173,12 @@ In order to assess the sensitivity of each erosional model to the spatial detail
 \item Gridded rainfall input. The rainfall rate is input from a overlying gridded mesh of raincells, at the same resolution as the rainfall radar product (1km).
 \end{itemize}
 
-
-
 %\subsubsection{Model spin-up}
 %
 %The HAIL-CAESAR model (Valters ?\& Coulthard?, 2016/7) initialises the model domain with a uniform distribution of sediment grain sizes across the catchment. This is physically unrealistic, so the model domain is `spun-up' for a simulated time of 1000 days using typical rainfall data for each catchment. This ensures a heterogeneous distribution of sediment throughout the catchment prior to the detailed storm simulations. 
 
 \section{Summary}
+
+Using case studies from two flash flood events in the UK in recent decades, a series of simulations has been designed to investigate the effects of rainfall spatial resolution has on flood inundation modelling, sediment erosion and transport, and catchment-scale hydrogeomorphic processes. The simulations are designed to answer the questions laid out in Chapter \ref{chapter_intro} and the hypotheses summarised in Section \ref{section_experiment_design}. 
+
+The results and analysis of the simulations are discussed in the subsequent chapters. Chapter \ref{chapter_flood_model_sensitivity} analyses and discusses the effects the rainfall spatial resolution has on flood inundation prediction in a hydrodynamic model, and also looks a the effects that geomorphic change during a flood has on flood dynamics. This addresses Question \ref{itm:flood} laid out in Section \ref{section_experiment_design} above. Chapter \ref{chapter_hydrogeomorph} analyses the results of the simulations focusing on sediment erosion and transport, discussing whether the spatial patterns of rainfall control the distribution of erosion and deposition in a catchment. The implications for longer term landscape evolution modelling are also discussed. This chapter address Question \ref{itm:geomorph} laid out in Section \ref{section_experiment_design} above. Conclusions and links between rainfall inputs, hydrological, and geomorphological processes are discussed in Chapter \ref{chapter_conclusion}.

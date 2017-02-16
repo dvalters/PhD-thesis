@@ -1,11 +1,8 @@
-\chapter{Rain or rock? Sensitivity of a flood-inundation model to rainfall distribution and erosional parameterisation}
+\chapter{Sensitivity of a flood-inundation model to rainfall distribution and erosional parameterisation}
 \label{chapter_flood_model_sensitivity}
-\chaptermark{Rain or rock?}
+\chaptermark{Flood inundation model sensitivity}
 %\begin{refsection}
-%\begin{chapquote}{Lewis Carroll, \textit{Alice in Wonderland}}
-%``Begin at the beginning,'' the King said, gravely, ``and go on till you
-%come to an end; then stop.''
-%\end{chapquote}
+
 
 %\begin{abstract}
 %Landscapes evolve and take their shape from the cumulative effect of `geomorphically effective' events. In temperate climates, these are rainfall-driven events of sufficient magnitude to trigger threshold-dependent erosional processes. This chapter investigates the sensitivity of two end-member erosional models to the spatial resolution of rainfall input to a catchment using three historic severe rainfall events in Northern England and Cornwall.
@@ -15,13 +12,22 @@
 %\end{abstract}
 \section{Introduction}
 
-Flooding from intense rainfall poses great risk to communities living in proximity to flood-prone areas and has the potential to cause loss of life and substantial economic damage in affected areas \citep{pitt2008pitt}. Reliable prediction and advanced warning of flooding requires an understanding of the hydrological processes that operate within a river catchment, in order that operational flood forecasting models may be better parameterised and developed to mitigate against the impact of future events. The interaction of environmental processes within the river catchment system is sensitive to a number of external and internal forcings, including but not limited to precipitation input \citep{nicotina2008impact}, catchment vegetation cover (XXXX), preconditioning of the catchment water table and soil moisture store by antecedent conditions, urbanisation, debris mobilisation and blockage in river channels, as well as channel morphological change during flood events. 
+Flooding from intense rainfall poses great risk to communities living in proximity to rivers and has the potential to cause loss of life and substantial economic damage in affected areas \citep{pitt2008pitt}. Reliable prediction and advanced warning of flooding requires an understanding of the hydrological processes that operate within a river catchment, in order that operational flood forecasting models may be better parameterised and developed to mitigate against the impact of future events. The interaction of environmental processes within the river catchment system is sensitive to a number of external and internal forcings, including but not limited to precipitation input \citep{nicotina2008impact}, catchment vegetation cover \citep{darby1999effect,andreassian2004waters,bradshaw2007global}, preconditioning of the catchment water table and soil moisture store by antecedent conditions \citep{berthet2009crucial}, urbanisation \citep{hollis1975effect}, debris mobilisation and blockage in river channels \citep{gippel1995environmental,jeffries2003influence}, as well as channel morphological change during flood events \citep{wong2015sensitivity}. 
 
-Morphological change during flood events has been shown to be a potential control in the extent of flooding during intense rainfall \citep{wong2015sensitivity}, particularly when river channels undergo geomorphically rapid change during repeated rainfall events of high magnitude \citep{slater2016extent}.. 
+%Spatial resolution
+The question of whether spatial detail in rainfall inputs to a river catchment affects the hydrological response is unresolved, with a number of different studies putting forward seemingly conflicting conclusions. Early studies using deterministic modelling of river catchments and synthetic rainfall fields \citep{wilson1979influence} suggested that detailed space-time representations of rainfall were needed in distributed hydrological models. However, no allusion was made to the possible effects of varying catchment scales. In terms of predicting peak discharge in a catchment \citep{krajewski1991monte}, a small catchment (7.5km\(^2\)), was found to be sensitive to the temporal resolution of rainfall input data, but less so to the spatial distribution of rainfall inputs.  
+The role of catchment size is likely to play a part in determining sensitivity to rainfall distribution, with several studies suggesting catchment size can dampen the effect of rainfall spatial variability \citep{segond2007simulation,nicotina2008impact}. The idea of catchment-size dependence has been developed further \citep{gabellani2007propagation}, suggesting that sensitivity to rainfall spatial heterogeneity depends on the characteristic size of the rainfall feature and the catchment size. Systematic investigation of the role of catchment size and morphology have suggested that is specifically the ratio between characteristic hillslope length of the catchment and the rainfall feature that determine sensitivity to spatial heterogeneity \citep{nicotina2008impact}. In cases where the rainfall feature is much greater in size than the typical hillslope length, the effects of rainfall heterogenity on runoff and hydrological response are muted. 
 
-Growing consensus indicates that intense rainfall events are becoming more frequent in the UK \citep{kendon2014heavier}.
+%Morphology change
+Understanding how flood dynamics interact with morphological change is of growing concern for flood modelling \citep{fewtrell2011geometric}. Morphological change during flood events has been shown to be a potential control in the extent of flooding during intense rainfall \citep{wong2015sensitivity}, particularly when river channels undergo geomorphically rapid change during repeated rainfall events of high magnitude \citep{slater2016extent}. 
 
-Patterns of rainfall distribution across a catchment can affect hydrograph response, including the peak discharge and local water levels (Nicotina et al., 2008). As many geomorphic processes are threshold dependent (Schumm, 1979), such as fluvial incision into bedrock (Sklar and Dietrich, 2001; Snyder et al., 2003), there is potential for the spatial distribution of rainfall to control local erosion rates within a catchment. Non-linearity in geomorphic process laws (e.g. Coulthard et al., 1998; Phillips, 2003; Coulthard and Van de Wiel, 2007) should dictate that catchments are also geomorphically sensitive to the spatial distribution of rainfall. 
+% Bring two together.
+Flood inundation prediction rarely considers both morphological change during flooding or spatial heterogeneity in rainfall inputs to the catchment. Little is known about which of these uncertainties plays the greater role in understanding how to predict flood inundation during intense rainfall. Given the reported importance of rainfall resolution on predicting increased sediment yields and channel incision over decades \citep{coulthard2016sensitivity}, can the same observation be made at the time scale of a single event, and does this in turn control the dynamics of a given flash flood event?
+
+%Climate impact etc.
+%Growing consensus indicates that intense rainfall events are becoming more frequent in the UK \citep{kendon2014heavier}.
+
+
 
 The following questions are explored through the use of numerical modelling simulations;
 
@@ -32,29 +38,9 @@ The following questions are explored through the use of numerical modelling simu
 \end{itemize}
 
 %%%%%%%%%%%%%%%%
-\section{Experiment Design \& Method}
+%\section{Experiment Design \& Method}
 %%%%%%%%%%%%%%%%
-An ensemble of simulations was designed to address the questions laid out in the previous section. The simulations were parametrised with different erosion law schemes and different rainfall input resolutions to assess which environmental factors exerted the greatest control over catchment response to intense rainfall, in terms of flood inundation and sediment transport. The same ensemble of experiments was carried out for two historic rainfall events that lead to severe flooding in UK river catchments. The summary of the ensemble events is given in the table below:
 
-\begin{table}
-\begin{tabular}{lll}
-\\
-\textbf{Experiment name}   & \textbf{Rainfall input} & \textbf{Erosion law}  \\
-\hline
-UNIFORM\_HYDRO  &  Spatially-averaged  Radar  & (no erosion) \\
-UNIFORM\_DLIM      &  Spatially-averaged  Radar & Detachment-limited \\
-UNIFORM\_TLIM       &  Spatially-averaged  Radar & Transport-limited \\
-
-GRIDDED\_HYDRO  &  1km Radar Gridded  & (no erosion) \\
-GRIDDED\_DLIM      &  1km Radar Gridded  & Detachment-limited \\
-GRIDDED\_TLIM       &  1km Radar Gridded   & Transport-limited \\
-\hline \\ 
-\end{tabular} 
-\caption{Outline of the flood-inundation simulations carried out for both the Ryedale and Boscastle case studies.}
-\label{table_ensemble_experiments}
-\end{table}
-
-The numerical landscape evolution model, HAIL-CAESAR (described in Chapter \ref{chapter_HAIL-CAESAR}) is used to investigate landscape and hydrological response to varying rainfall input resolution. HAIL-CAESAR is a hydrodynamic landscape evolution model that uses a TOPMODEL-based hydrological rainfall-runoff model to generate surface runoff in a river catchment, which is then routed through the landscape according to an adaptation of the LISFLOOD-FP shallow water routing algorithms \citep{bates2010simple}. Fluvial erosion and sediment transport is then derived using the velocities and depths of the calculated surface water within the catchment. The equations describing the water routing, sediment erosion, and transport laws are described fully in Chapter \ref{chapter_HAIL-CAESAR}.
 
 
 %\subsection{Rainfall-runoff and flow routing}
@@ -132,7 +118,7 @@ Ryedale     & 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.15, 0.2  \\
 
 The model exhibited a strong sensitivity to the choice of the TOPMODEL \( m\) parameter. In the results presented in figure \ref{fig_topmodel_m_ryedale} peak river discharge ranged from XX at an \(m\) value of 0.003 to XX with an \(m\) value of 0.008. The measured peak discharge reported for the 2005 storm at the Ness gauging station was 105 cumecs. In the sensitivity simulations, a value of \(m = 0.005\) produced a flood peak most closely matching the observed value, peaking at XX cumecs (Note the time as well.). 
 
-There were differences between the hydrographs of the observed and simulated discharges in terms of peak discharge timing and recession limb shape. The observed hydrograph showed a sharp rise at around 50 hours after the start of the simulation period. (UTC XX XX XX to X). Lower \(m\) values (m \textless 0.005) resulted in a prediction of the flood peak being too early compared to the observed timing, with values \textgreater \ 0.005 predicting the flood peak timing too late. Most of the simulations failed to capture the extended duration of peak discharge, which lasted approximately 5--6 hours, before receding back to low flow levels. The simulation with \(m = 0.006\) came closest to predicting this hydrograph shape, but failed to predict the magnitude of water discharge correctly, underestimating the peak flow by almost 50\%. 
+There were differences between the hydrographs of the observed and simulated discharges in terms of peak discharge timing and recession limb shape. The observed hydrograph showed a sharp rise at around 50 hours after the start of the simulation period. Lower \(m\) values (m \textless 0.005) resulted in a prediction of the flood peak being too early compared to the observed timing, with values \textgreater \ 0.005 predicting the flood peak timing too late. Most of the simulations failed to capture the extended duration of peak discharge, which lasted approximately 5--6 hours, before receding back to low flow levels. The simulation with \(m = 0.006\) came closest to predicting this hydrograph shape, but failed to predict the magnitude of water discharge correctly, underestimating the peak flow by almost 50\%. 
 
 For Ryedale simulations, it was decided to use an \(m\) value of 0.005, providing the closest possible match to the flood peak discharge, though not the true shape of the hydrograph and the receeding limb. As the catchment simulations include a representation of erosion and sediment transport processes, which are often threshold dependent, it was felt necessary to match the discharge peak more closely over choosing to match the hydrograph shape precisely.
 
