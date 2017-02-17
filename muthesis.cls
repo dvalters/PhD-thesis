@@ -131,9 +131,6 @@
 
 \ProcessOptions
 
-
-
-
 \LoadClass[a4paper]{report}
 
 \RequirePackage[utf8]{inputenc}
@@ -152,7 +149,8 @@
 
 \RequirePackage{csquotes}
 
-\RequirePackage[style=apa,
+\RequirePackage[style=authoryear,
+                              citestyle=authoryear,
                               natbib=true,
                               uniquename=false,
                               backend=biber,

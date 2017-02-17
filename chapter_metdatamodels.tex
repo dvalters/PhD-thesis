@@ -1,0 +1,27 @@
+\chapter{Rainfall data and models}
+\label{MetData}
+
+%%%%%%%%%%%%%%%%
+% TO DO
+% 
+% Figures of total rainfall accumulation over catcments
+% Zoomed in location maps
+%
+%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+This chapter discusses the various sources of meteorological data and numerical models used to generate rainfall input to the landscape evolution models discussed in Chapters \ref{chapter_landscape_evol} and \ref{RainfallInLEMs}. In this thesis, two sources of rainfall data were used to drive the hydrological inputs of landscape evolution models: precipitation radar data from the UK 1km rainfall radar composite product (Section \ref{NIMROD}) and rainfall outputs from a numerical weather prediction model (Section \ref{WRF}
+
+\section{Rainfall radar - the UK 1km Radar Composite Product}
+\label{NIMROD}
+
+Rainfall radar are used to infer the spatial distribution and intensity of rainfall over a spatial range of up to several hundred kilometres. Electromagnetic radiation in the microwave spectrum is emitted in pulses through radar antenna that focuses them into a narrow directional beam. When the microwaves encounter hydrometeors (or other obstacles in the path of the beam), the reflected microwave beams are backscattered towards the radar dish. The location and intensity of precipitation can then be calculated using the time taken for the returned radar waves to reach the radar dish, and the amount of backscattered microwave radiation. Radar rainfall measurements are not direct measurements of rainfall, rather they are inferred by making a series of assumptions of how the radar backscatter -- the radar reflectivity -- relates to the quantity and other characteristics of hydrometeors. The amount of radar reflectivity is determined by the size, shape, composition, and distribution of hydrometeors that are sampled by the focused radar beam. Radar reflectivity, denoted by \(Z\), is related to the rainfall rate, \(R\), by the formulation:
+
+\begin{equation}
+Z = aR^b
+\end{equation}
+
+\section{Numerical Weather Prediction - the Weather Research and Forecasting model}
+\label{WRF}
+
+Numerical weather prediction models (NWP) are used to predict 
