@@ -9,7 +9,7 @@
 \documentclass[12pt,oneside,PhD]{muthesis}
 
 % Use this command to output a single chapter
-%\includeonly{chapter_events,chapter_floodinundation,chapter_geomorph}
+\includeonly{chapter_events,chapter_geomorph}
 %\includeonly{chapter2}
 
 \usepackage{rotating}
@@ -18,6 +18,21 @@
 %\linenumbers
 \usepackage{listings}
 %\usepackage{epigraph}
+
+%\usepackage[]{hyperref}
+%\hypersetup{
+%    pdftitle={PhD Thesis},
+%    pdfauthor={Declan Valters},
+%    pdf subject={Environmental Modelling},
+%    pdfkeywords={Flooding, Erosion},
+%    bookmarksnumbered=true,     
+%    bookmarksopen=true,         
+%    bookmarksopenlevel=1,       
+%    colorlinks=true,            
+%    pdfstartview=Fit,           
+%    pdfpagemode=UseOutlines,    % this is the option you were lookin for
+%    pdfpagelayout=TwoPageRight
+%}
 
 % IF USING BIBLATEX PACKAGE, BIBLIOGRAPHY FILE MUST
 % GO HERE IN PREAMBLE
@@ -32,6 +47,7 @@
    \itshape}
   {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
 \makeatother
+
 
 %these are now in the muthesis.cls file
 %\usepackage[utf8]{inputenc}
