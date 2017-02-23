@@ -46,7 +46,7 @@ The following questions are explored through the use of numerical modelling simu
 %  \end{enumerate}
 %\end{enumerate}
 
-To build upon the work done in previous studies \citep[e.g.][]{han2016measuring, coulthard2016sensitivity}, this chapter focuses on the sensitivity of sediment yield and erosion distribution to rainfall heterogeneity at timescales not previously investigated -- single severe rain storms. 
+To build upon the work done in previous studies \citep[e.g.][]{han2014measuring, coulthard2016sensitivity}, this chapter focuses on the sensitivity of sediment yield and erosion distribution to rainfall heterogeneity at timescales not previously investigated -- single severe rain storms. 
 %Landscape response is investigated using a numerical landscape evolution model that incorporates a dynamic water-routing component \citep{bates2010simple} and a range of fluvial erosion and sediment transport laws \citep{howard1983channel,wilcock2003surface,whipple1999dynamics}. 
 Results from series of numerical simulations set out in Chapter \ref{chapter_events} are presented to assess how sensitive real landscapes are to the catchment-scale details of precipitation during intense rainfall events. The simulations are each based on selected severe storms in the UK occurring in the past decade, which left significant flooding, damage, and geomorphological change in their wake (Chapter \ref{chapter_events}).
 
@@ -70,7 +70,7 @@ Results from series of numerical simulations set out in Chapter \ref{chapter_eve
 
 \section{Results}
 
-Sediment flux predictions are presented at a catchment-wide scale, measured from the outlet of each catchment (Figures \ref{fig_boscastle_sedigraph_ensemble}, \ref{fig_ryedale_sedigraph_ensemble}). The spatial distribution of sediment deposition is presented in the form of 1D longitudinal profiles along the main channel (Figures \ref{fig_boscastle_swath_tlim}, \ref{fig_ryedale_swath_tlim}), as well as 2D planform maps of erosion and deposition distribution (Figures \ref{fig_boscastle_erodediff_grid_tlim}, \ref{fig_boscastle_erodediff_uniform_tlim}, \ref{fig_boscastle_2dplan_erosion_ensemble}, \ref{fig_boscastle_2dplan_erosion_ensemble_SE}, \ref{fig_ryedale_erodediff_lower_grid_tlim}, \ref{fig_ryedale_erodediff_lower_uniform_tlim}, \ref{fig_ryedale_2dplan_erosion_ensemble})
+Sediment flux predictions are presented at a catchment-wide scale, measured from the outlet of each catchment (Figures \ref{fig_boscastle_sedigraph_ensemble}, \ref{fig_ryedale_sedigraph_ensemble}). The spatial distribution of sediment deposition is presented in the form of 1D longitudinal profiles along the main channel (Figures \ref{fig_boscastle_swath_tlim}, \ref{fig_ryedale_swath_tlim}), as well as 2D planform maps of erosion and deposition distribution (Figures \ref{fig_boscastle_erodediff_grid_tlim}, \ref{fig_boscastle_erodediff_uniform_tlim}, \ref{fig_boscastle_2dplan_erosion_ensemble}, \ref{fig_boscastle_2dplan_erosion_ensemble_SE}, \ref{fig_ryedale_2dplan_erosion_ensemble})
 
 \subsection{Catchment sediment flux}
 % General description of all results.
@@ -79,7 +79,7 @@ Sediment flux from both catchments was found to be most sensitive to the sedimen
 
 The influence of rainfall input data spatial resolution played a secondary role in determining sediment yields. In almost simulations, when the same erosion law parameterisation was used, sediment yields were greater with gridded rainfall data input. The only exception was in the Boscastle detachment-limited simulations (\texttt{DLIM}), where sediment output was actually slightly lower with gridded rainfall input to the simulation (Figure \ref{fig_boscastle_sedigraph_ensemble}).
 
-The patterns of peak sediment discharge also mirrored that of water discharge ( see Chapter \ref{chapter_flood_model_sensitivity}), with sediment flux peaking earlier in the simulations with higher resolution rainfall inputs. 
+The patterns of peak sediment discharge also mirrored that of water discharge (see Chapter \ref{chapter_flood_model_sensitivity}), with sediment flux peaking earlier in the simulations with higher resolution rainfall inputs. 
 
 \begin{figure}[t]
 \includegraphics[width=14cm]{chp06_figures_scripts/figure_boscastle_sedigraph_ensemble.eps}
@@ -94,16 +94,16 @@ The patterns of peak sediment discharge also mirrored that of water discharge ( 
 \end{figure}
 
 % Describe planform variations in erosion and deposition
-\subsection{Spatial variations in sediment and bedrock erosion}
-The main spatial variation seen in sediment erosion is seen within river channels. The amount of erosion in each simulation was highly sensitive to parameterisation choice of the sediment erosion and transport law, with the choice of rainfall input data (gridded vs uniform) being only a secondary controlling factor on the spatial distribution of erosion, all other factors being equal. This behaviour was seen on all simulations, shown in Figures \ref{fig_boscastle_2dplan_erosion_ensemble} and \ref{fig_ryedale_2dplan_erosion_ensemble}. 
+\subsection{Spatial variations in channel erosion}
+The main spatial variation seen in sediment erosion is seen within river channels. The amount of erosion in each simulation was highly sensitive to parameterisation choice of the sediment erosion and transport law, with the choice of rainfall input data (gridded vs uniform) being only a secondary controlling factor on the spatial distribution of erosion, all other factors being equal. This behaviour was exhibited in all simulations, shown in Figures \ref{fig_boscastle_2dplan_erosion_ensemble} and \ref{fig_ryedale_2dplan_erosion_ensemble}.  As differences between the \texttt{GRIDDED} and \texttt{UNIFORM} simulations were minimal, and erosion amounts in the detachment-limited simulations were small, it was elected to only show the profiles from the \texttt{GRIDDED\_TLIM} for clarity.
 
-To highlight the variation in erosion along the river channel, longitudinal profiles showing the average change in elevation after the storm are shown in Figures \ref{fig_boscastle_swath_tlim} and \ref{fig_ryedale_swath_tlim}. The longitudinal profile shows the variation in erosion along the main channel within each catchment, averaged along a 10m wide swath centred on the midpoint of the channel. The swath profiling technique is adapted from \citep{hergarten2014extracting}. To reduce the number of points plotted along the swath profile, erosion is also averaged longitudinally, using bins spaced every 200m in the Ryedale catchment and every 50m in the Valency catchment.
+To highlight the variation in erosion along the river channel, longitudinal channel profiles showing the average change in elevation after the storm are shown in Figures \ref{fig_boscastle_swath_tlim} and \ref{fig_ryedale_swath_tlim}. The longitudinal profile shows the variation in erosion along the main channel within each catchment, averaged over a 10m wide channel cross-section centred on the midpoint of the channel. The longitudinal profiling technique is adapted from \citep{hergarten2014extracting}, where the resulting profiles are termed \textit{swath} profiles. Originally the swath profiling technique was written to calculate cross-sectional profiles across mountain ranges or basins, but here it has been adapted to create longitudinal profiles. To reduce the number of points plotted along the swath profile, erosion is also averaged longitudinally, using bins spaced every 200m in the Rye river channel and every 50m in the Valency river channel.
 
 % Swath profiles
 % Boscastle TLIM
 \begin{figure}[htb]
 \includegraphics[width=14cm]{chp06_figures_scripts/fig_swath_profile_boscastle_erode_tlim.eps}
-\caption{Channel averaged elevation difference along the main river channel in the Valency catchment. Simulation using the transport limited erosion parametrisation. Longitudinal profile is averaged over bins spaced every 50m. Transverse averaging (across the channel) is done over a 10m wide section centred on the channel midpoint. Results from the GRIDDED\_TLIM simulation shown in blue and the UNIFORM\_TLIM simulation shown in green.}
+\caption{Channel averaged elevation difference along the main river channel in the Valency catchment. Simulation using the transport limited erosion parametrisation. Longitudinal profile is averaged over bins spaced every 50m. Transverse averaging (across the channel) is done over a 10m wide section centred on the channel midpoint. Results from the \texttt{GRIDDED\_TLIM} simulation shown in blue and the \texttt{UNIFORM\_TLIM} simulation shown in green.}
 \label{fig_boscastle_swath_tlim}
 \end{figure}
 
@@ -114,13 +114,33 @@ To highlight the variation in erosion along the river channel, longitudinal prof
 \label{fig_ryedale_swath_tlim}
 \end{figure}
 
-Swath profiling of the Valency river channel (Boscastle) shows overall a net incision in the channel area, under transport-limited erosion parameterisation, with only small sections of the channel showing net sediment deposition (elevation increase) on average. Most incision is predicted to occur in the mid to upper reaches of the channel, with relatively little incision in the lowest reach of the catchment. The difference between gridded and uniform rainfall inputs shows a minimal difference along the main profile, though there is a slight tendency for the incision seen in the gridded rainfall input simulation to be higher in most places than the simulation using uniform input, with the difference in incision amounts of the order of tens of centimetres at most.
+Swath profiling of the Valency river channel (Boscastle) shows overall net incision under transport-limited erosion parameterisation, with only small sections of the channel showing net sediment deposition (elevation increase) on average (Figure \ref{fig_boscastle_swath_tlim}. Most incision is predicted to occur in the mid to upper reaches of the channel, with relatively little incision in the lowest reach of the catchment. The difference between gridded and uniform rainfall inputs shows a minimal difference along the main profile, though there is a slight tendency for the incision seen in the gridded rainfall input simulation to be higher in most places than the simulation using uniform input, with the difference in incision amounts between gridded and uniform rainfall inputs being of the order of tens of centimetres.
 
-The swath profiling of the Rye river channel within the Ryedale catchment shows a large variation in incision and deposition rates within the catchment, though there is still an overall tendency for net incision. The magnitude of both incision and deposition is higher in the mid to upper reaches of the Rye river channel, similar to the pattern observed in the Valency river. The differences in average elevation changes are not as clearly distinguishable between the gridded and uniform rainfall input parameterisations, magnitudes of erosional and depositional peaks are slightly higher in the lower reaches of the river channel, but in the mid to upper reaches the differences are more varied. 
+The swath profiling of the Rye river channel shows a large variation in incision and deposition rates within the catchment, though there is an overall tendency for net incision (Figure \ref{fig_ryedale_swath_tlim}). The magnitude of both incision and deposition is higher in the mid to upper reaches of the Rye river channel, similar to the pattern observed in the Valency river. The differences in average elevation changes are not as clearly distinguishable between the gridded and uniform rainfall input parameterisations; magnitudes of erosional and depositional peaks are slightly higher in the lower reaches of the river channel, but in the mid to upper reaches the differences are more varied. 
  
 % OTHER SWATH PROFILES? DLIM, WIDER SWATH HALF WIDTH PERHAPS FOR RYEDALE?????
 %
 %
+
+% APPENDIX DISCUSSING SWATH PROFILE ALGO?
+
+\subsection{Local variation in erosion patterns}
+
+\subsubsection{General observations}
+Though the choice of erosion law has a strong control on the \textit{amount} of sediment erosion, it does not appear to influence the \textit{distribution} of erosion over the catchment. Detachment-limited simulations exhibit a similar variation in spatial distribution of erosion, but overall with much lower amounts of incision and deposition. 
+
+\subsubsection{Boscastle}
+In the Boscastle catchment, there are slight differences in the spatial distribution of erosion between the gridded and uniform rainfall input simulations. In the area along the main channel of the Valency river around Boscastle village, gridded and uniform rainfall simulations appear to show very similar erosion and deposition amounts (Figure \ref{fig_boscastle_2dplan_erosion_ensemble}). The more obvious contrast lies in the choice of erosion law, with transport-limited erosion simulations predicting much higher amounts of elevation change.
+
+In the south-eastern section of the catchment, the predicted amounts of erosion are notably higher in upper tributaries and adjacent hillslopes under the gridded rainfall simulation (Figure \ref{fig_boscastle_erodediff_grid_tlim}), when compared with the uniform rainfall input simulation (Figure \ref{fig_boscastle_erodediff_uniform_tlim}). In the smaller tributaries of the catchment, detachment-limited simulations predicted little or no erosion. Figure \ref{fig_boscastle_2dplan_erosion_ensemble_SE} shows the Lesnewth stream and the erosion/deposition amounts in each simulation. The highest levels of erosion and deposition are predicted by the gridded rainfall, transport-limited erosion case, and in contrast there is almost no erosion predicted by the uniform rainfall, detachment-limited erosion case.
+
+
+\subsubsection{Ryedale}
+In the Ryedale catchment, the gridded rainfall input simulations predict slightly greater amounts of erosion and deposition in general, though it is difficult to pick out a particular area of the catchment where the differences are starkly contrasting. The spatial distribution of erosion and deposition in the Helmsley area is shown in Figure \ref{fig_ryedale_2dplan_erosion_ensemble}, for each of the four simulations. Small differences can be seen along the main floodplain and up into the gorge area of the river Rye, showing elevated levels of erosion and deposition in the gridded rainfall input simulations. In contrast to the Boscastle simulations, there was comparatively little sediment transport shown in any of the hillslope areas -- compare the yellow shaded areas over the hillslopes in the Boscastle castchment erosion map (Figure \ref{fig_boscastle_erodediff_grid_tlim}) and their notable absence in the Ryedale catchment erosion map (Figure \ref{fig_boscastle_erodediff_grid_tlim}.
+As with the Boscastle simulations, the most obvious contrast in erosion amounts is seen between the different erosion law simulations.
+
+
+%Discuss 2d planform maps for better prep for discussion section afterwards.
 
 % Plan view erosion diff maps
 \begin{sidewaysfigure}[t]
@@ -155,23 +175,29 @@ The swath profiling of the Rye river channel within the Ryedale catchment shows 
 \label{fig_boscastle_erodediff_uniform_tlim}
 \end{sidewaysfigure}
 
-% RYEDALE lower reaches
-\begin{figure}[htb]
-\includegraphics[width=16cm]{chp06_figures_scripts/fig_ryedale_lower_erodediff_grid_tlim.png}
-\caption{Ryedale. Map of extent of catchment change in elevation greater than 0.02m. Change in elevation shown after 72 hours of model simulation using gridded rainfall and the transport limited erosion law. Output from the gridded rainfall input, transport-limited erosion simulation (GRIDDED\_TLIM). Logarithmic scale for erosion.}
-\label{fig_ryedale_erodediff_lower_grid_tlim}
+\begin{figure}[t]
+\includegraphics[width=16cm]{chp06_figures_scripts/figure_ryedale_elev_diff_grid_tlim.eps}
+\caption{Ryedale. Map of extent of catchment change in elevation greater than 0.02m. Change in elevation shown after 72 hours of model simulation using uniform rainfall and the transport limited erosion law. Output from the uniform rainfall, transport-limited simulation (GRIDDED\_TLIM). Logarithmic scale for erosion.}
+\label{fig_ryedale_erodediff_gridded_tlim}
 \end{figure}
 
-\begin{figure}[htb]
-\includegraphics[width=16cm]{chp06_figures_scripts/fig_ryedale_lower_erodediff_uniform_tlim.png}
-\caption{Ryedale. Map of extent of catchment change in elevation greater than 0.02m. Change in elevation shown after 72 hours of model simulation using uniform rainfall and the transport limited erosion law. Output from the uniform rainfall, transport-limited simulation (UNIFORM\_TLIM). Logarithmic scale for erosion.}
-\label{fig_ryedale_erodediff_lower_uniform_tlim}
-\end{figure}
+% RYEDALE lower reaches
+%\begin{figure}[htb]
+%\includegraphics[width=16cm]{chp06_figures_scripts/fig_ryedale_lower_erodediff_grid_tlim.png}
+%\caption{Ryedale. Map of extent of catchment change in elevation greater than 0.02m. Change in elevation shown after 72 hours of model simulation using gridded rainfall and the transport limited erosion law. Output from the gridded rainfall input, transport-limited erosion simulation (GRIDDED\_TLIM). Logarithmic scale for erosion.}
+%\label{fig_ryedale_erodediff_lower_grid_tlim}
+%\end{figure}
+%
+%\begin{figure}[htb]
+%\includegraphics[width=16cm]{chp06_figures_scripts/fig_ryedale_lower_erodediff_uniform_tlim.png}
+%\caption{Ryedale. Map of extent of catchment change in elevation greater than 0.02m. Change in elevation shown after 72 hours of model simulation using uniform rainfall and the transport limited erosion law. Output from the uniform rainfall, transport-limited simulation (UNIFORM\_TLIM). Logarithmic scale for erosion.}
+%\label{fig_ryedale_erodediff_lower_uniform_tlim}
+%\end{figure}
 
 \section{Discussion}
 
 % Broader context of results
-The relationship between the spatial distribution of rainfall and the erosional response of a river catchment has yet to be thoroughly explored. This analysis has sought to better understand how erosional processes are sensitive to the spatial detail of precipitation in the context of flash flood events from intense rainfall. Improving our understanding of the relationship between rainfall patterns and erosional processes will has two beneficiaries: 1) The short term environmental forecasting community will be able to better assess control that  rainfall distribution has on sediment dynamics and erosion patterns. In the absence of spatially variable input data for environmental prediction, modellers will at least be able to quantify the potential uncertainty involved in sediment flux predictions in the absence of such data. 2) Within the context of longer term landscape evolution, this study contributes to understanding the importance of individual storm events in driving landscape change over geological timescales. Current parameterisation of rainfall heterogeneity in long term landscape evolution modelling is simplistic at best, and this results of this study can be used to guide rainfall parameterisation in landscape evolution model development. 
+The relationship between the spatial distribution of rainfall and the erosional response of a river catchment has yet to be thoroughly explored. The analysis presented in this section discusses how erosional processes are sensitive to the spatial detail of precipitation in the context of flash flood events from intense rainfall. Improving our understanding of the relationship between rainfall patterns and erosional processes has two beneficiaries: 1) The short term environmental forecasting community will be able to better assess control that  rainfall distribution has on sediment dynamics and erosion patterns. In the absence of spatially variable input data for environmental prediction, modellers will at least be able to quantify the potential uncertainty involved in sediment flux predictions in the absence of such data. 2) Within the context of longer term landscape evolution, this study contributes to understanding the importance of individual storm events in driving landscape change over geological timescales. Current parameterisation of rainfall heterogeneity in long term landscape evolution modelling is simplistic at best, and this results of this study can be used to guide rainfall parameterisation in landscape evolution model development. 
 
 % Critical analysis of major findings.
 The findings in this study are based on simulating historic flash flood events using a cellular automaton  numerical model, the HAIL-CAESAR model (Chapter \ref{chapter_HAIL-CAESAR}). As such, the conclusions drawn from these experiments will be influenced by the individual characteristics of each catchment, though they were selected to be representative of typical upland catchments in the UK. It is expected that simulation of different catchments and events may produce somewhat different outcomes, but the overall findings should be applicable to other modelling situations. 
