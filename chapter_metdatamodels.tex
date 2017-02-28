@@ -10,16 +10,52 @@
 %%%%%%%%%%%%%%%%
 
 \section{Introduction}
-This chapter discusses the various sources of meteorological data and numerical models used to generate rainfall input to the landscape evolution models discussed in Chapters \ref{chapter_landscape_evol} and \ref{RainfallInLEMs}. In this thesis, two sources of rainfall data were used to drive the hydrological inputs of landscape evolution models: precipitation radar data from the UK 1km rainfall radar composite product (Section \ref{NIMROD}) and rainfall outputs from a numerical weather prediction model (Section \ref{WRF}
+%This chapter discusses the various sources of meteorological data and numerical models used to generate rainfall input to the landscape evolution models discussed in Chapters \ref{chapter_landscape_evol} and \ref{RainfallInLEMs}. In this thesis, two sources of rainfall data were used to drive the hydrological inputs of landscape evolution models: precipitation radar data from the UK 1km rainfall radar composite product (Section \ref{NIMROD}) and rainfall outputs from a numerical weather prediction model (Section \ref{WRF}
 
-\section{Rainfall radar - the UK 1km Radar Composite Product}
+Rainfall data can be derived from a number of measurement sources, both direct and indirect, depending on the intended use of the data and the temporal and spatial availability of data sources.
+
+Uses... 
+
+\subsection{Rainfall data sources}
+% Raingague
+Direct measurement of rainfall is accomplished through the use of rainfall gauges, which provide an in situ measurement of rainfall totals, and in some cases, instantaneous rainfall rates, at a fixed-point location. In the UK, the density and spacing of rainfall gauges is heterogeneous, though there is good coverage at a regional scale. At catchment and sub-catchment scale, however, most rainfall gauge networks are too sparse to provide detailed information about the distribution of rainfall within a catchment. Exceptional coverage is sometimes found in catchments that have been set-up as `research catchments', where a high-density network of gauges has been established for monitoring of specific catchments, (Plynlimon) but this is atypical. Though raingauges are reliable for point totals of rainfall, certain types of gauge have a tendency to under-report rainfall rates during very high rainfall intensities. (TBR). 
+
+%Satellite
+Indirect measurements of precipitation can be either \textit{active} or \textit{passive} in their mode of measurement. Active sensors emit a pulse of electromagnetic radiation, usually in the microwave--radiowave band depending on the application, and measure the amount of energy reflected back from hydrometeors. An empirical relationship is used to convert the measurement of reflected electromagnetic radiation into a rainfall rate or rainfall amount. Passive sensors, as their name implies, do not emit any kind of scanning beam, and measure only the radaiation emitted naturally from the Earth's surface. When precipitation is present over the surface, passive sensors are able to measure the specific brightness temperature associated with rainfall and determine its phase and intensity based on a number of physical and empirical conversion formulae. Many satellite preceipitation measurement missions combine active and passive sensing to build a complete picture of rainfall on the Earth's surface. (TRMM GPM). The advantage of satellite precipitation measurements lies in their ability to cover large regions of the globe, which would be infeasible with a network of ground-based measurements. Satellite precipitation measurements are particularly useful at increasing the coverage of rainfall measurement over the oceans, where there is a particular paucity of other measurement sources. Limitations in satellite precipitation measurement include its lower resolution compared to ground based measurements, due to the distance betweent the surface and the orbiting sensor, as well as the lack of coverage around polar regions on most satellites. Due to the orbiting nature of satellites, they cannot currently take measurements with the same frequency as ground-based methods. Typical temporal resoultion of satellite measurements is on the order of 1.5--3 hours, whereas ground-based methods can take measurements up to every few minutes. Consequently, spcae-borne measurements are not usualy suitable for applications requiring high-frequency, high-resolution measurements of rainfall, but lend themselves well to providing consistent, near-global coverage (with the exception of polar regions). 
+
+%Radar
+
+
+\subsection{Choosing radar}
+
+
+\section{Rainfall radar}
+
+\subsection{Basic principles}
+
+\subsection{Processing and error correction}
+
+
+
+\section{UK 1km Radar Composite Product}
 \label{NIMROD}
 
-Rainfall radar are used to infer the spatial distribution and intensity of rainfall over a spatial range of up to several hundred kilometres. Electromagnetic radiation in the microwave spectrum is emitted in pulses through radar antenna that focuses them into a narrow directional beam. When the microwaves encounter hydrometeors (or other obstacles in the path of the beam), the reflected microwave beams are backscattered towards the radar dish. The location and intensity of precipitation can then be calculated using the time taken for the returned radar waves to reach the radar dish, and the amount of backscattered microwave radiation. Radar rainfall measurements are not direct measurements of rainfall, rather they are inferred by making a series of assumptions of how the radar backscatter -- the radar reflectivity -- relates to the quantity and other characteristics of hydrometeors. The amount of radar reflectivity is determined by the size, shape, composition, and distribution of hydrometeors that are sampled by the focused radar beam. Radar reflectivity, denoted by \(Z\), is related to the rainfall rate, \(R\), by the formulation:
+\subsection{Overview}
 
-\begin{equation}
-Z = aR^b
-\end{equation}
+\subsection{Processing}
+
+\subsection{Limitations}
+
+\section{Use in landscape evolution models}
+
+\section{Summary}
+
+%
+%Rainfall radar are used to infer the spatial distribution and intensity of rainfall over a spatial range of up to several hundred kilometres. Electromagnetic radiation in the microwave spectrum is emitted in pulses through radar antenna that focuses them into a narrow directional beam. When the microwaves encounter hydrometeors (or other obstacles in the path of the beam), the reflected microwave beams are backscattered towards the radar dish. The location and intensity of precipitation can then be calculated using the time taken for the returned radar waves to reach the radar dish, and the amount of backscattered microwave radiation. Radar rainfall measurements are not direct measurements of rainfall, rather they are inferred by making a series of assumptions of how the radar backscatter -- the radar reflectivity -- relates to the quantity and other characteristics of hydrometeors. The amount of radar reflectivity is determined by the size, shape, composition, and distribution of hydrometeors that are sampled by the focused radar beam. Radar reflectivity, denoted by \(Z\), is related to the rainfall rate, \(R\), by the formulation:
+%
+%\begin{equation}
+%Z = aR^b
+%\end{equation}
 
 \section{Numerical Weather Prediction - the Weather Research and Forecasting model}
 \label{WRF}
