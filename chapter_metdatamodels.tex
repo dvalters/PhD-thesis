@@ -24,18 +24,47 @@ Direct measurement of rainfall is accomplished through the use of rainfall gauge
 Indirect measurements of precipitation can be either \textit{active} or \textit{passive} in their mode of measurement. Active sensors emit a pulse of electromagnetic radiation, usually in the microwave--radiowave band depending on the application, and measure the amount of energy reflected back from hydrometeors. An empirical relationship is used to convert the measurement of reflected electromagnetic radiation into a rainfall rate or rainfall amount. Passive sensors, as their name implies, do not emit any kind of scanning beam, and measure only the radaiation emitted naturally from the Earth's surface. When precipitation is present over the surface, passive sensors are able to measure the specific brightness temperature associated with rainfall and determine its phase and intensity based on a number of physical and empirical conversion formulae. Many satellite preceipitation measurement missions combine active and passive sensing to build a complete picture of rainfall on the Earth's surface. (TRMM GPM). The advantage of satellite precipitation measurements lies in their ability to cover large regions of the globe, which would be infeasible with a network of ground-based measurements. Satellite precipitation measurements are particularly useful at increasing the coverage of rainfall measurement over the oceans, where there is a particular paucity of other measurement sources. Limitations in satellite precipitation measurement include its lower resolution compared to ground based measurements, due to the distance betweent the surface and the orbiting sensor, as well as the lack of coverage around polar regions on most satellites. Due to the orbiting nature of satellites, they cannot currently take measurements with the same frequency as ground-based methods. Typical temporal resoultion of satellite measurements is on the order of 1.5--3 hours, whereas ground-based methods can take measurements up to every few minutes. Consequently, spcae-borne measurements are not usualy suitable for applications requiring high-frequency, high-resolution measurements of rainfall, but lend themselves well to providing consistent, near-global coverage (with the exception of polar regions). 
 
 %Radar
+Ground-based precipitation radars are active sensors, emitting pulses of electromagnetic radiation in a 360\degree field of view through a rotating antenna. They measure the intensity of the beam that is reflected and use this to derive a rainfall rate through a series of empirical formulae. The scanning beam is angled slightly above level (typically 5 degrees) allowing a near-surface measurement of rainfall at close range, which gradually becomes higher as the beam extends in range.  Rainfall radars have a large variety of ranges depending on application, but national weather service radar stations typically have a range of 200--500km in diameter.  
+
+\subsection{Advantages of radar for hydrological applications}
+Weather radar is particularly well suited to use in hydrological applications, and for the purposes of this thesis, by extension, to landscape erosion models that feature a hydrological component. There are two principle hydrological applications: 1) routine monitoring of precipitation for climataological data collection, day-to-day river management, weather forecasting, and model validation. 2) Early detection and prediction of floods for civil protection purposes. Both applications have common requirements such as data accuracy, but early flood detection has the added need for rapid estimation and dissemination rainfall rates in order to give as much lead time as possible to authorities responsible for flood prediction and mitigation. 
+
+Rainfall radar is particularly useful in small basins, where response times to intense rainfall events are short, and where rapid rises in river level can quickly overcome infrastructure such as flood defences, reservoirs, and dams. With smaller basins, the likelihood of having other sources of rainfall and hydrological information diminishes, such as rainfall and river flow gauges. In larger basins with adequate gauging facilities, precipitation may have large variability in spatial patterns, necessitating the use of other methods to determine the distribution of rainfall inputs into a river catchment. Large, mountainous catchments also benefit from rainfall radar as they may experience intense localised rainfall and quickly channel the rain from steep hillslopes into gorges and river channels.
 
 
-\subsection{Choosing radar}
 
+\subsection{Basic principles of Radar}
 
-\section{Rainfall radar}
+Radar works on the principle of emitting microwaves and measuring the intensity and time taken of waves reflected back from distant hydrometeors. Its conception was alluded to by Marshall (1947) who wrote: 
 
-\subsection{Basic principles}
+\begin{quotation}
+"It may be possible therefore to determine with useful accuracy the intensity of rainfall at a point quite distant (say 100km) by the radar echo from that point".
+\end{quotation}
+
+The basic principle of rainfall radar remains the same to this day, though technological advances have increased the quality and dissemination of rainfall measurements. Specificically, meteorological radar measures the reflectivity, and uses this value to determine the intensity of rainfall through an empricial formula relating reflectivty intensity to a rainfall rate. This is refered to as the Z--R relationship, where \(Z\) is the reflectivty and \(R\) is the rainfall rate. Many variants of the formula exist, taking the general form of:
+  
+\begin{equation}
+Z = aR^b
+\end{equation}
+
+where \(a\) and \(b\) are empirically-derived constants. 
 
 \subsection{Processing and error correction}
 
+The reflectivity returns measured at any indivdual radar site are a combination of the radar waves refelceted off hydrometeors at the scan level at a given moment in time, plus any other objects or obstacles in the path of the radar, plus a level of background noise from the atmosphere and instrument. Form raw radar return signals, there follows several steps to process this data and convert it into a usable rainfall product, giving an accurate estimate of surface rainfall. Post-processing steps can be summarised as follows:
 
+\begin{enumerate}
+\item Noise removal. Background noise may come from instrumental sources or sources in the atmosphere. A typical approach to noise removal is to estimate the mean noise from scans take on precipitation-free periods and substract this from the measured return reflectivity.
+
+\item Removal of non-precipitation echoes. Sources of non-precipitation echoes include insects, birds, air and shipping traffic, and interference from other radar emitters. There are several approaches to removing this type of echo, some combining several techniques into one (e.g. Germann 2006, Rico-Ramierez et al 2008).
+
+\item Removal of blocking obstacles such as terrain. Radar scans made at low elevations suffer from blocking of the emmitted signals by topography. The effects of blocking on radar reflectivity can be modelled using a high resolution digital elevation map and a model of radar beam propagation (Pellarin et al 2002). Another approach is to use long term records of reflectivity and rainfall rate to extrapolate rainfall rates in the blocked regions.
+
+\end{enumerate}
+
+
+
+\section{Rainfall radar in the UK}
 
 \section{UK 1km Radar Composite Product}
 \label{NIMROD}
