@@ -10,9 +10,16 @@
 
 % Use this command to output a single chapter
 %\includeonly{chapter_events,chapter_geomorph}
-%\includeonly{chapter_floodinundation}
-\includeonly{chapter_metdatamodels}
+\includeonly{chapter_floodinundation}
+%\includeonly{chapter_metdatamodels}
 
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{9} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{9}  % for normal
+
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
 
 \usepackage{rotating}
 \usepackage[labelfont=bf]{caption}
@@ -254,7 +261,13 @@
 \appendix
 %\include{appendix_wrf_lem}
 
-%\include{appendices}
+\include{appendices}
+
+%APPENDICES
+%
+% 1. Code for the hail-caesar model (extracts)
+% 2. Code for the NIMROD-processing script
+% 3. Code for the long channel swath profiler (flowchart)
 
 
 % If you need more than one appendix, then just use another \chapter command

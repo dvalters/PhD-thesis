@@ -138,6 +138,18 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
+\RequirePackage[section]{placeins}  % Make floats appear in section they are placed in
+
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+% Enforce that floats stay in the same subsection.
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+%\let\Oldsubsubsection\subsubsection
+%\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
 
 % BIBLIOGRAPHY PACKAGES
 
@@ -153,8 +165,12 @@
                               citestyle=authoryear,
                               natbib=true,
                               uniquename=false,
+                              uniquelist=false,
                               backend=biber,
+                              maxbibnames=99,
+                              firstinits=true,
                               maxcitenames=2]{biblatex}
+%\DeclareNameAlias{author}{family-given}
 \DeclareLanguageMapping{british}{british-apa}
 \DeclareFieldFormat{apacase}{#1}
 % Requires biber to be installed, and set in your build options if 

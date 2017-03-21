@@ -3,7 +3,6 @@
 \chaptermark{Flood inundation model sensitivity}
 %\begin{refsection}
 
-
 %\begin{abstract}
 %Landscapes evolve and take their shape from the cumulative effect of `geomorphically effective' events. In temperate climates, these are rainfall-driven events of sufficient magnitude to trigger threshold-dependent erosional processes. This chapter investigates the sensitivity of two end-member erosional models to the spatial resolution of rainfall input to a catchment using three historic severe rainfall events in Northern England and Cornwall.
 %
@@ -12,100 +11,52 @@
 %\end{abstract}
 \section{Introduction}
 
-Flooding from intense rainfall poses great risk to communities living in proximity to rivers and has the potential to cause loss of life and substantial economic damage in affected areas \citep{pitt2008pitt}. Reliable prediction and advanced warning of flooding requires an understanding of the hydrological processes that operate within a river catchment, in order that operational flood forecasting models may be better parameterised and developed to mitigate against the impact of future events. The interaction of environmental processes within the river catchment system is sensitive to a number of external and internal forcings, including but not limited to precipitation input \citep{nicotina2008impact}, catchment vegetation cover \citep{darby1999effect,andreassian2004waters,bradshaw2007global}, preconditioning of the catchment water table and soil moisture store by antecedent conditions \citep{berthet2009crucial}, urbanisation \citep{hollis1975effect}, debris mobilisation and blockage in river channels \citep{gippel1995environmental,jeffries2003influence}, as well as channel morphological change during flood events \citep{wong2015sensitivity}. 
+Flooding from intense rainfall poses great risk to communities living in proximity to rivers and has the potential to cause loss of life and substantial economic damage in affected areas \citep{pitt2008pitt}. Reliable prediction and advanced warning of flooding requires an understanding of the hydrological processes that operate within a river catchment, in order that flood forecasting models may be better parameterised and developed to mitigate against the impact of future events. Uncertainty in making hydrological predictions comes from a range of boundary conditions \citep{pappenberger2006influence} and many of these boundary conditions are known controls on catchment hydrology and causes of flooding \citep{shaw2010hydrology,sear2010guidebook}. Hydrological processes within the river catchment system are sensitive to a number of external and internal forcings, including but not limited to precipitation input \citep{nicotina2008impact}, catchment vegetation cover \citep{darby1999effect,andreassian2004waters,bradshaw2007global}, preconditioning of the catchment water table and soil moisture store by antecedent conditions \citep{berthet2009crucial}, urbanisation \citep{hollis1975effect}, debris mobilisation and blockage in river channels \citep{gippel1995environmental,jeffries2003influence}, as well as channel and floodplain morphological change during flood events \citep{werner2005spatially,wong2015sensitivity}. 
+
 
 %Spatial resolution
-The question of whether spatial detail in rainfall inputs to a river catchment affects the hydrological response is unresolved, with a number of different studies putting forward seemingly conflicting conclusions. Early studies using deterministic modelling of river catchments and synthetic rainfall fields \citep{wilson1979influence} suggested that detailed space-time representations of rainfall were needed in distributed hydrological models. However, no allusion was made to the possible effects of varying catchment scales. In terms of predicting peak discharge in a catchment \citep{krajewski1991monte}, a small catchment (7.5km\(^2\)), was found to be sensitive to the temporal resolution of rainfall input data, but less so to the spatial distribution of rainfall inputs.  
-The role of catchment size is likely to play a part in determining sensitivity to rainfall distribution, with several studies suggesting catchment size can dampen the effect of rainfall spatial variability \citep{segond2007simulation,nicotina2008impact}. The idea of catchment-size dependence has been developed further \citep{gabellani2007propagation}, suggesting that sensitivity to rainfall spatial heterogeneity depends on the characteristic size of the rainfall feature and the catchment size. Systematic investigation of the role of catchment size and morphology have suggested that is specifically the ratio between characteristic hillslope length of the catchment and the rainfall feature that determine sensitivity to spatial heterogeneity \citep{nicotina2008impact}. In cases where the rainfall feature is much greater in size than the typical hillslope length, the effects of rainfall heterogenity on runoff and hydrological response are muted. 
+The question of whether spatial detail in rainfall inputs to a river catchment affects the hydrological response is unresolved, with a number of different studies arriving at seemingly conflicting conclusions as to role of the spatial variability of rainfall inputs. Early studies using deterministic modelling of river catchments and synthetic rainfall fields \citep{wilson1979influence} suggest that detailed space-time representations of rainfall are needed in distributed hydrological models to produce accurate flood forecasts. However, no allusion was made to the possible effects of varying catchment scales or other competing factors that could influence the hydrological response of a catchment. In terms of predicting peak discharge in a catchment \citep{krajewski1991monte}, a small catchment (7.5km\(^2\)) is found to be sensitive to the temporal resolution of rainfall input data, but less so to the spatial distribution of rainfall inputs. A similar conclusion is reached by \citet{coulthard2016sensitivity}, finding that temporal resolution of rainfall input data is a greater control on hydrological outputs over long time periods than spatial resolution. 
+
+The size of the catchment size is likely to play a part in determining sensitivity to rainfall spatial distribution, with several studies suggesting catchment size can dampen the effect of rainfall spatial variability \citep{segond2007simulation,nicotina2008impact}. The idea of catchment-size dependence has been developed further \citep{gabellani2007propagation}, to suggest that sensitivity to rainfall spatial heterogeneity depends on the characteristic size of the rainfall feature and the catchment size. Systematic investigation of the role of catchment size and morphology have suggested that is specifically the ratio between characteristic hillslope length of the catchment and the rainfall feature that determine sensitivity to spatial heterogeneity \citep{nicotina2008impact}. In cases where the rainfall feature is much greater in size than the typical hillslope length, the effects of rainfall heterogeneity on runoff generation and hydrological response are limited. 
+
+%Rainfall Radar
+Modelling catchment hydrological sensitivity to rainfall spatial resolution requires a rainfall data source capable of capturing the spatial variability of rainfall across a catchment. Rainfall radar has been successfully used as a spatially variable rainfall input to a variety of types of catchment hydrology and urban hydrology models, from deterministic flood-inundation models \citep[e.g][]{coulthard2016sensitivity}, to probabilistic hydrology models \citep{bell2000sensitivity,cole2008hydrological}. The use of rainfall radar can be applied to modelling different environmental situations, for example rainfall radar data is particularly well established a data input source for urban hydrology models \citep{berne2004temporal,einfalt2004towards,thorndahl2014analyses} to small mountain catchments \citep{borga2000use} as well as large-scale regional hydrological modelling using national rainfall radar networks \citep{knebl2005regional}.
 
 %Morphology change
-Understanding how flood dynamics interact with channel and floodplain morphological change is of growing concern for flood modelling \citep{fewtrell2011geometric}. Morphological change during flood events has been shown to be a potential control in the extent of flooding during intense rainfall \citep{wong2015sensitivity}, particularly when river channels undergo geomorphically rapid change during repeated rainfall events of high magnitude \citep{slater2016extent}. Within the context of a single flood, bedload sediment may become highly mobile, and the forces acting on the boundaries of the river channel are sufficient to alter channel geometry in long profile, cross-section, and channel pattern \citep{wong2015sensitivity,kleinhans2013splitting}. As a counterargument, it has ben put forward that during large flood events the floodplain and river channel effectively act as one channel unit, dampening any effects brought about by changes to river channel morphology \citep{bates2005numerical}. The implications of sediment transport and erosion within river catchments has been highlighted as an important factor in flood inundation modelling \citep{lane2007interactions,lane2008reconceptualising,neuhold2009incorporating}, and should form part of an effective flood modelling strategy \citep{wong2015sensitivity} in catchments thought to be sensitive to morphological change during large floods.
+Understanding how flood dynamics interact with channel and floodplain morphological change is of growing concern for flood modelling \citep{fewtrell2011geometric}. Feedbacks between river morphology and fluvial processes are well established \citep{schumm1979geomorphic,sear2010guidebook}. Morphological change during flood events has been shown to be a potential control on the extent of flooding during intense rainfall \citep{stover2001channel,wong2015sensitivity}, particularly when river channels undergo geomorphically rapid change during repeated rainfall events of high magnitude \citep{slater2016extent}. Within the context of a single flood, bedload sediment may become highly mobile, and the forces acting on the boundaries of the river channel are sufficient to alter channel geometry in long profile, cross-section, and channel pattern \citep{kleinhans2013splitting,wong2015sensitivity}. As a counterargument, it has been suggested that during large flood events the floodplain and river channel effectively act as one channel unit, dampening any effects brought about by changes to river channel morphology \citep{bates2005numerical}. The implications of sediment transport and erosion within river catchments has been highlighted as an important factor in flood inundation modelling \citep{lane2007interactions,lane2008reconceptualising,neuhold2009incorporating}, and should form part of an effective flood modelling strategy \citep{wong2015sensitivity} in catchments thought to be sensitive to morphological change during large floods. Most numerical modelling approaches to flood inundation prediction are concerned with improving or addressing uncertainties in hydraulic flow \citep{galland1991telemac,bates2000simple}, rather than considering other boundary conditions such as the morphology of the channel bed and floodplain itself. Numerical models of flood inundation often overlook river channels and their floodplains as a mechanism for controlling flow and patterns and inundation extents \citep{neuhold2009incorporating}.
 
 % Bring two together.
-Flood inundation prediction studies rarely consider both morphological change during flooding or spatial heterogeneity in rainfall inputs to the catchment. Given the reported importance of rainfall resolution on predicting increased sediment yields and channel incision over decades \citep{coulthard2016sensitivity}, can the same observation be made at the time scale of a single event, and does this in turn control the dynamics of a given flash flood event? Though there are differing conclusiions as to importance of rainfall heterogeneity and channel morphological change in flood inundation modelling, there is at least agreement that both have the potential to alter the outcome of flood prediction, under certain conditions. More investigation is needed into which of these uncertainties plays the greater role in determining flood inundation patterns during intense rainfall events and the analysis presented in this chapter attempts to address this by comparing flood inundation model predictions under different rainfall spatial resolution scenarios and erosion law parameterisations. 
+Flood inundation prediction studies rarely consider both geomorphological change or spatial heterogeneity in rainfall inputs to the catchment during intense rainfall episodes. Given the reported importance of rainfall resolution on predicting increased erosion rates, sediment yields and channel incision over decades \citep{deluis2010rainfall,coulthard2016sensitivity}, can the same observation be made at the time scale of a single event? In extreme rainfall events that mobilise large amounts of sediment, does this in turn control the dynamics and distribution of the floodwaters? Though there are differing conclusions as to importance of rainfall heterogeneity and channel morphological change in flood inundation modelling, there is at least agreement that both have the potential to alter the outcome of flood prediction, under certain conditions -- yet exactly which conditions this occurs  is still uncertain. More investigation is needed into which of these uncertainties -- spatial heterogeneity of rainfall input, or erosional processes -- plays the greater role in determining flood inundation patterns during intense rainfall events. The simulations and analysis presented in this chapter attempts to address this by comparing flood inundation model predictions under different rainfall spatial resolution scenarios and erosion law parameterisations. 
 
 %Climate impact etc.
 %Growing consensus indicates that intense rainfall events are becoming more frequent in the UK \citep{kendon2014heavier}.
 
-% Bring two together.
-Flood inundation prediction rarely considers both morphological change during flooding or spatial heterogeneity in rainfall inputs to the catchment. Little is known about which of these uncertainties plays the greater role in understanding how to predict flood inundation during intense rainfall. Given the reported importance of rainfall resolution on predicting increased sediment yields and channel incision over decades \citep{coulthard2016sensitivity}, can the same observation be made at the time scale of a single event, and does this in turn control the dynamics of a given flash flood event?
-
-The following questions are explored through the use of numerical modelling experiments set out in Chapter \ref{chapter_events}, Table \ref{table_ensemble_experiments}
+The following questions are explored through the use of numerical modelling experiments set out in Chapter \ref{chapter_events}.
 
 \begin{enumerate}
 \item Are predicted flood inundation extents during a storm sensitive to the spatial resolution of rainfall inputs to the catchment?
-\item Are fluvial erosion and sediment transport controls on predicted flood inundation extents during a single severe storm?
-\item Does geomorphic change of the floodplain and channel during a storm event significant enough to affect flood inundation predictions?
+\item Can morphological change of the floodplain and channel during a storm event be significant enough to affect flood inundation predictions?
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%
-%\section{Experiment Design \& Method}
-%%%%%%%%%%%%%%%%
+\section{Method}
 
-%\subsection{Rainfall-runoff and flow routing}
-%From rainfall input, runoff is calculated using an adaptation of the Beven and Kirby (1979) TOPMODEL. Total surface and subsurface discharge is given by:
-%
-%\begin{equation}
-%Q_{tot} = \frac{m}{T}\log \left( \frac{(r - j_t) + j_t \exp \left( \frac{rT}{m} \right) }{r} \right)
-%\end{equation}
-%
-%where \(T\) is the time step in seconds, \(r\) is the rainfall rate, \(j_t\) is a function that describes soil moisture store, and \(m\) is a parameter that controls the rise and fall of this soil moisture store in \(j_t\). These adapted TOPMODEL equations are given fully in Coulthard (2002), equations (1) and (2).
-%
-%The amount of water partitioned between surface and subsurface flow is determined by a simple infiltration threshold, given by:
-%
-%\begin{equation}
-%I_t = KS(Dx)^2
-%\end{equation}
-%
-%where \(K\) is hydraulic conductivity, \(S\) is the slope, and \(Dx\) is the width of the grid cell or horizontal grid spacing. The infiltration threshold is subtracted from \(Q_{tot}\) to give the portion of water routed over the surface.
-%
-%Surface water and channel flow is an important driver in catchment scale erosional processes. The amount and velocity of water flow is a variable in both the sediment transport and bedrock erosion laws. The water flow equations are based on a simplified form of the shallow water flow equations, a simplification first derived by Bates (2010) and incorporated into the landscape evolution model by Coulthard et al (2013). The flow between cells is calculated by:
-%
-%\begin{equation}
-%Q = \frac{q - g h_{flow} \Delta T \frac{\Delta (h+z) }{\Delta x}}{1 + g h_{flow} \Delta t n^2 |q| / h_{flow}^{10/3}} \Delta x
-%\end{equation}
-%
-%where \(q\) is the water flux between cells from the previous iteration, \(g\) is acceleration due to gravity, \(h_{flow}\) is the maximum depth of flow between cells (m), \(t\) is time (s), \(h\) is depth of water, \(z\) is elevation, \(x\) is the grid well width, and \(n\) is Manning's roughness coefficient. The full implementation details are given in Coulthard (2013), and the derivation from the shallow water equations is given in Bates (2010).
-%
-%\subsection{Sediment transport}
-%Transport of loose sediment within the model is governed by the \citet{Wilcock2003} sediment transport model. The Wilcock and Crowe model represents transport of mixed sand/gravel fractions based on the surface sediment composition. The rate of sediment transport, \(q_i\), is given as:
-%
-%\begin{equation}
-%q_i = \frac{F_i {U_*}^3 {W_i}^*}{(s -1) g}
-%\end{equation}
-%
-%where \(F_i\) is the fractional volume of sediment, for a given sediment fraction, \(i\), \(U^*\) is the shear velocity, \(s\) is the ratio of sediment to water density. \({W_i}^*\) is a function relating fractional transport rate to total transport rate (see \citet{Wilcock2003} for a full derivation of this equation). The usage of this sediment transport model is extrapolated here to account for finer particles such as silts \citep{Vandewiel2007}, as well as the sand-gravel mixture it was originally designed for.
-%
-%\subsection{Bedrock incision}
-%\label{bedrock_model}
-%A simple model of bedrock incision based on the excess shear stress model (Citations) is implemented in the numerical model. The rate of bedrock incision is determined by the amount of shear stress acting on the bedrock, above a threshold level of stress required to initiate substrate removal (e.g. \citet{Snyder2003}. When bedrock material is removed, it is distributed amongst the sediment fractions according to the fractional proportions set by the user. The rate of bedrock erosion according to the excess shear stress model is given by:
-%
-%\begin{equation}
-%\varepsilon = k_e(\tau_b - \tau_c)^{P_b}
-%\end{equation}
-%
-%where \(k_e\) is the bedrock erodibility coefficient, \(\tau_b\) is the basal shear stress on the channel bed, \(\tau_c\), is the critical shear stress threshold, \(P_b\) is the shear stress exponent. (Cite Howard or Whipple?)
+The approach in this study was to use an ensemble of numerical simulations detailed in Chapter \ref{chapter_events} to investigate catchment hydrological response to different parameterisations of spatial variability of rainfall data and erosional process representation using the HAIL-CAESAR landscape evolution model developed in Chapter \ref{chapter_HAIL-CAESAR}. The results of the simulations were then analysed in terms of the hydrological outputs of the model: water discharge, average water depths, and spatial distribution of floodwaters. The set of simulations used in this chapter are laid out in Table \ref{table_ensemble_experiments} in Chapter \ref{chapter_events}. In addition to the simulations described in Chapter \ref{chapter_events} a further set of hydrological simulations are carried out to assess the model sensitivity to the \(m\) hydrological parameter that controls how rapidly the catchment responds to rainfall events \citep{beven1979physically}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Study area}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsubsection{Overview}
+\subsection{Sensitivity analysis of the TOPMODEL \(m\) parameter}
+There are numerous user-defined parameters in the HAIL-CAESAR model (and in landscape evolution models in general) that have a wide range of potential values. Parameter selection in environmental modelling comes with a degree of uncertainty, and resulting outputs from models can be highly sensitive to the user's choice of input parameters for a given simulation \citep{Pelletier2012}. Initial testing of the HAIL-CAESAR model, and studies using the CAESAR-Lisflood model that it is based upon, show it is particularly sensitive to the \textit{m} parameter, \citep{coulthard2002cellular,welsh2009testing}. The \(m\) parameter in HAIL-CAESAR is based upon an adaptation of the semi-distributed hydrological model TOPMODEL \citep{beven1979physically}. The parameter represents the rate of the rise and fall of the soil moisture store, determining how quickly a catchment responds to rainfall inputs -- sometimes referred to as the `flashiness' of a catchment. A high value of \(m\) reduces the transmissivity of the soil, leading to slower response times in the catchment, whereas a lower value of \(m\) increases soil transmissivity leading to quicker response times to rainfall input and a `flashier' hydrograph. The \(m\) value imitates the factors associated with water movement and storage in relation to the vegetation cover of a catchment; it is sometimes termed the \textit{land-use parameter} \citep{welsh2009testing} to reflect this. Typical values used for \(m\) range from 0.002--0.005 (grassland) to around 0.02 (dense forest), with the range of values in between representing a full gamut of vegetation covers \citep{beven1997topmodel,beven1984testing}.
 
-\section{Sensitivity analysis}
-There are numerous user defined parameters in the HAIL-CAESAR model, and in landscape evolution models in general, that have a wide range of potential values. Parameter selection in environmental modelling comes with a degree of uncertainty, and resulting outputs from models can be highly sensitive to the user's choice of input parameters for a given simulation \citep{Pelletier2012}. Initial testing of the HAIL-CAESAR model, and studies using the CAESAR-Lisflood model that it is based upon show it is particularly sensitive to the TOPMODEL \textit{m} parameter, a parameter that controls the rise and fall of the soil moisture store, and hence how a river catchment responds to rainfall input \citep{beven1979physically}. 
-
-To assess the sensitivity of the model to the choice of TOPMODEL-\textit{m} parameter, a series of simulations were carried out with a range of \textit{m} values for both test cases. Simulations of each flood event were carried out with the \textit{m} values shown in table \ref{table-m-sens}.
+Preliminary experiments used the default model value of \(m = 0.002\) for grassland -- both catchments are a mixture of agricultural pasture land, some sparse vegetation, and small urban settlements -- but the dominant land cover is sparse vegetation. The default value for \(m\) was adequate in reproducing the Boscastle hydrograph noted in an earlier study \citep{wallingford2005flooding}, but it was found that the hydrological response of the Ryedale catchment was highly sensitive to the choice of \(m\) parameter. To assess the full range of sensitivity to the choice of \textit{m} parameter in the Ryedale catchment, a series of simulations were carried out with a range of \textit{m} values for both uniform and gridded rainfall inputs. Simulations of each flood event were carried out with the \textit{m} values shown in Table \ref{table-m-sens}. Each of the simulations were run with the model in hydrology-only mode, with no erosional process parameterisation switched on. To assess whether there was further sensitivity to the type of rainfall input (spatially variable or uniform), the sensitivity analyses were repeated with both types of rainfall input data.
 
 \begin{table}
 \begin{tabular}{lc}
-\textbf{Catchment} & \textbf{TOPMODEL \(m\) parameter} \\
+\textbf{Catchment} & \textbf{\(m\) parameter} \\
 \hline
-Boscastle   &                                            \\
-Ryedale     & 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.15, 0.2  \\
+%Boscastle   &                                            \\
+Ryedale     & 0.003, 0.004, 0.005, 0.006, 0.007, 0.008, 0.009, 0.01, 0.015, 0.02  \\
 \hline
 \\ 
 \end{tabular}
-\caption{TOPMODEL \(m\) parameter values used to run sensitivity simulations for each catchment.}
+\caption{TOPMODEL \(m\) parameter values used to run sensitivity simulations for each type of rainfall input types (Uniform and Gridded) for the Ryedale catchment. }
 \label{table-m-sens}
 \end{table}
 
@@ -113,80 +64,261 @@ Ryedale     & 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.15, 0.2  \\
 \section{Results}
 %%%%%%%%%%%%%%%%%
 
-\subsection{TOPMODEL sensitivity}
+\subsection{Model sensitivity to the \(m\) parameter}
 
-The model exhibited a strong sensitivity to the choice of the TOPMODEL \( m\) parameter. In the results presented in figure \ref{fig_topmodel_m_ryedale} peak river discharge ranged from XX at an \(m\) value of 0.003 to XX with an \(m\) value of 0.008. The measured peak discharge reported for the 2005 storm at the Ness gauging station was 105 cumecs. In the sensitivity simulations, a value of \(m = 0.005\) produced a flood peak most closely matching the observed value, peaking at XX cumecs (Note the time as well.). 
+The model exhibited a strong sensitivity to the choice of the TOPMODEL \(m\) parameter. In the results presented in Figure \ref{fig_topmodel_m_ryedale_lumped} peak river discharge ranged from approximately 530 m\(^3\)s\(^{-1}\) using an \(m\) value of 0.003 to 20 m\(^3\)s\(^{-1}\) using an \(m\) value of 0.008 under uniform rainfall input conditions. Under spatially variable rainfall inputs, discharge was as high as 650 m\(^3\)s\(^{-1}\) where \(m = 0.003\). The measured peak discharge reported for the 2005 Ryedale storm at the Ness gauging station was 80 m\(^3\)s\(^{-1}\) (Environment Agency, email communication), and a subsequent post event report estimated the peak discharge at 105 m\(^3\)s\(^{-1}\) \citep{wass2008investigation}. In the sensitivity simulations, a value of \(m = 0.005\) under uniform rainfall conditions produced a flood peak most closely matching the observed value, peaking at approximately 100 m\(^3\)s\(^{-1}\), the choice of \(m=0.005\) for Ryedale also best approximated the timing in the rise and fall of the hydrograph. Under spatially variable conditions (Figure \ref{fig_topmodel_m_ryedale_gridded}), a value of \(0.007 < m < 0.008\) would appear to produce a hydrograph most likely to match the observed discharge rates in terms of the onset of flooding, but a value of \(0.006 < m < 0.007\) would be likely to more closely match the magnitude of peak discharge. At a first approximation, the use of uniform rainfall inputs appeared to lead to better agreement of the model with measured discharges from the river gauging station data, in terms of agreement with both the timing and magnitude of the flood peak. It was decided therefore to use the calibration data from the uniform rainfall sensitivity analysis to choose the best value of \(m\) for the main set of simulations. 
 
-There were differences between the hydrographs of the observed and simulated discharges in terms of peak discharge timing and recession limb shape. The observed hydrograph showed a sharp rise at around 50 hours after the start of the simulation period. Lower \(m\) values (m \textless 0.005) resulted in a prediction of the flood peak being too early compared to the observed timing, with values \textgreater \ 0.005 predicting the flood peak timing too late. Most of the simulations failed to capture the extended duration of peak discharge, which lasted approximately 5--6 hours, before receding back to low flow levels. The simulation with \(m = 0.006\) came closest to predicting this hydrograph shape, but failed to predict the magnitude of water discharge correctly, underestimating the peak flow by almost 50\%. 
+There were differences between the hydrographs of the observed and simulated discharges in terms of peak discharge timing and recession limb shape. The measured hydrograph overlaid in Figure \ref{fig_topmodel_m_ryedale_lumped} (black dashed line) showed a sharp rise at around 50 hours after the start of the simulation period. Lower \(m\) values (\(m < 0.005\)) resulted in the prediction of the flood peak being too early compared to the observed timing, with values \textgreater \ 0.005 predicting the flood peak timing too late. Most of the simulations failed to capture the extended duration of peak discharge, which lead to a `plateaued' appearance of the measured hydrograph, lasting approximately 5--6 hours, before receding back to low flow levels. The simulation with \(m = 0.006\) came closest to predicting this plateaued hydrograph shape, but failed to predict the magnitude of water discharge correctly, underestimating the peak flow by almost 50\%. 
 
-For Ryedale simulations, it was decided to use an \(m\) value of 0.005, providing the closest possible match to the flood peak discharge, though not the true shape of the hydrograph and the receeding limb. As the catchment simulations include a representation of erosion and sediment transport processes, which are often threshold dependent, it was felt necessary to match the discharge peak more closely over choosing to match the hydrograph shape precisely.
+For Ryedale simulations, it was decided to use an \(m\) value of 0.005, providing the closest possible match to the flood peak discharge, though not the true shape of the hydrograph and the receding limb. As the catchment simulations include a representation of erosion and sediment transport processes, which are often threshold dependent, it was felt necessary to match the discharge peak more closely over choosing to match the hydrograph shape precisely.
 
-\begin{figure}[t]
-\includegraphics[width=11cm]{chp06_figures_scripts/figure_ryedale_M_sens.eps}
-\caption{Discharge at Ryedale catchment outlet for varying values of the TOPMODEL \(m\) parameter. The measured discharge at the catchment gauging station is overlain in dashed line. The results from the simulations with \(m\) \textgreater \ 0.008 are omitted for clarity due to the low peak discharges they produced.}
-\label{fig_topmodel_m_ryedale}
+% comment on second run with gridded rainfall in ryedale
+
+\begin{figure}[!h]
+\includegraphics[width=11cm]{chp_flood_figs_scripts/fig_ryedale_hydro_m_sens_lumped.eps}
+\caption{Hydrograph sensitivity to the \(m\) parameter under \textbf{uniform} rainfall inputs. Discharge over time at the Ryedale catchment outlet for varying values of the \(m\) parameter. The measured discharge at the catchment gauging station is overlaid in dashed line. The results from the simulations with \(m\) \textgreater \ 0.008 are omitted for clarity due to the low discharges they produced.}
+\label{fig_topmodel_m_ryedale_lumped}
 \end{figure}
 
-\subsection{Catchment hydrology}
+\begin{figure}[!h]
+\includegraphics[width=11cm]{chp_flood_figs_scripts/fig_ryedale_hydro_m_sens_gridded.eps}
+\caption{Hydrograph sensitivity to the \(m\) parameter under \textbf{gridded} rainfall inputs. Discharge over simulation time at the Ryedale catchment outlet for varying values of the \(m\) parameter. The measured discharge at the catchment gauging station is overlaid in dashed line. The results from the simulations with \(m\) \textgreater \ 0.008 are omitted for clarity due to the low discharges they produced.}
+\label{fig_topmodel_m_ryedale_gridded}
+\end{figure}
+
+\subsection{Catchment hydrographs}
+% AMMENDMENTS:
+%Plot hyetograph (rainfall) oerlay on the hydrographs.
+%For Ryedale, plot the measured observation as well from gauge. -done
 
 %Comparisons with the actual hydrographs from the gauged basins?
+\subsubsection{General observations}
+At the catchment scale, hydrological response was sensitive to both the rainfall resolution and the choice of erosional model. For both catchments, higher resolution rainfall input data resulted in a greater maximum river discharge. In the Ryedale experiments, simulations using the gridded rainfall input experienced a flashier hydrological response, reaching peak discharge several hours before the uniform rainfall input cases. This large difference in timing was not observed in any of the Boscastle simulations, with all simulations reaching peak discharge within 10 minutes of each other. Peak discharges and the timings of peak flow for each simulation are tabulated in Table \ref{table_discharges}.
 
-At the catchment scale, hydrological response was sensitive to both the rainfall resolution and the choice of erosional model. For both catchments, higher resolution rainfall input data resulted in a greater maximum river discharge. In the Ryedale experiments, simulations using the gridded rainfall input experienced a flashier hydrological response, reaching peak discharge several hours before the uniform rainfall input cases. This was not observed in any of the Boscastle simulations, with all simulations reaching peak discharge within 30 minutes of each other.
+The choice of erosion model also influenced the hydrological response. When catchment erosion was modelled using a transport-limited (\texttt{TLIM}) case, peak discharges were higher in all cases, but the timing of hydrograph peaks remained similar for each case. The difference in peak discharges were minimal when comparing the detachment-limited (\texttt{DLIM}) cases to the hydrological-only models.
 
-The choice of erosion model also influenced the hydrological response. When catchment erosion was modelled using a transport-limited case, peak discharges were higher in all cases, but the timing of hydrograph peaks remained similar for each case. The difference in peak discharges were minimal when comparing the detachment-limited cases to the hydrological-only models.
+\subsubsection{Boscastle}
+The timing of peak discharge in the Boscastle catchment was similar for both the gridded and uniform rainfall simulations (Figure \ref{fig_boscastle_hydrograph_ensemble}). In gridded rainfall simulations the discharge peaked 40 hours after the start of the simulation (16:00 UTC) and for the uniform rainfall input simulations at 40 hours 10 minutes into the simulation (16:10 UTC). The choice of erosional parameterisation did not appear to affect the timing of the peak discharge, however, it did result in small changes in the discharge rate at peak flow, of up to 14\% difference in the uniform rainfall simulations, and 6\% increase in the gridded rainfall simulations. The primary control on the amount of discharge at peak flow appeared to be the type of rainfall inputs into the model, with the gridded simulations predicting peak discharges up to 28\% higher than their uniform counterparts. 
 
-\begin{figure}[t]
-\includegraphics[width=14cm]{chp06_figures_scripts/figure_boscastle_hydrograph_ensemble.eps}
+Comparison with measured discharge is not possible in the Boscastle case, as the basin is ungauged. However, a number of methods exist for predicting runoff and river flow in ungauged river basins \citep{sivapalan2003prediction,bloschl2013runoff}, and two estimations of discharge are presented here for comparison with the predictions from the HAIL-CAESAR model. Both estimations were derived in the \citet{wallingford2005flooding} and the hydrographs are overlaid on the model outputs from this study in Figure \ref{fig_boscastle_hydrograph_ensemble}. The HR Wallingford report produced a simple hydrograph derived from eyewitness reports and water level marks, estimating a peak discharge of 180 m\(^3\)s\(^{-1}\) at 16:00 UTC, the same as the timing of peak flow in the HAIL-CAESAR simulations. A second estimation of the hydrograph during the Boscastle event was made in the report using a one-dimensional hydraulic model, \textit{InfoWorks RS}, which also predicted a peak flow of approximately 178 m\(^3\)s\(^{-1}\), but at the later time of 17:00 UTC. The InfoWorks RS model uses a fixed representation of the river bed, and does not permit the topographic surface to change during the course of the model simulation. 
+
+The estimated flow from observations and the 1D hydraulic model was higher than any of the model predictions made in this study -- a difference of 30--80 m\(^3\)s\(^{-1}\) was noted between the HAIL-CAESAR simulations and the two estimations from the HR Wallingford report. The rising and falling limbs of the hydrograph were also much shallower than the HAIL-CAESAR model predictions, which suggest a much more rapid rise and fall in water levels during the storm. 
+
+\subsubsection{Ryedale}
+
+The hydrological response of the Ryedale catchment was more sensitive to the choice of rainfall input type, with marked differences in the timing and magnitude of the peak discharge between the uniform and gridded rainfall sets of simulations (Table \ref{table_discharges}, Figure \ref{fig_ryedale_hydrograph_ensemble}). There is up to 83\% increase in discharge in the gridded rainfall simulations when compared to the corresponding uniform rainfall input simulations. The hydrograph was less sensitive to the type of erosional parameterisation, with up to 40\% difference observed in the uniform rainfall cases, and upto 25\% difference in the gridded rainfall simulations. 
+
+The Rye river is gauged at several locations, and flow data was recorded during the 2005 flood, though the accuracy of gauging station data is uncertain during particularly high flow events \citep{shaw2010hydrology}. The gauge data is measured at the River Rye Ness gauging station\footnote{Environment Agency gauging station F2505 -- British National Grid reference SE 69439 79196}. The outlet of the modelled catchment domain was set up to coincide (as near as possible) with the location of the Ness gauging station on the River Rye. The observed flow data from the gauging station is overlaid in Figure \ref{fig_ryedale_hydrograph_ensemble}. The gauging station data most closely matches the hydrographs produced by the uniform rainfall inputs, though it is lower than all of the simulated hydrograph, peaking at approximately 81 m\(^3\)s\(^{-1}\). A further value of peak discharge during the Ryedale flood was reported by \citet{wass2008investigation} as 105 m \(^3\)s\(^{-1}\), derived from 1D flow modelling -- the timing of this estimated peak flow was not available due to the type of model used. The value of peak discharge reported by \citet{wass2008investigation} is similar to that of the Environment Agency gauge data and the peak flows predicted by the uniform rainfall input simulations in this study. 
+
+The difference in timing of peak flow between the set of gridded rainfall input simulations and the uniform rainfall simulations is large; the gridded rainfall simulations predict the timing of peak flow as being almost four hours earlier than the simulations using a uniform rainfall input. Observations reported in \citet{wass2008investigation} and the Environment Agency gauge support the predictions made by the uniform rainfall simulations in this case.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[!htbp]
+\centering
+\caption{Peak water discharges and corresponding times at peak flow for each of the simulation cases. Discharge is calculated at the outlet of the catchment model domain. Time is given in UTC on the day of the storm.}
+\label{table_discharges}
+
+\begin{tabular}{lcc}
+\textbf{Simulation name} & \begin{tabular}[c]{@{}l@{}}\textbf{Peak discharge}\\ (m$^3$s$^{-1}$)\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Time}\\ (UTC on storm day)\end{tabular} \\
+\hline 
+\multicolumn{3}{l}{Boscastle: 2004-08-16} \\
+\hline
+\texttt{GRIDDED\_HYDRO} & 151 & 16:00 \\
+\texttt{GRIDDED\_TLIM} & 148 & 16:00 \\
+\texttt{GRIDDED\_DLIM} & 143 & 16:00 \\
+\texttt{UNIFORM\_HYDRO} & 108 & 16:10 \\
+\texttt{UNIFORM\_TLIM} & 122 & 16:10 \\
+\texttt{UNIFORM\_DLIM} & 107 & 16:10 \\
+\hline
+\multicolumn{3}{l}{Ryedale: 2005-06-19} \\
+\hline
+\texttt{GRIDDED\_HYDRO} & 221 & 20:05 \\
+\texttt{GRIDDED\_TLIM} & 277 & 19:50 \\
+\texttt{GRIDDED\_DLIM} & 232 & 20:00 \\
+\texttt{UNIFORM\_HYDRO} & 108 & 00:50$^\dagger$ \\
+\texttt{UNIFORM\_TLIM} & 151 & 23:40 \\
+\texttt{UNIFORM\_DLIM} & 114 & 00:25$^\dagger$\\
+\hline
+\vspace{1em}
+{\footnotesize $\dagger$ -- Time the following day}. & & \\
+
+\end{tabular}%
+\end{table}
+
+% ENSEMBLE HYDROGRAPHS
+\begin{figure}[!htbp]
+\includegraphics[width=14cm]{chp_flood_figs_scripts/fig_hydrographs_boscastle_new.eps}
 \caption{Boscastle hydrographs (discharge over time at catchment outlet) for each simulation of the 2004 Boscastle event listed in Table \ref{table_ensemble_experiments}. Inset shows detail of main flood peaks around hour 40 of the simulation.}
 \label{fig_boscastle_hydrograph_ensemble}
 \end{figure}
 
-\begin{figure}[t]
-\includegraphics[width=14cm]{chp06_figures_scripts/figure_ryedale_hydrograph_ensemble.eps}
+\begin{figure}[!htbp]
+\includegraphics[width=14cm]{chp_flood_figs_scripts/fig_hydrographs_ryedale_new.eps}
 \caption{Ryedale hydrographs (discharge over time at catchment outlet) for each simulation of the 2005 Ryedale event listed in Table \ref{table_ensemble_experiments}.}
 \label{fig_ryedale_hydrograph_ensemble}
 \end{figure}
 
+\subsection{Flood inundation and river levels}
+A series of flood inundation metrics are shown in Figures \ref{fig_inundation_area_ensemble}, \ref{fig_floodplain_depth_ensemble}, and \ref{fig_channel_depth_ensemble}, showing respectively:
+
+\begin{enumerate}
+\item Total area inundated by water
+\item Mean water depth in the floodplain
+\item Mean water depth in the main channel
+\end{enumerate}
+
+The floodplain area is defined for the purpose of this analysis using the \citet{clubbinpress} floodplain delineation algorithm, a method which searches for statistically significant variation in terrain relief to identify and delineate floodplains in a catchment. The `main channel' is herein defined as the mainstem channel with the highest stream order number \citep{strahler1957quantitative}, removing any tributary channels in the headwaters. The mainstem channel is delineated using a simple channel network identification algorithm based on a contributing drainage area threshold \citep{ocallaghan1984extraction,tarboton1991extraction}. The inundation metrics were derived from water depth output files created every two hours of simulated time during the model runs. As such, the absolute peak flood inundation may lie between two of the output file timesteps, but sufficient detail in spatial extents and dynamics of  the floodwaters are still captured in the analysis and the resulting figures. 
+
+Generally, there is a tendency for the simulations with gridded rainfall input  running in hydrology-only mode (\texttt{GRIDDED\_HYDRO}) to predict the greatest extents of areal flood extent as well as floodwater depth across the floodplain and main river channel, behaviour which is noted in both case studies. Most simulations running in hydrology-only mode and uniform rainfall input ( \texttt{UNIFORM\_HYDRO}) also predict greater flood inundation extents and peak water levels, but this tendency is less prevalent in the Ryedale simulations. In fact, the Ryedale set of simulations appear to be marginally more sensitive to the type of rainfall input, with both the \texttt{GRIDDED} simulations producing slightly higher peak inundation levels, regardless of whether erosion parameterisation is switched on in the model.
+
+The starkest contrast observed was in the mean channel water depth of the Boscastle set of simulations; the difference in peak mean water depth was approximately 1 m between the hydrology-only and erosion-enabled simulations. In most of the other simulations, the differences in main channel mean water depth were smaller, on the order of tens of centimetres.
+
+\subsubsection{Total inundation area}
+Inundation area is defined here as the total area of the catchment grid cells that exceed the minimum discharge threshold at a given timestep. The minimum discharge threshold for all simulations was set as 0.03 m\(^3\)s\(^{-1}\). The inundation amounts for the Boscastle and Ryedale simulations are presented in Figure \ref{fig_inundation_area_ensemble}. For clarity, only results from one type of the erosion-enabled simulations is presented in each case (transport-limited -- \texttt{TLIM}). The predicted inundation areas for the detachment-limited erosion simulations were similar to the hydrology-only simulations, differing only by a few percentage points.
+
+\paragraph{Boscastle}
+Both of the hydrology-only simulations in the Boscastle case predicted the greatest peak in flood inundation area, with the gridded rainfall input simulations predicting slightly higher peak inundation areas. The highest predicted flood inundation area resulted from the \texttt{GRIDDED\_HYDRO} simulation, and the lowest peak from the \texttt{UNIFORM\_TLIM} simulation. The rise and fall in the areal extent of the inundated flood area is rapid, peaking within hour 40 of the simulation  (16:00 UTC) and reducing by approximately 50\% by the next output time step, two hours later at 18:00 UTC. 
+
+\paragraph{Ryedale}
+In the Ryedale simulations, predicted flood inundation area was again greatest in the \texttt{GRIDDED\_HYDRO} simulation and lowest in the \texttt{UNIFORM\_TLIM} simulation. In this set of simulations, both the gridded rainfall input experiments produce higher total inundation areas at the peak of the flood.
+
+\subsubsection{Floodplain mean water depth}
+
+Inundation area provides a general indication of the spatial extent of flooding within a catchment, but does not reveal as much about the distribution of water depths within the catchment, particularly the floodplain where many settlements are located in the Boscastle and Ryedale cases. Average floodplain water depths area presented in Figure \ref{fig_floodplain_depth_ensemble} showing how water depths rise and fall on the floodplain over the course of each storm. The average depth is calculated for each output time step (two-hourly), by averaging the water depth in each model grid cell, limited to area delineated by the floodplain-finding algorithm \citep{clubbinpress}. 
+
+\paragraph{Boscastle}
+Floodplain average water depths follow a similar pattern to that observed in the total inundation area timeseries: a sharp rise and peak corresponding to the time of maximum river discharge (16:00 UTC), followed by a rapid drop-off by the time of the next model output timestep at 18:00 UTC. Average water depths in the Boscastle floodplain peaked at just over 0.4 m for the \texttt{GRIDDED\_HYDRO} simulations. Average floodplain water depths for the other simulations were approximately 0.35 m, and showed little variation from this value between the different simulation parameters. %Overall there was little difference in average floodplain water depth (5 cm) predicted for the Boscastle event. 
+
+\paragraph{Ryedale}
+Water depths on the Ryedale floodplain were fast to reach their peak, but showed a more gradual recession after the flood peak than the Boscastle simulations. The highest mean floodplain water depths were predicted by the \texttt{GRIDDED\_HYDRO} simulations at 0.16 m, though the difference between other simulations was minimal -- the lowest predicted mean depths of 0.14 m were observed in the \texttt{UNIFORM\_TLIM} simulation, a difference of only 2 cm. The timings of peak water depth were slightly different between the gridded rainfall and uniform rainfall simulations, with uniform rainfall input simulations peaking 2--3 hours after the gridded rainfall input simulations, mirroring the pattern seen the Ryedale hydrographs (Figure \ref{fig_ryedale_hydrograph_ensemble}).
+
+\subsubsection{River channel water depth}
+Water depths in the river channel are determined by reporting the water depth along the channel midpoint, determined by a channel network extraction algorithm \citep{Braun2013}. Modification of the floodplain finding algorithm was considered to extract the entire channel footprint and average over the full channel width, but limitations in the algorithm's ability to delineate the channel in the 5 m digital elevation model prevented this and so the channel midpoint was used as a representative sampling point of water depth. The channel section over which the average depth was taken was defined as the highest order channel in the catchment, i.e. the main channel stem into which all the other catchment tributaries flow.
+
+%Any level data for Rye?
+\paragraph{Boscastle}
+In the Boscastle catchment, (River Valency channel), peak mean channel water depths range from 2.4 m in the \texttt{GRIDDED\_HYDRO} simulation to 1.2 m in the \texttt{GRIDDED\_TLIM} simulations. There is a noticeable difference between the channel mean water depths at peak flow in the erosion-enabled simulations, which range between 1.2--1.4 m, and the mean depths in the hydrology-only simulations, both of which exceed 2 m. Modelling of river levels carried out by \citet[][figures 6.14, 6.15 in the report]{wallingford2005flooding} using a one-dimensional hydraulic model predicted water levels in the Valency river channel ranging between 1--3 metres at the peak of the flood, within a similar range to the river channel levels predicted the HAIL-CAESAR simulations presented here. 
+
+\paragraph{Ryedale}
+In the main channel of the River Rye, peak water depths range from approximately 1.2--1.5 m, a notably smaller range in depth than the Boscastle simulations. The highest mean water depths were predicted by the \texttt{GRIDDED\_HYDRO} simulations. The other simulations predicted very similar peak mean channel water depths, around 1.3 m. The lowest mean depths were predicted by the \texttt{UNIFORM\_TLIM} simulation.  
+
+% ENSEMBLE INUNDATION AND DEPTHS
+\begin{figure}[!htbp]
+\includegraphics[width=12cm]{chp_flood_figs_scripts/inundation_area.eps}
+\caption{Total inundation area (km$^2$) covered by floodwaters in the Boscastle (top) and Ryedale (bottom) catchments throughout the duration of the each storm. Inundation area is shown for each combination of flood-only, erosion-enabled, gridded rainfall input, and uniform rainfall input simulation. The erosion-enabled simulations use the transport-limited erosion law (\texttt{TLIM}). Detachment limited erosion cases were omitted for clarity.}
+\label{fig_inundation_area_ensemble}
+\end{figure}
+
+\begin{figure}[!htbp]
+\includegraphics[width=12cm]{chp_flood_figs_scripts/floodplain_mean_depth.eps}
+\caption{Mean floodplain water depth (metres) in the Boscastle (top) and Ryedale (bottom) catchments throughout the duration of the each storm. Floodplain is defined using the \citet{clubbinpress} floodplain delineation algorithm.) Water depth is shown for each combination of flood-only, erosion-enabled, gridded rainfall input, and uniform rainfall input simulation. The erosion-enabled simulations use the transport-limited erosion law (\texttt{TLIM}). Detachment limited erosion cases were omitted for clarity.}
+\label{fig_floodplain_depth_ensemble}
+\end{figure}
+
+\begin{figure}[!htbp]
+\includegraphics[width=12cm]{chp_flood_figs_scripts/channel_mean_depth.eps}
+\caption{Main channel mean water depth (metres) in the Boscastle (top) and Ryedale (bottom) catchments throughout the duration of the each storm. The main channel is defined as the highest-order stream in each catchment \citep{strahler1957quantitative} and excludes all minor tributaries. Water depth is shown for each combination of flood-only, erosion-enabled, gridded rainfall input, and uniform rainfall input simulation. The erosion-enabled simulations use the transport-limited erosion law (\texttt{TLIM}). Detachment limited erosion cases were omitted for clarity.}
+\label{fig_channel_depth_ensemble}
+\end{figure}
 
 
 \subsection{Spatial variation in flood inundation}
+Thus far, the analysis of the model output has concerned catchment wide hydrological outputs and average water depths during flooding in the form of two-dimensional time series. The following section considers the spatial distribution of floodwaters across the catchments at the peak of each flood event. Comparisons between the spatial distribution of floodwaters under different model parameterisations are presented in Figures \ref{fig_boscastle_2dplan_flood_ensemble_town}, \ref{fig_boscastle_2dplan_flood_ensemble_confluence} (Boscastle), and Figures \ref{fig_ryedale_2dplan_flood_ensemble_floodplain}, \ref{fig_ryedale_2dplan_flood_ensemble_town}, \ref{fig_ryedale_2dplan_flood_ensemble_upstream} (Ryedale). An overview of the catchments and location of the main settlement in each is presented in Figure \ref{fig_boscastle_2dplan_inset_loc} and \ref{fig_ryedale_2dplan_location_insets}.
+
 \subsubsection{Boscastle}
-The Boscastle catchment simulations showed minimal variation in flood inundation extent. Simulations with gridded rainfall input did not result in substantially different predictions of floodwater inundation compared to those with uniform rainfall input. Both sets of simulations reflected the general extent of reported flood water extents \citep{wallingford2005flooding}. Simulations that allowed erosion to take place (GRID\_TLIM and UNIFORM\_TLIM) showed a slight difference in the variation of floodwater depths in the floodplain area, particularly in the vicinity of Boscastle village, where Figure \ref{fig_boscastle_2dplan_flood_ensemble} is centred on. In hydrological-only simulations, the deepest water depths were predicted to occur in the confines of the river channel, whereas in erosion-enabled simulation, there appeared to be a `smoothing' effect of water depths between the channel and the adjacent floodplain, suggesting that the channel geometry had altered during the flood event either by infilling from sediment from upstream or collapse of the adjacent river banks. Engineer's reports of the Boscastle flood noted that the river channel in the Boscastle village area had indeed been inundated with debris during the storm, which had potentially contributed to the extent of the flooding within the village.
+The Boscastle catchment simulations showed minimal variation in flood inundation extent. Simulations with gridded rainfall input did not result in substantially different predictions of floodwater inundation compared to those with uniform rainfall input. Both sets of simulations reflected the general extent of reported flood water extents \citep{wallingford2005flooding}. Simulations that allowed erosion to take place (\texttt{GRID\_TLIM} and \texttt{UNIFORM\_TLIM}) showed a slight difference in the variation of floodwater depths in the floodplain area, particularly in the vicinity of Boscastle village, where Figure \ref{fig_boscastle_2dplan_flood_ensemble_town} is centred on. In hydrological-only simulations, the deepest water depths were predicted to occur in the confines of the river channel, whereas in erosion-enabled simulations, there appeared to be a `smoothing' effect of water depths between the channel and the adjacent floodplain, suggesting that the channel geometry had altered during the flood event either by infilling from sediment from upstream or collapse of the adjacent river banks -- this effect is particularly evident in Figure \ref{fig_boscastle_2dplan_flood_ensemble_confluence}. Post-event reports of the Boscastle flood noted that the river channel in the Boscastle village area had indeed been inundated with debris during the storm, which had potentially contributed to the extent of the flooding within the village. The debris blockage of the  river channel as it flowed under the road bridge in the centre of the village was also noted as a potential contributory factor to the pattern of flood inundation during the storm. Overall, the results from the Boscastle simulations indicate that while the general differences in flood extent are minimal, there are small localised variations in the distribution of flood water depths at key locations, which can be attributed to the parameterisation of erosional processes in the simulations (Figure \ref{fig_boscastle_2dplan_flood_ensemble_town} and \ref{fig_boscastle_2dplan_flood_ensemble_confluence}).
 
 \subsubsection{Ryedale}
-The Ryedale simulations showed greater variation in flood extent between the gridded rainfall and uniform rainfall inputs. The flood extents were greater in the gridded rainfall input simulations, corresponding with the higher peak discharges predicted in these simulations.  The variation in water depths appeared to be less sensitive in comparison to the Boscastle simulations. In the lower reaches of the catchment (Figure \ref{fig_ryedale_2dplan_flood_ensemble}, there appeared to be little indication that flood extents or water depths were sensitive to the erosion parameterisation, in contrast to the Boscastle simulations.
+The Ryedale simulations showed greater variation in flood extent between the gridded rainfall and uniform rainfall inputs. The flood extents were greater in the gridded rainfall input simulations, corresponding with the higher peak discharges predicted in these simulations.  The variation in water depths appeared to be less sensitive in comparison to the Boscastle simulations. In the lower reaches of the catchment (Figure \ref{fig_ryedale_2dplan_flood_ensemble_town}), there appeared to be little indication that flood extents or water depths were sensitive to the erosion parameterisation, in contrast to the Boscastle simulations.
 
+%LOCATION MAP BOS
+\begin{figure}[!htbp]
+\includegraphics[width=14cm]{chp_flood_figs_scripts/fig_boscastle_catchment_insets.png}
+\caption{Location map of the Boscastle catchment and Valency river valley, with the village of Boscastle shown. Location of the zoom-in images in Figures \ref{fig_boscastle_2dplan_flood_ensemble_town} (A) and \ref{fig_boscastle_2dplan_flood_ensemble_confluence} (B) shown in rectangular outlines.}
+\label{fig_boscastle_2dplan_inset_loc}
+\end{figure}
 
-
-% Plan view erosion diff maps
-\begin{sidewaysfigure}[t]
-\includegraphics[width=20cm]{chp06_figures_scripts/figure_boscastle_peak_flood_ensemble.png}
-\caption{Flood extents in the Boscastle catchment at the time of maximum river discharge for each simulation.}
-\label{fig_boscastle_2dplan_flood_ensemble}
+% Plan view flood maps BOSCASTLE
+\begin{sidewaysfigure}[!htbp]
+\includegraphics[width=24cm]{chp_flood_figs_scripts/fig_boscastle_flood_enseble_town.png}
+\caption{Flood extents in the Boscastle catchment around the village area (location A on the overview map in Figure \ref{fig_boscastle_2dplan_inset_loc}) at the time of maximum river discharge for each simulation. }
+\label{fig_boscastle_2dplan_flood_ensemble_town}
 \end{sidewaysfigure}
 
-% Plan view erosion diff maps
-\begin{sidewaysfigure}[t]
-\includegraphics[width=20cm]{chp06_figures_scripts/figure_ryedale_peak_flood_ensemble.png}
-\caption{Flood extents in the Ryedale catchment at the time of maximum river discharge for each simulation.}
-\label{fig_ryedale_2dplan_flood_ensemble}
+\begin{sidewaysfigure}[!htbp]
+\includegraphics[width=24cm]{chp_flood_figs_scripts/fig_boscastle_flood_enseble_confluence.png}
+\caption{Flood extents in the Boscastle catchment around the upstream confluence area (location B on the overview map in Figure \ref{fig_boscastle_2dplan_inset_loc}) at the time of maximum river discharge for each simulation.}
+\label{fig_boscastle_2dplan_flood_ensemble_confluence}
 \end{sidewaysfigure}
 
+% Plan view flood  maps RYEDALE
+\begin{figure}[!htbp]
+\includegraphics[width=12cm]{chp_flood_figs_scripts/fig_ryedale_catchment_location_insets.png}
+\caption{Location map of the Ryedale catchment and Rye river valley, with the village of Helmsley shown. Location of the zoom-in images in Figures \ref{fig_ryedale_2dplan_flood_ensemble_floodplain} (A), \ref{fig_ryedale_2dplan_flood_ensemble_town} (B), and \ref{fig_ryedale_2dplan_flood_ensemble_upstream} (C) shown in rectangular outlines.}
+\label{fig_ryedale_2dplan_location_insets}
+\end{figure}
 
+\begin{sidewaysfigure}[!htbp]
+\includegraphics[width=20cm]{chp_flood_figs_scripts/fig_ryedale_flood_ensemble_floodplain.png}
+\caption{Flood extents in the Ryedale catchment in the floodplain area south of Helmsley (location C on the overview map in Figure \ref{fig_ryedale_2dplan_location_insets}) at the time of maximum river discharge for each simulation.}
+\label{fig_ryedale_2dplan_flood_ensemble_floodplain}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!htbp]
+\includegraphics[width=20cm]{chp_flood_figs_scripts/fig_ryedale_flood_ensemble_helmsely.png}
+\caption{Flood extents in the Ryedale catchment in the area surrounding Helmsley village (location B on the overview map in Figure \ref{fig_ryedale_2dplan_location_insets}) at the time of maximum river discharge for each simulation.}
+\label{fig_ryedale_2dplan_flood_ensemble_town}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!htbp]
+\includegraphics[width=20cm]{chp_flood_figs_scripts/fig_ryedale_flood_ensemble_upstream.png}
+\caption{Flood extents in the Ryedale catchment in the gorge area west of Helmsley village (location A on the overview map in Figure \ref{fig_ryedale_2dplan_location_insets}) at the time of maximum river discharge for each simulation.}
+\label{fig_ryedale_2dplan_flood_ensemble_upstream}
+\end{sidewaysfigure}
 
 \section{Discussion}
 
-The size of the two catchments appears to be a determining factor in how sensitive hydrogeomorphic processes are to the rainfall data input resolution. The Boscastle catchment at 18 km\(^2\) is approximately an order of magnitude smaller than the Rydedale catchment at 270 km\(^2\). For each simulation using gridded rainfall input, the cell width of the rainfall grid is 1 km. The relative amount of increase in rainfall detail between uniform and gridded simulations is much greater in the larger Ryedale catchment than the Boscastle catchment. By using a 1 km gridded rainfall product as input data, the Ryedale simulation potentially captures 15 times more rainfall heterogeneity compared to the respective Boscastle simulation, by virtue of it simply being a much larger catchment with a greater number of rainfall input cells. Catchment size is known to be a factor in hydrological studies of rainfall resolution, and larger catchments are reported to show greater sensitivity to rainfall resolution \citep[e.g.][]{nicotina2008impact}, in terms of hydrological response.
+The aim of this chapter was to explore how flood hydrology and flood inundation extents are sensitive to two external factors: the spatial resolution of precipitation inputs and the parameterisation of erosional processes. An ensemble simulation approach was taken using a cellular automaton landscape evolution and hydrological model to simulate two historic case studies of flash flooding events in the UK, varying several parameterisations of erosion and rainfall spatial resolution in each simulation. The results paint a complex picture of the competing controls of 1) Spatial resolution of rainfall input and 2) Erosional processes representation within the catchment.
 
-Increasing the resolution of rainfall input data may not be enough to observe sensitivity in smaller catchments, as rainfall features themselves may not exhibit the necessary heterogeneity in structure to benefit from being resolved at finer scale. Rain cells or bands equal to or greater in size than the catchment over which they rain upon, may well be homogeneous enough in spatial extent and rainfall rate that a `uniform' approximation of their rainfall rate is sufficiently precise enough to represent the rainfall rate at all points in the catchment. As seen in the Boscastle catchment simulations, using a detailed rainfall input data source did not notably alter the outcome of the hydrological predictions (Figures \ref{fig_boscastle_2dplan_flood_ensemble}, \ref{fig_ryedale_2dplan_flood_ensemble}). In the Ryedale catchment simulations, the hydrological predictions were notably different based on the choice of rainfall input data resolution, affecting both the time and magnitude of the resulting flood peak. 
+\subsection{Rainfall spatial resolution}
+The spatial resolution of rainfall input to the catchment exhibits a first-order control on its hydrological response during the flash flood event in both of the case studies presented here. Hydrographs from the Ryedale simulations were noticeably different in the prediction of the magnitude and timing of peak discharges, although in the smaller Boscastle catchment the differences in hydrological response were more muted, both in terms of the difference in timing of the peak flow and the peak water discharge rate. There are size differences between the two catchments studied -- the Ryedale catchment (270 km\(^2\)) is an order of magnitude larger in area than Boscastle (18 km\(^2\)) -- and such differences in catchment size have previously (although not conclusively) been argued to control the sensitivity of catchments to spatial variability in rainfall inputs \citep{krajewski1991monte,nicotina2008impact}. While it has been argued that smaller catchments up to around 3500 km\(^2\) are largely insensitive to spatial heterogeneity in rainfall input \citep{nicotina2008impact}, the results in this study suggest that rainfall input resolution may influence the flood response of smaller basins, around 250 km\(^2\) in size during intense rainfall events. For each simulation using gridded rainfall input, the cell width of the rainfall grid is 1 km. The relative amount of increase in rainfall detail between uniform and gridded simulations is much greater in the larger Ryedale catchment than the Boscastle catchment. By using a 1 km gridded rainfall product as input data, the Ryedale simulation potentially captures 15 times more rainfall heterogeneity compared to the respective Boscastle simulation, by virtue of it simply being a much larger catchment with a greater number of rainfall input cells. The results from this study support the general consensus that there is some degree of sensitivity in catchment hydrology to rainfall spatial inputs, but in contrast to other studies, suggests that such sensitivity may be observed in much smaller catchments than previously thought. The results here potentially offer some explanation to other findings that over longer timescales, hydrological outputs from catchments simulated with spatially variable rainfall input data can see significant increases in mean annual discharge \citep{coulthard2016sensitivity} in smaller catchments. If individual events can show notable differences in hydrological outputs, over time this will lead to larger differences in mean annual discharges. The general idea of catchment-size sensitivity to rainfall inputs is not disputed, but there is still a lack of consensus at what spatial scale this becomes an dominating factor. 
 
-Talk about size of convective cell features. What is typical storm cell size and heterogeneity (decay from centre?).
+A further aim of this study was to investigate whether spatially detailed rainfall data leads to more accurate hydrological predictions, not merely \textit{different} predictions. Where available, measurements of the timing, magnitude, and spatial distribution of flood inundation were compared with the predictions made by the numerical model. Both the Ryedale and Boscastle events were extensively studied and surveyed in their aftermath and comparisons with previous modelling studies of each event were made where these were available. The results with respect to aim of improving  the accuracy of flood inundation predictions were mixed. There was better agreement with the peak discharges published in the \citep{wallingford2005flooding} report when using the gridded rainfall input to drive the numerical model, though a limitation of this comparison is that the hydrographs published in the HR Wallingford report were themselves based on estimates from eyewitness observations, reconstructions from water-level marks, and one-dimensional hydraulic modelling. 
+
+In the Ryedale case study, using gridded rainfall input actually produced a worse prediction of the peak discharge during the flood, though the only comparison available was made with a single gauge station at the catchment outlet -- gauging station data can be unreliable during extreme flows and this may partly explain the discrepancy. In this case the uniform rainfall data actually gave a better hydrological prediction in terms of matching the timing and rate of peak discharge during the flood. 
+
+% More on the m value, equifinality, Welsh study 2009.
+\subsection{Choice of \(m\) parameter value}
+The sensitivity analysis of the model \(m\) parameter was initially done using one type of rainfall input (spatially uniform) for the Ryedale catchment and the value of \(m\) that most closely matched published hydrographs (\(m = 0.005\)) was used for all of the simulations laid out in Table \ref{table_ensemble_experiments}. Subsequent analysis showed that a separate sensitivity analyses using the gridded rainfall input revealed a different `best-fit' value of \(m=0.0075\) when using the gridded rainfall input (Figure \ref{fig_topmodel_m_ryedale_gridded}), leading to better hydrological predictions from the gridded rainfall input simulations. This raises the issue that the model can be configured with different parameters and arrive at the same or similar predictions -- a concept referred to as equifinality and one which is frequently encountered modelling community \citep{beven1993prophecy,beven2001equifinality,ebel2006physics} -- which somewhat limits the conclusions that can be drawn from the experiments comparing uniform rainfall inputs with gridded rainfall input. In this particular case, both choices of \(m\) value are with reasonable ranges for the types of environment simulated \citep{beven1984testing}, but the choice of value one over the other can be used to support the case for using spatially detailed gridded rainfall inputs into hydrological models. Does one chose to calibrate the model based on the type of rainfall input as well, and if so, should it be calibrated further based on the type of erosional parametrisation enabled in the model. The size of the parameter space in the HAIL-CAESAR model is large, and a systematic exploration of every single combination of parameters would be time consuming if it were required for every case study to be simulated.
+
+% Discussion on erosional parameterisation.
+\subsection{Erosional parameterisation}
+The results of the numerical modelling simulations suggested that choice of erosional parameterisation exerts a secondary control on the hydrological response of a catchment when compared to the effects of the choice in rainfall resolution input. Consistently across simulations, the enabling of a transport-limited erosion parameterisation in the numerical model resulted in higher predicted peak discharges, evident in both the gridded rainfall and uniform rainfall sets of simulations. Again, the size of the catchment appears to be a factor in determining the degree of sensitivity, with the differences in hydrological output greater in the larger Ryedale catchment according to the choice of erosional parameterisation. The differences in discharge, however, are relatively smaller in both cases and any change in discharge from varying the choice of erosion law is surpassed by switching to a gridded rainfall input source. 
+
+The same limited sensitivity to erosional parameterisation is noted by \citep{wong2015sensitivity}, using a similar hydraulic model to investigate flood inundation sensitivity to channel morphological change during flood events. The hydraulic model used in the \citet{wong2015sensitivity} study is based on the same two-dimensional flood inundation model used in HAIL-CAESAR, coupled with a simple erosional model that allows the channel bed elevation to be eroded (but no sediment deposited) during the course of a flood. The authors of the study note that differences in hydrological response are minimal during erosion-enabled simulations, though there is a small increase of up to 5\% in the simulated mean depth of floodwaters throughout the event they simulate. By contrast, the results presented here show that floodwater depths on average are lower in erosion-enabled simulations. The erosion-enabled simulations presented in this chapter address a limitation in the previous study in that they permit the redistribution of sediments within a catchment through depositional as well as erosional processes.  In theory, such a model could capture channel blockage from sediment build up or infill during a flood, though this behaviour is not immediately apparent from the simulations carried out for these case studies. However, considering the sets of gridded-and uniform-rainfall input simulations separately, the predicted mean water depths in the main channel of each catchment (Figure \ref{fig_channel_depth_ensemble}), are lower in the erosion-enabled simulations. In the Boscastle simulations, the mean water depths are as much as 1 metre lower in the transport-limited erosion-enabled simulations than the corresponding hydrology-only simulations where the morphology of the channel bed and floodplain are effectively fixed. Average floodplain water depths are also lower in the erosion-enabled Boscastle simulations (Figure \ref{fig_floodplain_depth_ensemble}). 
+
+In models that permit the channel to be lowered through erosional processes, but no sediment deposition to take place, the channel and floodplain capacity to store or transport water can only be increased during the flood \citep[e.g.][]{wong2015sensitivity}. The effect of this could either be to increase the rate of water transport downstream through the channels to the floodplains, or to increase the channels capacity to store water during the course of the flood. In the \citet{wong2015sensitivity} study the case seems to have been that water depths have increased on floodplain. In models that permit both channel erosion and sediment deposition, it the possibility arises that channel capacity is reduced during the flood through the deposition of sediments in the channel after being transported from elsewhere in the catchment. However, detailed observational evidence recorded after the Boscastle event tends not to support this hypothesis as the amount of floodplain deposited sediments was on the order of centimetres, and most sections of the channel were noted as having undergone net incision through erosion, rather than deposition. In any case, a detailed analysis of the change in channel carrying capacity was beyond the scope of this study, but it is offered as a potential explanation for some of the differences seen between the \citet{wong2015sensitivity} study and the results of this analysis. A further explanation for the general lack of sensitivity of hydraulic models to morphological changes to the channel and floodplain during large floods is that the channel and floodplain act as a single channel unit \citep{bates2005numerical}, and so localised changes to one hydromorphic feature are compensated for by the other, in effect dampening any potential hydrological sensitivity to erosional processes.
 
 
 %%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}  %% \conclusions[modified heading if necessary]
 %%%%%%%%%%%%%%%%%%%%%
-Catchment hydrological response on the short term scale -- such as during the course of single storm event -- is also sensitive the spatial input pattern of rainfall, with the simulations carried out in this study also supporting similar work of \citep{nicotina2008impact} AND OTHERS.
+Considering the competing factors of spatial variation in rainfall inputs and erosional parameterisation in hydrolgical models, two main conclusions can be drawn from this investigation:
+
+\paragraph{Rainfall resolution}
+In distributed models of catchment hydrology, rainfall input data that is spatially variable will lead to greater hydrological outputs during severe rainfall events, and the likely cause of this is that localised peaks in rainfall rate are captured by the use of high-resolution rainfall data, such as meteorological radar, that would otherwise be smoothed-out by spatially uniform rainfall inputs or coarser resolution rainfall data. This conclusion, however, assumes that rainfall structures themselves are spatially heterogeneous relative to the size of the catchment being modelled. Catchment size itself may be a controlling factor determining how sensitive the hydrological response is to spatially detailed rainfall input data, but another possible explanation is that it is the ratio of rainfall detail captured in input data, relative to the size of the catchment. A further systematic study investigating hydrological sensitivity to a range of rainfall structures of varying structural complexity would be needed to assess this hypothesis. 
+
+Higher resolution rainfall input data has the potential to improve the accuracy of hydrological predictions, but it is not conclusive that this is always the case based on the results of this study. For high resolution rainfall data to be of use to hydrological modellers, the other parameters within the model must be tightly constrained, either through field study (where parameters can be constrained through field measurement), detailed exploration of parameter sensitivity and calibration of the model, or a combination of both. 
+
+\paragraph{Erosional parameterisation}
+Hydrological simulations show some sensitivity to erosional parameterisation. The amount of change in hydrological outputs and spatial distribution of flood waters is small relative to the sensitivity to rainfall spatial representation. The conclusions in this respect are similar to that of \citet{wong2015sensitivity} in that getting an accurate representation of erosional process in hydrological models is likely to be of secondary importance compared to obtaining accurate inputs of rainfall intensity and distribution. Error in the radar-derived rainfall rate, and in the spatial distribution of rainfall is more likely to have a larger impact on model performance, compared to the nuances predicted by erosion-enabled simulations. An often reported consequence of large flood events is that bridged channels and culverts can become blocked  with mobilised debris (other than sediment), leading to localised changes in flood dynamics. Blockage of channels underneath bridges was noted in the Boscastle flood. A limitation of the HAIL-CAESAR model, and others like it, is that they cannot account for closed-channel flow and blockages from debris, but future model enhancements may enable this kind of localised change in flood hydraulics to be investigated further.
+
+\subsubsection{Summary}
+Hydrological modelling shows measurable sensitivity to the spatial variation in rainfall input data using gridded rainfall data derived from meteorological radar. Sensitivity is more pronounced in larger catchments, though it is also noticeable in smaller catchments during extreme flood events, contrary to previously published studies. Whether or not high-resolution  rainfall data can improve hydrological model performance depends on the constraint of other model parameters, notably the \(m\) parameter, that can lead to large amounts of uncertainty in the hydrological response of a catchment to intense rainfall. Erosional parameterisation within a hydrological model -- the ability to represent changes in channel and floodplain morphology during a flash flood event -- appears to be of only secondary importance in determining the hydrological response based on the studies carried out in this investigation. Nonetheless, both erosional parameterisation and spatial distribution of rainfall remain important factors to be considered in future models of flood inundation and catchment hydrology.
+
+
+
 
 %\printbibliography
 %\end{refsection}
