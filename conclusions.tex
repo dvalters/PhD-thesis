@@ -1,9 +1,43 @@
 \chapter{Conclusions}
 \label{chapter_conclusion}
-\chaptermark{Conclsuions}
+\chaptermark{Conclusions}
+
+\section{Review of aims and overview}
+
+I set out to investigate the sensitivity of hydrogeomorphic processes to rainfall spatial variability during intense rainfall events. The aims of the thesis presented in Chpater \ref{chapter_intro} were threefold: two scientific aims and one technological aim to support these. The scientific aims were to investigate the influence of using spatially variable rainfall input data on a) Flood inundation predictions and b) Sediment flux and distribution of erosion and deposition; both aims addressed within the context of flash flood events from intense rainfall. To address these questions, a hydrodynamic landscape evolution model was developed based on an existing model, capable of carrying out ensemble-style simulations on high-performance computing (HPC) services. To build on previous studies that have investigated the role of rainfall spatial resolution in isolation, or with other competing factors, a secondary variable was introduced: the choice of erosional process parameterisation in the model. This study is believed to be the first to investigate the sensitivity of rainfall resolution and erosional process parameterisation in tandem, and to assess which has the greater control on hydrogeomorphic processes. It is also one of few to investigate the role of these two competing factors within the context of an individual flash flood event induced by intense rainfall. 
+
+The two core scientific hypotheses (presented in detail in Chapter \ref{chapter_events}, Section \ref{section_experiment_design}) stated:
+
+\begin{enumerate}
+\item Flood inundation modelling is sensitive to the spatial detail of precipitation inputs.
+\item Erosional processes in river catchments are sensitive to the spatial distribution of rainfall inputs.
+\end{enumerate}
+
+Summarising the conclusions made in Chapters \ref{chapter_flood_model_sensitivity} and \ref{chapter_hydrogeomorph}, it can be said that: 
+Flood inundation model predictions are sensitive to spatial distribution of rainfall inputs, specifically the use of 1km gridded rainfall data, when compared to using uniform avaeraged data as model input. Predicted hydrological discharge is higher using gridded rainfall inputs, though not necessarily more accurate when compared to measured discharges during the respective flood events simulated. In the Boscastle case study, river discharges more closely matched the observed data, whereas in the Ryedale event, uniform rainfall inputs into the model actually produced a better match to observed data. The choice of erosional process parameterisation plays only a secondary role in hydrological response. 
+
+Fluvial erosional processes in river catchments are somewhat sensitive to the use of spatially variable rainfall input data to the model, though it is only of secondary importance when compared to the sensitivity observed in the use of different erosional process law parametrisation. The difference in sediment outputs were much greater under a transport-limited type erosion law, compared to a detachment-limited one. The effects from using spatially variable rainfall input data on sediment fluxes were much less noticeable in comparison.
+
+\section{Key themes and advances}
+
+Extended conclusion here: Remember to state novelty/advancement. Support of other studies. 
 
 The spatial resolution of rainfall input in a river catchment simulation has a demonstrable effect on both hydrological and sediment fluxes, which is seen in both catchment-wide fluxes (Figures \ref{fig_boscastle_hydrograph_ensemble}, \ref{fig_boscastle_sedigraph_ensemble}, \ref{fig_ryedale_hydrograph_ensemble}, \ref{fig_ryedale_sedigraph_ensemble}). Though the magnitude of the sensitivity varied between experiments, there was a general increase in water fluxes, and hence sediment flux, in simulations with gridded rainfall data used as the rainfall input, compared to simulations that used a single, uniform value for rainfall. Existing studies investigating landscape evolution model sensitivity to rainfall resolution \citep{coulthard2016sensitivity} have noted similar increases in water discharge and sediment yields when using spatially heterogeneous rainfall data. The results from the experiments presented in this chapter are broadly in agreement with the general findings of \citet{coulthard2016sensitivity} although the timescales involved in each study are of different magnitudes. The results presented here suggest that the effect of rainfall resolution sensitivity applies to hydrogeomorphic processes at the single-event time scale, as well as landscape evolution over periods of hundreds and thousands of years.
 
-Increasing the resolution of rainfall input data may not be enough to observe sensitivity in smaller catchments, as rainfall features themselves may not exhibit the necessary heterogeneity in structure to benefit from being resolved at finer scale. Rain cells or bands equal to or greater in size than the catchment over which they rain upon, may well be homogeneous enough in spatial extent and rainfall rate that a `uniform' approximation of their rainfall rate is sufficiently precise enough to represent the rainfall rate at all points in the catchment. As seen in the Boscastle catchment simulations, using a detailed rainfall input data source did not notably alter the outcome of the hydrological predictions (Figures \ref{fig_boscastle_2dplan_flood_ensemble}, \ref{fig_ryedale_2dplan_flood_ensemble}). In the Ryedale catchment simulations, the hydrological predictions were notably different based on the choice of rainfall input data resolution, affecting both the time and magnitude of the resulting flood peak. 
+Increasing the resolution of rainfall input data may not be enough to observe sensitivity in smaller catchments, as rainfall features themselves may not exhibit the necessary heterogeneity in structure to benefit from being resolved at finer scale. Rain cells or bands equal to or greater in size than the catchment over which they rain upon, may well be homogeneous enough in spatial extent and rainfall rate that a `uniform' approximation of their rainfall rate is sufficiently precise enough to represent the rainfall rate at all points in the catchment. As seen in the Boscastle catchment simulations, using a detailed rainfall input data source did not notably alter the outcome of the hydrological predictions (Figures \ref{fig_boscastle_2dplan_flood_ensemble_town}, \ref{fig_ryedale_2dplan_flood_ensemble_town}). In the Ryedale catchment simulations, the hydrological predictions were notably different based on the choice of rainfall input data resolution, affecting both the time and magnitude of the resulting flood peak. 
 %
 Talk about size of convective cell features. What is typical storm cell size and heterogeneity (decay from centre?).
+
+\section{Technical advances}
+The numerical simulation work in this project has been made possible by the development of a numerical landscape evolution model suitable for deployment on HPC services (Chapter \ref{chapter_HAIL-CAESAR}). The porting and development of landscape erosion and evolution models for HPC has thus far been under-exploited in the geomorphological modelling community. The development and parallelisation of the HAIL-CAESAR model as part of this thesis is an advancement of existing methods in computational modelling for hydro-geomorphology:
+
+Firstly, the model's basis as a re-write and redevelopment of an existing model (CAESAR-Lisflood) provides a continuity and familiarity with the existing user base. Core functionality is preserved, which will hopefully encourage the uptake in use of the model amongst existing users of the CAESAR-Lisflood model. The translation of the original model's code, preserving the algorithms as closely as possible in a different programming language, ensures there is comparability between the original and redeveloped version of the model presented here. 
+
+Secondly, in addition to the speed-up in simulations runtimes observed, the ability to now use HPC facilities to conduct geomorphological modelling studies allows large-scale sensitivity studies to be done, with multiple member `ensemble-style' simulations, in a similar fashion to numerical weather prediction ensemble simulations \citep{sivillo1997ensemble,klein2015variability}. In this study, six-member simulations per case study are are used for the main set of experiments (Table \ref{table_ensemble_experiments}), with ten member simulations used for the parameter sensitivity analysis in Chapter \ref{chapter_flood_model_sensitivity} (Table \ref{table-m-sens}). With sufficient compute resources, much larger ensembler simulations would be possible using the HAIL-CAESAR model.
+
+\section{Future work}
+Can address some limitations.
+
+
+\section{Summary}
+Concluding remarks.
