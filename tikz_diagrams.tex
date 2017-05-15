@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{tikz}
+% \stack{5}{(4,0)}{(3,2)}{Label} draws a stack of 5 at (4,0) with dimensions (3,2)
+% and labels the center with "Label"
+\newcommand{\stack}[4]{
+  \foreach \i in {1,...,#1} {
+    \draw[fill=white] #2 ++({-0.3*(#1)},{-0.3*(#1)}) ++({-0.3*\i},{-0.3*\i}) rectangle +#3;
+  }
+  \path #2 -- +#3 node[pos=0.0] {};
+}
+\begin{document}
+\begin{tikzpicture}
+\stack{5}{(0,0)}{(3,5)}{I}
+\stack{3}{(4,1)}{(3,2)}{II}
+%\stack{1}{(8,0)}{(3,2)}{III}
+\end{tikzpicture}
+\end{document}
