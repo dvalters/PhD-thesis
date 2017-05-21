@@ -105,7 +105,7 @@ A simple model of bedrock incision based on the excess shear stress model \citep
 \varepsilon = k_e(\tau_b - \tau_c)^{P_b}
 \end{equation}
 
-where \(k_e\) is the bedrock erodibility coefficient, \(\tau_b\) is the basal shear stress on the channel bed, \(\tau_c\), is the critical shear stress threshold, \(P_b\) is the shear stress exponent \citep{Howard1983,whipple1999dynamics}.
+where \(k_e\) is the bedrock erodibility coefficient, \(\tau_b\) is the basal shear stress on the channel bed, \(\tau_c\), is the critical shear stress threshold, \(P_b\) is the shear stress exponent \citep{howard1983channel,whipple1999dynamics}.
 
 \subsection{Parallelisation implementation}
 The HAIL-CAESAR code is parallelised using a shared-memory parallelisation model. In brief, the shared-memory technique works by distributing the processing load to multiple processing units that all have access to the same memory address space. The HAIL-CAESAR code uses the OpenMP application programming interface (API), which is widely supported on a range of software platforms and computing architectures \citep{dagum1998openmp}. Shared-memory parallel codes such as the one described in this paper are suitable for any computing system where the physical processors have access to the same memory space. A wide range of systems can avail of shared-memory parallel codes, from multi-core desktop computers, through high-end multi-processor, multi-core workstations, to individual compute nodes on high performance computing services (HPC). The code presented has been tested on a wide range of architectures including desktop computers,  small-scale cluster computing facilities, and national scale HPC services.

@@ -2,13 +2,26 @@
 \label{chapter_landscape_evol}
 
 \section{Introduction}
-Landscape evolution models (LEMs) are quantitative tools used to simulate Earth surface processes and the evolution of the land surface. LEMs can be used to deduce whether hypotheses about landscape evolution are likely to be valid, by making quantitative predictions about their development. The earliest LEMs were conceptual and largely qualitative, such as the early pictorial landscape evolution diagrams by Gilbert (1880), Figure 1a. Gilbert’s model contains many of the key components in a modern LEM. The background schematic depicts the effect of an uplift field alone on the landscape, and the foreground depicts the combined effects of uplift and erosion. Gilbert also recognised the important concept of boundary conditions in LEMs, stating that the base of the diagram represents a fixed sea-level in this case.  These early models offered insight into the potential course of landscape evolution, and sowed the seeds for the later development of LEMs that abound today. In Figure 1b, a computer-based LEM (CHILD, Tucker et al. 2001) is shown, with the components of boundary conditions, uplift, and other process representations that are still core concepts in modern LEMs. The advent of computerised, numerical LEMs, such as those in Figure 1b, along with high-resolution digital topographic data provide important quantitative tools for investigating landscape process and form. 
+\footnote{An extended version of this chapter was published in the British Society for Geomorphology's \textit{Geomorphological Techniques} article series. \citep{valters2016modelling}}Landscape evolution models (LEMs) are quantitative tools used to simulate Earth surface processes and the evolution of the land surface. LEMs can be used to deduce whether hypotheses about landscape evolution are likely to be valid, by making quantitative predictions about their development. The earliest LEMs were conceptual and largely qualitative, such as the early pictorial landscape evolution diagrams by \citet{Gilbert1877}, Figure \ref{gilbert_fig}. Gilbert’s model contains many of the key components in a modern LEM. The background schematic depicts the effect of an uplift field alone on the landscape, and the foreground depicts the combined effects of uplift and erosion. Gilbert also recognised the important concept of boundary conditions in LEMs, stating that the base of the diagram represents a fixed sea-level in this case.  These early models offered insight into the potential course of landscape evolution, and sowed the seeds for the later development of LEMs that abound today. In Figure \ref{child_fig}, a computer-based LEM \citep[CHILD,][]{Tucker2001} is shown, with the components of boundary conditions, uplift, and other process representations that are still core concepts in modern LEMs. The advent of computerised, numerical LEMs, such as those in Figure 1b, along with high-resolution digital topographic data provide important quantitative tools for investigating landscape process and form. 
 
-\includegraphics[width=7.86cm]{LEMFinalRevisedmanuscriptDAVFinalrevisions-img/LEMFinalRevisedmanuscriptDAVFinalrevisions-img001.png} 
+\begin{figure}
+\begin{subfigure}[b]{0.7\textwidth}
+\includegraphics[width=\textwidth]{LEMFinalRevisedmanuscriptDAVFinalrevisions-img/LEMFinalRevisedmanuscriptDAVFinalrevisions-img001.png} 
+\caption{The diagrammatic LEM of \citet{Gilbert1877}.}
+\label{gilbert_fig}
+\end{subfigure}%
 
-\includegraphics[width=7.883cm]{LEMFinalRevisedmanuscriptDAVFinalrevisions-img/LEMFinalRevisedmanuscriptDAVFinalrevisions-img002.png} 
+\begin{subfigure}[b]{0.7\textwidth}
+\includegraphics[width=\textwidth]{LEMFinalRevisedmanuscriptDAVFinalrevisions-img/LEMFinalRevisedmanuscriptDAVFinalrevisions-img002.png} 
+\caption{A computer numerical landscape evolution model \citep[CHILD,][]{Tucker2001}.}
+\label{child_fig}
+\end{subfigure}
 
-Figure 1. The evolution of LEMs. (a) The diagrammatic LEM of Gilbert (1880) compared to (b) a computer numerical model (CHILD, Tucker et al. 2001). 
+\caption{The evolution of landscape evolution models.} 
+\label{fig_gilbert_child}
+\end{figure}
+
+
 
 \subsection[Scope]{Scope}
 This chapter provides a practical guide to the usage of numerical LEMs. Readers interested in more theoretical aspects of landscape evolution modelling should refer to other detailed literature reviews, such as those by Pazzaglia (2003), Martin and Church (2004), Willgoose (2005), Tucker and Hancock (2010), and Pelletier (2013). Other reviews focus on the use and application of LEMs, such as Van De Wiel et al. (2011); Willgoose and Hancock (2011); Temme et al. (2013). This chapter is not solely a software-type review of different LEMs (e.g. Coulthard, 2001), though comparisons between the features of various LEMs will be made to aid the prospective landscape evolution modeller. In short, the chapter aims to provide an overview of the usage, theoretical background, example applications, and software features of mainstream LEMs at the present time.

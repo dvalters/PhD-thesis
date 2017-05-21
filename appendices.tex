@@ -1,59 +1,69 @@
 
 \chapter{Software availability}
 
-\chapter{Core code for the HAIL-CAESAR model}
+\section{Radar data processing code}
+The software for the radar data extraction and re-gridding for use in the HAIL-CAESAR/CAESAR-Lisflood models is available at the online software repository GitHub at: \url{https://github.com/dvalters/nimrod-toolbox/releases/tag/0.2}
 
-%\lstdefinestyle{customcpp}{
-%  belowcaptionskip=1\baselineskip,
-%  breaklines=true,
-%  %xleftmargin=\parindent,
-%  language=C++,
-%  showstringspaces=false,
+
+\section{HAIL-CAESAR landscape evolution model code}
+The HAIL-CAESAR landscape evolution modelling software is available at the online software repository GitHub at: \url{https://github.com/dvalters/HAIL-CAESAR/releases/tag/v0.9}
+
+\section{Figure plotting software}
+The code used to plot figures from the model simulation output in this thesis was part of the \textit{LSDMappingTools} package and can be found here: \url{https://github.com/LSDtopotools/LSDMappingTools}. The author contributed to a significant part of the LSDMappingTools software development during the course of the PhD.
+
+%\chapter{Core code for the HAIL-CAESAR model}
+%
+%%\lstdefinestyle{customcpp}{
+%%  belowcaptionskip=1\baselineskip,
+%%  breaklines=true,
+%%  %xleftmargin=\parindent,
+%%  language=C++,
+%%  showstringspaces=false,
+%%  basicstyle=\footnotesize\ttfamily,
+%%  keywordstyle=\bfseries\color{green!40!black},
+%%  commentstyle=\itshape\color{purple!40!black},
+%%  identifierstyle=\color{blue},
+%%  stringstyle=\color{orange},
+%% }
+%%  
+%%\lstinputlisting[language=C++,style=customcpp]{/mnt/SCRATCH/Dev/HAIL-CAESAR/LSDCatchmentModel.cpp}
+%
+%\chapter{NIMROD-processing code}
+%\label{appendix_nimrod_code}
+%
+%\lstdefinestyle{mypy}{
+%  language=Python,
+%  backgroundcolor=\color{white}, %%%%%%%
 %  basicstyle=\footnotesize\ttfamily,
-%  keywordstyle=\bfseries\color{green!40!black},
-%  commentstyle=\itshape\color{purple!40!black},
-%  identifierstyle=\color{blue},
-%  stringstyle=\color{orange},
-% }
-%  
-%\lstinputlisting[language=C++,style=customcpp]{/mnt/SCRATCH/Dev/HAIL-CAESAR/LSDCatchmentModel.cpp}
-
-\chapter{NIMROD-processing code}
-\label{appendix_nimrod_code}
-
-\lstdefinestyle{mypy}{
-  language=Python,
-  backgroundcolor=\color{white}, %%%%%%%
-  basicstyle=\footnotesize\ttfamily,
-  breaklines=true,
-  otherkeywords={self},            
-  keywordstyle=\bfseries\color{blue},
-  emph={MyClass,__init__},          
-  emphstyle=\bfseries\color{purple!40!black},    
-  stringstyle=\color{green!40!black},
-  commentstyle=\color{red},  %%%%%%%%
-  frame=tb,                         
-  showstringspaces=false            
-}
-
-\section{NIMROD data conversion code}
-\lstinputlisting[language=Python,style=mypy]{/mnt/SCRATCH/Dev/nimrod-toolbox/NIMROD_convert.py}
-
-\section{NIMROD rainfall timeseries creation code}
-\lstinputlisting[language=Python,style=mypy]{/mnt/SCRATCH/Dev/nimrod-toolbox/NIMROD_timeseries.py}
-
-\section{Code for creating HAIL-CAESAR hydroindex file}
-\lstinputlisting[language=Python,style=mypy]{/mnt/SCRATCH/Dev/nimrod-toolbox/create_hydroindex.py}
-
-
-\chapter{Swath profiling algorithm and code}
-
-%\chapter{Configuration of the WRF model for the simulation of the North York Moors storm}
-
-%\chapter{Modifications made to the Weather Research and Forecasting model (WRF)}
-
-%\chapter{A one-way coupling framework for the WRF-CHILD model}
-
-\chapter{HPC computing simulations: set-up and compilation}
-
-%\chapter{Paper off-prints may also be attached with a traditional-format thesis}
+%  breaklines=true,
+%  otherkeywords={self},            
+%  keywordstyle=\bfseries\color{blue},
+%  emph={MyClass,__init__},          
+%  emphstyle=\bfseries\color{purple!40!black},    
+%  stringstyle=\color{green!40!black},
+%  commentstyle=\color{red},  %%%%%%%%
+%  frame=tb,                         
+%  showstringspaces=false            
+%}
+%
+%\section{NIMROD data conversion code}
+%\lstinputlisting[language=Python,style=mypy]{/mnt/SCRATCH/Dev/nimrod-toolbox/NIMROD_convert.py}
+%
+%\section{NIMROD rainfall timeseries creation code}
+%\lstinputlisting[language=Python,style=mypy]{/mnt/SCRATCH/Dev/nimrod-toolbox/NIMROD_timeseries.py}
+%
+%\section{Code for creating HAIL-CAESAR hydroindex file}
+%\lstinputlisting[language=Python,style=mypy]{/mnt/SCRATCH/Dev/nimrod-toolbox/create_hydroindex.py}
+%
+%
+%\chapter{Swath profiling algorithm and code}
+%
+%%\chapter{Configuration of the WRF model for the simulation of the North York Moors storm}
+%
+%%\chapter{Modifications made to the Weather Research and Forecasting model (WRF)}
+%
+%%\chapter{A one-way coupling framework for the WRF-CHILD model}
+%
+%\chapter{HPC computing simulations: set-up and compilation}
+%
+%%\chapter{Paper off-prints may also be attached with a traditional-format thesis}
