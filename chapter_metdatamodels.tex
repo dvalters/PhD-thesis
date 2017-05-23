@@ -1,5 +1,6 @@
 \chapter{Integration of rainfall radar data with a landscape evolution model}
 \label{chapter_metdata}
+\chaptermark{Linking rainfall radar data with LEMs}
 
 %%%%%%%%%%%%%%%%
 % TO DO
@@ -8,9 +9,9 @@
 % Zoomed in location maps
 %
 %%%%%%%%%%%%%%%%
-\begin{chapquote}{Claude Monet \textit{}}
-``It's enough to drive one crazy, trying to depict the weather, the atmosphere, the ambience...
-\end{chapquote}
+%\begin{chapquote}{Claude Monet \textit{}}
+%``It's enough to drive one crazy, trying to depict the weather, the atmosphere, the ambience...
+%\end{chapquote}
 
 \section{Introduction}
 %This chapter discusses the various sources of meteorological data and numerical models used to generate rainfall input to the landscape evolution models discussed in Chapters \ref{chapter_landscape_evol} and \ref{RainfallInLEMs}. In this thesis, two sources of rainfall data were used to drive the hydrological inputs of landscape evolution models: precipitation radar data from the UK 1km rainfall radar composite product (Section \ref{NIMROD}) and rainfall outputs from a numerical weather prediction model (Section \ref{WRF}
@@ -105,7 +106,7 @@ The workflow for producing these input files is:
 The code developed for the radar data processing is given in Appendix \ref{appendix_nimrod_code}.
 
 \begin{figure}[htb]
-\includegraphics[width=11cm]{chp_radar/cropradar.eps}
+\includegraphics[width=15cm]{chp_radar/cropradar.eps}
 \caption{From the UK composite radar product (a), subgrids of the study area area extracted for the time period of interest (b). The number of radar image pixels in each subgrid determines the number of hydroindex zones used in the model initialisation.}
 \label{fig_radar_extract}
 \end{figure}

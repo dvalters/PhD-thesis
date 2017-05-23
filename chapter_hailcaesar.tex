@@ -2,9 +2,9 @@
 \label{chapter_HAIL-CAESAR}
 \chaptermark{A landscape evolution model for HPC}
 
-\begin{chapquote}{The GNU gcc compiler \textit{}}
-``Segmentation fault.''
-\end{chapquote}
+%\begin{chapquote}{The GNU gcc compiler \textit{}}
+%``Segmentation fault.''
+%\end{chapquote}
 
 
 \section{Introduction}
@@ -309,19 +309,19 @@ Figure \ref{fig_swale_regression_lisflood} shows the differences in water discha
 Figure \ref{fig_swale_regression_sediment} shows the sediment flux from the catchment outlet. While there is low-magnitude variation in the sediment flux signal, the main peaks in sediment discharge are at similar times and of similar magnitude in both implementations. Figure \ref{fig_swale_regression_cum_sediment} shows the cumulative sediment output from the catchment. Initially, both implementations show close agreement, until approximately 700 days into the test simulation where the predicted sediment totals begin to diverge. The CAESAR-Lisflood implementation, in this case, predicts an overall lower total sediment discharge over the 10-year period. The HAIL-CAESAR implementation predicts c. 40\% greater total sediment yields after 10 years. 
 
 \begin{figure*}[t]
-\includegraphics[width=12cm]{chp05_figures_scripts/lisflood_comparison.eps}
+\includegraphics[width=15cm]{chp05_figures_scripts/lisflood_comparison.eps}
 \caption{Water discharge rates over first 250 days of simulation. Outputs from the Swale 10 year at 50m resolution test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers.}
 \label{fig_swale_regression_lisflood}
 \end{figure*}
 
 \begin{figure*}[t]
-\includegraphics[width=12cm]{chp05_figures_scripts/sed_tot_comparison.eps}
+\includegraphics[width=15cm]{chp05_figures_scripts/sed_tot_comparison.eps}
 \caption{Catchment sediment flux over first 250 days of simulation. Outputs from the Swale 10 year at 50m resolution test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers.}
 \label{fig_swale_regression_sediment}
 \end{figure*}
 
 \begin{figure}[t]
-\includegraphics[width=8.3cm]{chp05_figures_scripts/cum_sed_tot_regression.eps}
+\includegraphics[width=11cm]{chp05_figures_scripts/cum_sed_tot_regression.eps}
 \caption{Cumulative catchment sediment flux over full duration of simulation. Outputs from the Swale 10 year at 50m resolution test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers.}
 \label{fig_swale_regression_cum_sediment}
 \end{figure}
@@ -393,7 +393,7 @@ Since HAIL-CAESAR features both a flood-inundation-only and sediment erosion mod
 The results from the single-event scaling benchmark show the greatest speed-up for the 48 hour Boscastle simulation, with a speed-up of almost 16 times at 48 threads/cores, for the hydrology-only simulation. Erosion-enabled simulations also show food speed-up for this problem size (720 000 grid cells), but the linear speed-up trend is lost above around 30 cores, when speed-up gains begin to tail-off. At the larger problem size of 4 500 000 grid cells, the speed-up gains from increasing core counts is much diminished, though still increases linearly through higher core counts. Speed-up here reaches only c. 5 times running on 48 cores, in hydrology-only mode, and 3.5 times in erosion-enabled mode.
 
 \begin{figure}[t]
-\includegraphics[width=8.3cm]{chp05_figures_scripts/strong_scale_four.eps}
+\includegraphics[width=11cm]{chp05_figures_scripts/strong_scale_four.eps}
 \caption{Speed-up achieved relative to serial code on 2, 4, 8, 12, 16, 20, 24, 30, 36, 42, and 48 cores. Four sets of simulations are used representing a range of model uses from short, single event episodes (48--72hr) to 1 year simulations.}
 \label{fig_strong_scale_multi}
 \end{figure}
@@ -404,7 +404,7 @@ Weak scaling is a parallel performance metric used to asses how the code runtime
 
 The simulations in hydrological-only mode show positive weak scaling as the problem size increases in tandem with the number of threads (Figure \ref{fig_weak_scale}). Ideal weak scaling would be expected to show a runtime per number of grid cells/cores remaining approximately constant compared with a single-threaded simulation. The slight increase seen in the weak scaling here is likely due to the overheads experienced with creating and synchronising the extra threads as the problem size is increased.
 
-\begin{table*}[t]
+\begin{sidewaystable*}[t]
 \caption{Weak scaling test cases with the Boscastle DEM resampled at increasing resolutions from 0.5m to 5m. The absence of run-time results for certain erosion simulations is due to memory limitations preventing higher resolution simulations from running.}
 \resizebox{\textwidth}{!}
 {%
@@ -425,10 +425,10 @@ DEM resolution (m)  &  Grid cells & Ideal no. of threads & No. of threads & Cell
 \end{tabular} 
 }
 \label{weak_scale_table}
-\end{table*}
+\end{sidewaystable*}
 
 \begin{figure}[t]
-\includegraphics[width=8.3cm]{chp05_figures_scripts/weak_scale_bos.eps}
+\includegraphics[width=11cm]{chp05_figures_scripts/weak_scale_bos.eps}
 \caption{Weak scaling with the Boscastle DEM at increasing resolution (see Table \ref{weak_scale_table}). Hydrological and erosion-enabled simulations shown. Each simulation uses c.150 000 grid cells per CPU. The absence of results for certain erosion simulations is due to memory limitations preventing higher resolution simulations from running.}
 \label{fig_weak_scale}
 \end{figure}
@@ -447,7 +447,7 @@ Further profiling of the parallelised version of the code was carried out using 
 The break down of major function overheads is shown in Figure \ref{fig_thread_profile}. Only four of the key parallel-implemented functions, \textit{erode, flow\_route, scan\_area,} and \textit{depth\_update} are assessed, as other functions collectively amounted to a small proportion of the runtime, or were serial functions. Load imbalance accounts for 22\% of the execution time of these four key functions, due to certain threads sitting idle while waiting for other threads to complete. Load imbalance is particularly apparent in the \textit{erode} and \textit{depth\_update} functions. Overhead time (from the creation and synchronisation of threads) is minimal across all functions. The issue of load imbalance is discussed further in Section \ref{sec_loadbalance}.
 
 \begin{figure}[t]
-\includegraphics[width=8.3cm]{chp05_figures_scripts/fig_thread_profile.eps}
+\includegraphics[width=11cm]{chp05_figures_scripts/fig_thread_profile.eps}
 \caption{Thread profiling of the Swale 1 year simulation with 50m DEM. Data from major functions only displayed.}
 \label{fig_thread_profile}
 \end{figure}
