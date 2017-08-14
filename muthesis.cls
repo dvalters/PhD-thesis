@@ -364,11 +364,12 @@ acceptable looking results, but it may be omitted to get smaller print.
 
 %% If you're doing an MSc, I'm sure you can guess which parts to change
 %% below; if not then you shouldn't be doing one.
+%% \uppercase can be placed in title after \HUge 
 \def\titlep{%
         \thispagestyle{empty}%
         \null\vskip1in%
         \begin{center}
-                \Huge\uppercase\expandafter{\@title}
+                \Huge\expandafter{\@title}
         \end{center}
         \vfill
         \begin{center}
@@ -425,7 +426,7 @@ owner(s) of the relevant Intellectual Property and/or Reproductions.
 publication and commercialisation of this \expandafter{\@thesis}, the
 Copyright and any Intellectual Property and/or Reproductions described in
 it may take place is available in the University IP Policy (see
-http://documents.manchester.ac.uk/DocuInfo.aspx?DocID=487), in any relevant
+http://documents.manchester.ac.uk/DocuInfo.aspx?DocID=24420), in any relevant
 \ifx\degreetitle\@msc
 Dissertation
 \else
@@ -433,7 +434,7 @@ Thesis
 \fi
  restriction declarations deposited in the University Library, The University
 Library's regulations (see
-http://www.manchester.ac.uk/library/ab\-outus/regul\-ations) and in The 
+http://www.manchester.ac.uk/library/ab\-out/regul\-ations) and in The 
 University's 
 \ifx\degreetitle\@msc
 Guidance on Presentation of Dissertations.

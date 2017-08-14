@@ -1,10 +1,12 @@
-\title{Linking numerical landscape evolution models with high-resolution meteorological data}
+%\title{Numerical modelling of catchment hydrogeomorphological sensitivity to rainfall spatial distribution and erosion law parameterisation during convective rainfall events in the UK}
 
-\author{Declan Valters}
+\title{Numerical modelling of hydrogeomorphological sensitivity to rainfall and erosion law parameterisation during convective rainfall events in the UK}
+
+\author{Declan A. Valters}
 % Faculty of Life Sciences people should comment the next line out
 \school{Earth and Environmental Sciences}
 \faculty{Science and Engineering}
-\def\wordcount{74031}
+\def\wordcount{74333}
 
 % Uncomment the line below to suppress the `List of Tables' page (optional)
 %\tablespagefalse
@@ -16,15 +18,15 @@
 %\def\declaration{All the work in this thesis has been sourced from Google.}
 
 \beforeabstract
-The contribution of this thesis is twofold: 1) The development of a hydrodynamic landscape evolution model for use on high-performance computing systems and 2) Assessing the sensitivity of hydro-geomorphic processes to high-resolution rainfall input data using the model.
+The contribution of this thesis is twofold: 1) the development of a hydrodynamic landscape evolution model for use on high-performance computing systems and 2) assessing the sensitivity of hydrogeomorphic processes to high-resolution rainfall input data using the model.
 
-The thesis addresses a limitation in numerical landscape evolution models regarding how spatial variation in rainfall is represented or parameterised within such models. Typically, landscape evolution models forsake a realistic representation of rainfall patterns in favour of a simpler treatments of rainfall as being spatially homogeneous across the model domain. The simplification in rainfall inputs is still made despite the fact that many geomorphological processes are sensitive to thresholds of sediment entrainment and transport, driven by the distribution and movement of water within the landscape. 
+The thesis addresses a limitation in numerical landscape evolution models regarding how spatial variation in rainfall is represented or parameterised within such models. Typically, landscape evolution models forsake a realistic representation of rainfall patterns in favour of a simpler treatment of rainfall as being spatially homogeneous across the model domain. This simplification of rainfall spatial variability is still made despite the fact that many geomorphological processes are sensitive to thresholds of sediment entrainment and transport, driven by the distribution and movement of water within the landscape. 
 
-The thesis starts by exploring current limitations in rainfall representation in landscape evolution models, and assesses various precipitation data sources that could be potentially used as more realistic rainfall inputs to landscape evolution models. A numerical model of landscape evolution is developed for deployment on high-performance parallel computing systems, based on the established CAESAR-Lisflood model \citep{Coulthard2013}. The new model code is benchmarked, showing performance benefits compared with the serial code. The improved model code is shown to produce results commensurate with the CAESAR-Lisflood model it is based on.
+The thesis starts by exploring current limitations in rainfall representation in landscape evolution models, and assesses various precipitation data sources that could be potentially used as more realistic rainfall inputs to landscape evolution models. A numerical model of landscape evolution is developed for deployment on high-performance parallel computing systems, based on the established CAESAR-Lisflood model \citep{Coulthard2013}. The new model code is benchmarked, showing performance benefits compared with the original CAESAR-Lisflood model it is based on.
 
-The model is applied to assessing the sensitivity of flood-inundation predictions, sediment flux, and erosion distribution within river catchments to spatial variation in rainfall during extreme storm events. Two real storm events that caused localised flash flooding in the UK are used a test cases: the Boscastle storm of 2004 and the North York Moors storm of 2005. 
+The model is applied to assessing the sensitivity of flood-inundation predictions, sediment flux, and erosion distribution within river catchments to spatial variation in rainfall during extreme storm events. Two real storm events that caused localised flash flooding in the UK are used as test cases: the Boscastle storm of 2004 and the North York Moors storm of 2005. 
 
-Flood extent predictions and river discharges are found to be sensitive to the use of spatially variable input rainfall data, with high-resolution rainfall data leading to larger peak flood discharges. The role of sediment erosion during large floods is also assessed, but it is found to play a minor role relative to spatially variable rainfall data. In contrast, the geomorphological response of catchments (sediment flux and fluvial erosion) to single storm events is shown to be less sensitive to the spatial heterogeneity of rainfall input and controlled more strongly by the choice of erosional process parameterisation within the model.
+Flood extent predictions and river discharges are found to be sensitive to the use of spatially variable input rainfall data, with high-resolution rainfall data leading to larger peak flood discharges. However, the differences are less pronounced in smaller catchments. The role of sediment erosion during large floods is also assessed, but it is found to play a minor role relative to spatially variable rainfall data. In contrast, the geomorphological response of catchments to single storm events is shown to be less sensitive to the spatial heterogeneity of rainfall input and controlled more strongly by the choice of erosional process parameterisation within the model. Nonetheless, spatial variability in rainfall data is shown to increase sediment yields during flash flood simulations.
 
 %Finally, a software framework is presented for driving a landscape evolution model with input from a numerical weather prediction model. Using high-resolution NWP simulations of 250m grid spacing, mesoscale rainfall features are resolved at the river catchment scale. The UK storm case studies described in the previous chapter are re-assessed using data from NWP simulations of each case to investigate the response of catchments to the mesoscale details of severe rainfall events.
 %To explore the effects of rainfall spatial variability at longer timescales of topographic evolution, the CHILD landscape evolution model (Tucker et al., 2001) is developed to incorporate a model of spatially-limited storm morphology. The rainfall model is designed to represent the typical intense rainfall associated with convective storm cells.
