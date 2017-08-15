@@ -47,7 +47,7 @@ def init_plotting():
     plt.rcParams['axes.linewidth'] = 1
     plt.rcParams['xtick.minor.visible'] = True
     plt.rcParams['ytick.minor.visible'] = True
-    plt.rcParams['lines.linewidth'] = 1.3
+    plt.rcParams['lines.linewidth'] = 1.5
 
 
 def create_data_arrays(data_dir, input_raster1, input_raster2):
@@ -162,7 +162,7 @@ class CaesarTimeseriesPlot(object):
             self.ax_inset = self.create_inset_axes()
 
         # plot the main axes data
-        line, = self.ax.plot(time_units, metric, alpha=1.0)
+        line, = self.ax.plot(time_units, metric, alpha=0.9, linestyle='--')
         line.set_label(line_label)
         #labelLine(line, 45)
 
@@ -261,7 +261,7 @@ class CaesarTimeseriesPlot(object):
 
     def plot_inset(self, x_data, y_data):
 
-        self.ax_inset.plot(x_data, y_data, alpha=1.0)
+        self.ax_inset.plot(x_data, y_data, linestyle='--', alpha=0.9)
         # SHould be user settable
         self.ax_inset.set_xlim(40, 80)
         self.ax_inset.set_ylim(5, 15)

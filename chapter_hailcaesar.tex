@@ -308,27 +308,31 @@ where \(P\) is the proportion of program time that can be run in parallel. (Note
 
 \section{Testing and benchmarking}
 
+Two aspects of model performance are tested in this section. Firstly, tests are carried out to verify that the HAIL-CAESAR model produces comparable scientific results with that of its progenitor, CAESAR-Lisflood. Secondly, benchmarking tests are done to measure any performance gains of HAIL-CAESAR arising from its implementation in C++, parallelisation strategy, and choice of compiler. The HAIL-CAESAR model is tested with two different compilers, to assess any potential differences arising from the choice of compiler. These are the \textit{GCC (GNU compiler collection)} C++ compiler and the \textit{Intel} C++ compiler. The CAESAR-Lisflood model is supplied already compiled with the Microsoft \textit{MSVC} C\# compiler. In all cases, compiler optimisation flags are turned on for the compilation process.
+
 \subsection{Regression testing}
 
-Regression testing is a software development practice used to verify that software that has been modified, interfaced with other software, or re-implemented, still performs as expected when compared to the original implementation \citep{wong1997study}. To verify that HAIL-CAESAR produces comparable results to the original CAESAR-Lisflood model, a set of simulations with the same test data and input parameters for both implementations is carried out. The catchment hydrological and sediment outputs from a 10-year simulation of the River Swale, North Yorkshire, United Kingdom are compared for consistency between both implementations. The Swaledale test case has been well calibrated in previous studies \citep[e.g.,][]{Coulthard2001} and is supplied with the original CAESAR-Lisflood model as a standard test case. Details of the model testing simulations are shown in Table \ref{versus_CL}. The HAIL-CAESAR model is tested with two different compilers, to assess any potential differences arising from the choice of compiler. Three metrics are used to compare the two implementations: water discharge rate from the catchment outlet, hourly sediment output, and cumulative sediment output from the catchment over the course of the simulation. 
+Regression testing is a software development practice used to verify that software that has been modified, interfaced with other software, or re-implemented, still performs as expected when compared to the original implementation \citep{wong1997study}. To verify that HAIL-CAESAR produces comparable results to the original CAESAR-Lisflood model, a set of simulations with the same test data and input parameters for both models is carried out. The catchment hydrological and sediment outputs from a 10-year simulation of the River Swale, North Yorkshire, United Kingdom are compared for consistency between both implementations. The Swaledale test case has been well calibrated in previous studies \citep[e.g.,][]{Coulthard2001} and is supplied with the original CAESAR-Lisflood model as a standard test case. Details of the model testing simulations are shown in Table \ref{versus_CL}. 
+
+Three metrics are used to compare the two models (and choice of compiler in HAIL-CAESAR): water discharge rate from the catchment outlet, hourly sediment output, and cumulative sediment output from the catchment over the course of the simulation. 
 Figure \ref{fig_swale_regression_lisflood} shows the differences in water discharge comparing HAIL-CAESAR with the original CAESAR-Lisflood model. (For clarity, only the first 250 days are shown.) The flow routing algorithm performs similarly in both models, with the largest discrepancies seen in the first 100 days. An inset in Figure \ref{fig_swale_regression_lisflood} shows the typical magnitude and timing of differences in the discharge. The timing and magnitude of the largest flood peaks are comparable, and the largest differences in magnitude on the order of 1--10 \(m^3s^{-1}\).
 Figure \ref{fig_swale_regression_sediment} shows the sediment flux from the catchment outlet. While there is low-magnitude variation in the sediment flux signal, the main peaks in sediment discharge are at similar times and of similar magnitude in both implementations. Figure \ref{fig_swale_regression_cum_sediment} shows the cumulative sediment output from the catchment. Initially, both implementations show close agreement, until approximately 700 days into the test simulation where the predicted sediment totals begin to diverge. The CAESAR-Lisflood implementation, in this case, predicts an overall lower total sediment discharge over the 10-year period. The HAIL-CAESAR implementation predicts c. 40\% greater total sediment yields after 10 years. 
 
-\begin{figure*}[t]
-\includegraphics[width=15cm]{chp05_figures_scripts/lisflood_comparison.eps}
-\caption{Water discharge rates over first 250 days of simulation. Outputs from the Swale 10 year at 50m resolution test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers.}
+\begin{sidewaysfigure*}[t]
+\includegraphics[width=25cm]{chp05_figures_scripts/lisflood_regerssion_new_colours13.png}
+\caption{Water discharge rates over first 250 days of simulation. Outputs from the Swale 10 year at 50m resolution test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers: Intel and GCC.}
 \label{fig_swale_regression_lisflood}
-\end{figure*}
+\end{sidewaysfigure*}
 
-\begin{figure*}[t]
-\includegraphics[width=15cm]{chp05_figures_scripts/sed_tot_comparison.eps}
-\caption{Catchment sediment flux over first 250 days of simulation. Outputs from the Swale 10 year at 50 m resolution DEM test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers.}
+\begin{sidewaysfigure*}[t]
+\includegraphics[width=25cm]{chp05_figures_scripts/sed_tot_regression_alpha.png}
+\caption{Catchment sediment flux over first 250 days of simulation. Outputs from the Swale 10 year at 50 m resolution DEM test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers: Intel and GCC.}
 \label{fig_swale_regression_sediment}
-\end{figure*}
+\end{sidewaysfigure*}
 
 \begin{figure}[t]
-\includegraphics[width=11cm]{chp05_figures_scripts/cum_sed_tot_regression.eps}
-\caption{Cumulative catchment sediment flux over full duration of simulation. Outputs from the Swale 10 year at 50 m DEM resolution test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers.}
+\includegraphics[width=15cm]{chp05_figures_scripts/cum_sed_tot_regression.eps}
+\caption{Cumulative catchment sediment flux over full duration of simulation. Outputs from the Swale 10 year at 50 m DEM resolution test case, showing results from the original CAESAR-Lisflood model and HAIL-CAESAR model compiled under two different compilers: Intel and GCC.}
 \label{fig_swale_regression_cum_sediment}
 \end{figure}
 
@@ -338,7 +342,7 @@ Though the code base of HAIL-CAESAR and CAESAR-Lisflood differ somewhat, due to 
 
 The hardware used for this test study was a workstation computer with an Intel i7 8-core processor and 32GiB of memory. The CAESAR-Lisflood test simulations were run on a Windows operating system, as per the requirements of the software; the HAIL-CAESAR model test simulations were run on a Linux operating system on the same machine. The input parameters and input DEM were kept the same for all benchmarking simulations. The details of the test case configurations are shown in Table \ref{versus_CL}.
 
-Using the HAIL-CAESAR implementation, a speed up of c.41\% was seen using the open-source GNU C++ compiler (g++) and a speed-up of 48\% using the Intel C++ compiler. As the core algorithms remain the same in both versions of the code, the speed up likely comes from the fewer overheads in the command-line based HAIL-CAESAR model, and potentially through better compiler optimisations available with the C++ compilers. Further speed up may come from the fact that the CAESAR-Lisflood model is executed through a \textit{just-in-time} compiler, translating pre-compiled bytecode into machine code at runtime \citep{aycock2003brief}. In contrast, HAIL-CAESAR runs using a compiled binary executable file, with machine code generated at compile time. The HAIL-CAESAR approach avoids the potential overheads of invoking the dynamic compilation stage in C\#/.NET programs.
+Using the HAIL-CAESAR implementation, a speed up of c.41\% was seen using the open-source GNU C++ compiler (gcc) and a speed-up of 48\% using the Intel C++ compiler. As the core algorithms remain the same in both versions of the code, the speed up likely comes from the fewer overheads in the command-line based HAIL-CAESAR model, and potentially through better compiler optimisations available with the C++ compilers. Further speed up may come from the fact that the CAESAR-Lisflood model is executed through a \textit{just-in-time} compiler, translating pre-compiled bytecode into machine code at runtime \citep{aycock2003brief}. In contrast, HAIL-CAESAR runs using a compiled binary executable file, with machine code generated at compile time. The HAIL-CAESAR approach avoids the potential overheads of invoking the dynamic compilation stage in C\#/.NET programs.
 
 \begin{table*}
 
