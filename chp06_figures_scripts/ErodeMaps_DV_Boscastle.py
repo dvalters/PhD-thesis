@@ -55,7 +55,7 @@ drapename = DataDirectory + "WaterDepths2880.asc"
 #                      OutFileType="AAIGrid")
 
 
-LSDP.MultiDrapeErodeDiffMaps(DataDirectory, "RyedaleElevations0.asc", "RyedaleElevDiff*.bil", 
+LSDP.MultiDrapeErodeDiffMaps(DataDirectory, "BoscastleElevations0.asc", "BoscastleElevDiff*.bil", 
                "seismic", 
                drape_min_threshold= -4.5,
                drape_max_threshold= 4.5,

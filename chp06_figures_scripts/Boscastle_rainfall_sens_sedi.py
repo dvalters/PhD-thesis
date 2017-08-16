@@ -28,7 +28,7 @@ from cycler import cycler
 from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes
 from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 
-from caesarplotlib.labellines import *
+from label_lines import *
 
 # This is a custom module
 #from label_lines import *
@@ -44,7 +44,7 @@ def init_plotting():
     plt.rcParams['legend.fontsize'] = plt.rcParams['font.size']
     plt.rcParams['xtick.labelsize'] = plt.rcParams['font.size']
     plt.rcParams['ytick.labelsize'] = plt.rcParams['font.size']
-    plt.rcParams['savefig.dpi'] = 2*plt.rcParams['savefig.dpi']
+    #plt.rcParams['savefig.dpi'] = 2*plt.rcParams['savefig.dpi']
     plt.rcParams['xtick.major.size'] = 3
     plt.rcParams['xtick.minor.size'] = 3
     plt.rcParams['xtick.major.width'] = 1
@@ -173,7 +173,7 @@ class CaesarTimeseriesPlot(object):
         # Loop through the files in a dir and plot them all on the same axes
         for f in sorted(glob.glob(self.data_dir + self.fname)):
             current_timeseries = os.path.basename(f)
-            print current_timeseries
+            print (current_timeseries)
             self.plot_hydrograph(current_timeseries, draw_inset)
 
         # for i in caesar_cube.dim(3) # loop through 3rd dims of array
@@ -204,7 +204,7 @@ class CaesarTimeseriesPlot(object):
         part3 = re.split("[_.]", fname)[2]
 
         part = part2 + '_' + part3
-        print part
+        print (part)
         return part
 
     def add_line_labels(self):
