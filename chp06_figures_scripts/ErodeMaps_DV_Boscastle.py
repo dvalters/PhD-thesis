@@ -54,14 +54,14 @@ drapename = DataDirectory + "WaterDepths2880.asc"
 #                      OutFileName="TestDIFF.asc", 
 #                      OutFileType="AAIGrid")
 
-
+"""
 LSDP.MultiDrapeErodeDiffMaps(DataDirectory, "BoscastleElevations0.asc", "BoscastleElevDiff*.bil", 
                "seismic", 
                drape_min_threshold= -4.5,
                drape_max_threshold= 4.5,
                middle_mask_range=(-0.02,0.02),
                cbar_label = "Erosion/Deposition (m)")
-
+"""
 
 # Create the drape array from one of the Catchment model output rasters
 #drape_array = LSDP.ReadRasterArrayBlocks(drapename)
@@ -71,10 +71,9 @@ LSDP.MultiDrapeErodeDiffMaps(DataDirectory, "BoscastleElevations0.asc", "Boscast
 #drape_array[low_values_index] = np.nan
 
 
-"""
+
 LSDP.DrapedOverHillshade(filename,drape_array,clim_val=(0,400), \
                          drape_cmap=trunc_cmap, colorbarlabel='Elevation in meters',\
                          ShowColorbar=True, ShowDrapeColorbar=True,
                          drape_cbarlabel = "Water depth (m)",
                          drape_alpha=1.0)
-"""
