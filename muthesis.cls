@@ -161,7 +161,8 @@
 
 \RequirePackage{csquotes}
 
-\RequirePackage[style=authoryear,
+\RequirePackage[style=authoryear,maxalphanames=1,labelalpha,
+                              sorting=anyt,
                               citestyle=authoryear,
                               natbib=true,
                               uniquename=false,

@@ -117,6 +117,7 @@ To test the above hypotheses, simulations of the two case studies were repeated,
 
 The simulations were parameterised with different erosion law schemes and different rainfall input resolutions to assess which factor exerted the greatest control over flood inundation and sediment transport within the catchment. The same set of experiments was carried out for both the Boscastle and Ryedale events, giving a total of 6 different simulations for each catchment outlined in Table \ref{table_ensemble_experiments} -- a total of 12 simulations.
 
+
 \begin{table}
 \begin{tabular}{lll}
 \\
@@ -138,7 +139,13 @@ GRIDDED\_TLIM       &  1km Radar Gridded   & Transport-limited \\
 \
 
 \subsection{Model initialisation and configuration}
-The numerical landscape evolution model, HAIL-CAESAR was used for all simulations.  The equations describing the water routing, sediment erosion, and transport laws are described fully in Chapter \ref{chapter_HAIL-CAESAR}.
+The numerical landscape evolution model, HAIL-CAESAR was used for all simulations. The equations describing the water routing, sediment erosion and transport laws are described fully in Chapter \ref{chapter_HAIL-CAESAR}.
+
+Two erosion laws are used in the set of simulations with erosional processes `switched-on' in the model: a transport-limited law and a detachment-limited law. The transport-limited law represents erosion taking place under flowing water, which is limited by the capacity of the water to move away sediment. It assumes a constant supply of sediment is available, and that \textit{transportation} is the effective limiting factor on how much erosion takes place during water flow over hillslopes and in rivers. The transport-limited law in HAIL-CAESAR is based on the \citet{wilcock2003surface} sediment transport law, which accommodates multiple grain sizes across the sand to gravel particle size range. The equations describing the Wilcock and Crowe model are referred to in Section \ref{trans_model}.
+
+The second type of erosion law used in the simulations is a bedrock incision law based on detachment-limited erosion. A detachment-limited law assumes that erosion is limited by the amount of material that can be \textit{detached} from the bedrock layer, based upon a critical shear stress exerted by water flow being exceeded to detach sediment material. The detachment-limited law is based on the same law used in the CHILD landscape evolution model (Chapter \ref{chapter_landscape_evol}) and the equations describing it are given in Section \ref{bedrock_model}.
+
+The two erosional parameterisations used in these simulations represent two end-members of a spectrum of potential erosion laws that could be used. Upland catchments in the UK, and in these catchments in particular, tend to be a mixture of thin sediment layers and partially exposed bedrock. It was felt that limiting the number of erosion laws used to two end-members would constrain some of the uncertainty in selecting a sediment transport law appropriate for these types of catchment, similar to a landscape evolution modelling approach used by \citet{Attal2008}.
 %
 %HAIL-CAESAR is a hydrodynamic landscape evolution model that uses a TOPMODEL-based hydrological rainfall-runoff model to generate surface runoff in a river catchment, which is then routed through the landscape according to an adaptation of the LISFLOOD-FP shallow water routing algorithms \citep{bates2010simple}. Fluvial erosion and sediment transport is then derived using the velocities and depths of the calculated surface water within the catchment.
 
