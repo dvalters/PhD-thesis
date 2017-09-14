@@ -48,15 +48,15 @@ Predicting catchment response to intense rainfall events is a pressing societal 
 A number of interested parties have expressed interest in using HAIL-CAESAR for further landscape evolution and hydrological modelling. Future development work is outlined here.
 
 \subsection*{Reach mode}
-Development of the model in future would include the development of a `reach-mode' in addition to the `whole-catchment' mode currently implemented in the model. Reach-mode would be a configuration of the model that allows it to simulate localised sections of a river channel and surrounding area. Reach-mode is also feature of the progenitor to the HAIL-CAESAR model, CAESAR-Lisflood, and has applications where detailed simulations are required of particular sections of river channel, but not of the entire catchment.
+Development of the model in future would implement a `reach-mode' in addition to the `whole-catchment' mode currently implemented in the model. Reach-mode would be a configuration of the model that allows it to simulate localised sections of a river channel and surrounding area. Reach-mode is also a feature of the progenitor to the HAIL-CAESAR model, CAESAR-Lisflood, and has applications where detailed simulations are required of particular sections of river channel, but not of the entire catchment.
 
 \subsection*{Process representation}
 A number of processes in the CAESAR and CAESAR-Lisflood models were omitted in the HAIL-CAESAR development process because of time constraints and applicability to the research questions posed in this thesis. Additional process representation in the HAIL-CAESAR model could be facilitated by the implementation of the following additional subroutines in the model code:
 
 \begin{itemize}
-\item \textbf{Lateral channel erosion}. Currently only downcutting erosion and deposition is represented in the model. The lack of lateral erosion mechanisms was highlighted as a possible limitation in the HAIL-CAESAR model's ability to fully predict the amount and distribution in the Boscastle event documented in Chapter \ref{chapter_hydrogeomorph}
+\item \textbf{Lateral channel erosion}. Currently only downcutting erosion and deposition is represented in the model. The lack of lateral erosion mechanisms was highlighted as a possible limitation in the HAIL-CAESAR model's ability to fully predict the amount and distribution of erosion in the Boscastle event documented in Chapter \ref{chapter_hydrogeomorph}.
 
-\item \textbf{Slope processes}. Slope processes in HAIL-CAESAR as well as CAESAR-Lisflood have very simple representations based on simple threshold gradients to initiate redistribution of slope material between adjacent cells. A number of more physically realistic slope process models exist that could be incorporated into the HAIL-CAESAR model.
+\item \textbf{Slope processes}. Slope processes in HAIL-CAESAR as well as CAESAR-Lisflood have very simple representations based on threshold gradients required to initiate redistribution of slope material between adjacent cells. A number of more physically realistic slope process models exist that could be incorporated into the HAIL-CAESAR model.
 
 \item \textbf{Groundwater}. Interest has been expressed by the developers of the British Geological Survey's CLiDE model in using HAIL-CAESAR as a basis for the development of a coupled groundwater--catchment hydrology and erosion model for use on HPC services. The groundwater components would be based on the algorithms in the existing CLiDE model, another CAESAR-based model with applications in environmental modelling and prediction \citep[e.g.][]{Barkwith2015}.
 

@@ -374,7 +374,7 @@ acceptable looking results, but it may be omitted to get smaller print.
         \end{center}
         \vfill
         \begin{center}
-           \sc A \expandafter{\@thesis} submitted to the University of Manchester\\
+           \sc A \expandafter{\@thesis} submitted to The University of Manchester\\
            for the degree of \degreetitle\\
            in the Faculty of \expandafter{\@faculty}
         \end{center}
@@ -435,7 +435,7 @@ Thesis
 \fi
  restriction declarations deposited in the University Library, The University
 Library's regulations (see
-http://www.manchester.ac.uk/library/ab\-out/regul\-ations) and in The 
+http://www.library.manchester.ac.uk/ab\-out/regul\-ations) and in The 
 University's 
 \ifx\degreetitle\@msc
 Guidance on Presentation of Dissertations.
